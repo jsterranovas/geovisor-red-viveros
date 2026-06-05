@@ -42,7 +42,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[2.8331983142787736,-76.77142156846135],[3.298208093457782,-75.89124504742732]]);
+        }).fitBounds([[2.8331896710063105,-76.77979581634109],[3.298210647141606,-75.88286889601163]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/qgis2web/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -139,7 +139,6 @@
             maxNativeZoom: 20
         });
         layer_ESRISatellite_1;
-        map.addLayer(layer_ESRISatellite_1);
         function pop_Subcuenca_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -197,7 +196,6 @@
             style: style_Subcuenca_2_0,
         });
         bounds_group.addLayer(layer_Subcuenca_2);
-        map.addLayer(layer_Subcuenca_2);
         function pop_RedViveros_CORPOPALO_3(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -355,7 +353,7 @@
             {label: 'RedViveros_CORPOPALO<br /><table><tr><td style="text-align: center;"><img src="legend/RedViveros_CORPOPALO_3_Comunitario0.png" /></td><td>Comunitario</td></tr><tr><td style="text-align: center;"><img src="legend/RedViveros_CORPOPALO_3_Escolar1.png" /></td><td>Escolar</td></tr><tr><td style="text-align: center;"><img src="legend/RedViveros_CORPOPALO_3_Institucional2.png" /></td><td>Institucional</td></tr></table>', layer: layer_RedViveros_CORPOPALO_3},
             {label: '<img src="legend/Subcuenca_2.png" /> Subcuenca', layer: layer_Subcuenca_2},
             {label: "ESRI Satellite", layer: layer_ESRISatellite_1},
-            {label: "Positron (retina)", layer: layer_Positronretina_0},]
+            {label: "Positron (retina)", layer: layer_Positronretina_0, radioGroup: 'bm' },]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
             //selectorBack: false,
