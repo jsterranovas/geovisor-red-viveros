@@ -1,72 +1,154 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Kwesx Fiwe (Nuestras Semillas)</title>
 
 <style>
+
 body{
-    font-family: Arial, sans-serif;
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px;
-    line-height: 1.6;
-    background: #f5f7f4;
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f4f7f3;
+    color:#333;
+    line-height:1.7;
 }
 
-header{
-    text-align:center;
-    padding:30px;
-    background:#2f6b3f;
+.hero{
+    position:relative;
+}
+
+.hero img{
+    width:100%;
+    height:450px;
+    object-fit:cover;
+}
+
+.hero-text{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    background:rgba(0,0,0,0.55);
     color:white;
-    border-radius:10px;
+    padding:25px;
+    box-sizing:border-box;
 }
 
-section{
-    background:white;
-    margin-top:20px;
-    padding:20px;
-    border-radius:10px;
+.hero-text h1{
+    margin:0;
+    font-size:2.5rem;
 }
 
-h2{
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:25px;
+}
+
+.frase{
+    text-align:center;
+    font-style:italic;
+    font-size:1.2rem;
     color:#2f6b3f;
+    margin:30px 0;
 }
 
 .indicadores{
-    display:flex;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
     gap:15px;
-    flex-wrap:wrap;
 }
 
 .tarjeta{
     background:white;
-    padding:15px;
-    border-radius:10px;
-    flex:1;
-    min-width:180px;
+    padding:20px;
+    border-radius:12px;
     text-align:center;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.section{
+    background:white;
+    padding:25px;
+    margin-top:20px;
+    border-radius:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.section h2{
+    color:#2f6b3f;
+}
+
+.impacto{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.impacto div{
+    background:#f8faf7;
+    padding:20px;
+    border-radius:10px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,td{
+    border-bottom:1px solid #ddd;
+    padding:10px;
+}
+
+.galeria{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.galeria img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:10px;
 }
 
 .boton{
     display:inline-block;
-    padding:10px 15px;
+    padding:12px 20px;
     background:#2f6b3f;
     color:white;
     text-decoration:none;
     border-radius:8px;
 }
+
+footer{
+    text-align:center;
+    background:#2f6b3f;
+    color:white;
+    padding:30px;
+    margin-top:40px;
+}
+
 </style>
 
 </head>
 
 <body>
 
-<header>
+<div class="hero">
+
+<img src="../img/eekathe_portada.jpg">
+
+<div class="hero-text">
 
 <h1>🌱 Kwesx Fiwe</h1>
-<h3>(Nuestras Semillas)</h3>
+
+<h2>(Nuestras Semillas)</h2>
 
 <p>
 Vivero Escolar de Eekathé<br>
@@ -74,9 +156,18 @@ Resguardo de López Adentro<br>
 Caloto, Cauca
 </p>
 
-</header>
+</div>
 
-<section>
+</div>
+
+<div class="container">
+
+<div class="frase">
+
+"Los niños y niñas son nuestras semillas; al cuidarlas hoy,
+sembramos el futuro de nuestro territorio."
+
+</div>
 
 <div class="indicadores">
 
@@ -96,41 +187,165 @@ Caloto, Cauca
 </div>
 
 <div class="tarjeta">
+<h3>👦 Participantes directos</h3>
+<p>9 estudiantes</p>
+</div>
+
+<div class="tarjeta">
 <h3>🌿 Especies</h3>
 <p>12 especies</p>
 </div>
 
 </div>
 
-</section>
+<div class="section">
 
-<section>
-
-<h2>Nuestra identidad</h2>
+<h2>🌱 Nuestra identidad</h2>
 
 <p>
-Kwesx Fiwe, que significa "Nuestras Semillas", busca sembrar conciencia ambiental y amor por la Madre Tierra en niños y niñas, quienes son concebidos como semillas que crecerán para cuidar y proteger el territorio.
+Kwesx Fiwe significa "Nuestras Semillas". El vivero concibe a los niños y niñas
+como semillas que crecerán para cuidar la Madre Tierra y fortalecer el territorio.
 </p>
 
-</section>
+</div>
 
-<section>
+<div class="section">
 
-<h2>Nuestra historia</h2>
+<h2>📖 Nuestra historia</h2>
 
 <p>
-El vivero fue creado hace ocho años por iniciativa de la docente Adriana Tombé como respuesta a la escasez de agua y a la necesidad de fortalecer la arborización de la institución educativa y del territorio.
+El vivero nació hace ocho años por iniciativa de la docente Adriana Tombé como
+respuesta a la escasez de agua y la necesidad de fortalecer la arborización de la institución y del resguardo.
 </p>
 
-</section>
+<p>
+Lo que comenzó con 300 árboles sembrados se ha convertido en un proceso pedagógico,
+cultural y ambiental que alcanzó una producción cercana a 5.000 árboles en 2024.
+</p>
 
-<section>
+</div>
+
+<div class="section">
+
+<h2>📚 Kwesx Tul: Aprender haciendo</h2>
+
+<p>
+Cada semana se desarrolla el "Día de Tul", una jornada donde los estudiantes realizan
+actividades de siembra, riego, monitoreo y mantenimiento del vivero.
+</p>
+
+<p>
+El proceso integra conocimientos ambientales, culturales y territoriales mediante experiencias prácticas.
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>🌿 Producción y biodiversidad</h2>
+
+<table>
+
+<tr>
+<th>Especie</th>
+<th>Presencia</th>
+</tr>
+
+<tr><td>Nacedero</td><td>✓</td></tr>
+<tr><td>Flor amarillo</td><td>✓</td></tr>
+<tr><td>Chicalá</td><td>✓</td></tr>
+<tr><td>Matarratón</td><td>✓</td></tr>
+<tr><td>Platanillo</td><td>✓</td></tr>
+<tr><td>Iraca</td><td>✓</td></tr>
+<tr><td>Lechero rojo</td><td>✓</td></tr>
+<tr><td>Gualanday</td><td>✓</td></tr>
+<tr><td>Acacia</td><td>✓</td></tr>
+<tr><td>Guayacán amarillo</td><td>✓</td></tr>
+<tr><td>Cedro rosado</td><td>✓</td></tr>
+<tr><td>Achiote</td><td>✓</td></tr>
+
+</table>
+
+</div>
+
+<div class="section">
+
+<h2>🌎 Impacto comunitario</h2>
+
+<div class="impacto">
+
+<div>
+<h3>🌳 Restauración</h3>
+Producción de árboles para recuperación ambiental.
+</div>
+
+<div>
+<h3>👨‍👩‍👧‍👦 Comunidad</h3>
+Participación de estudiantes, docentes y familias.
+</div>
+
+<div>
+<h3>🎶 Cultura</h3>
+Canciones, cuentos y material pedagógico propio.
+</div>
+
+<div>
+<h3>🌱 Medicina tradicional</h3>
+Semillero de plantas medicinales y huerta escolar.
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📸 Galería fotográfica</h2>
+
+<div class="galeria">
+
+<img src="../img/eekathe_01.jpg">
+<img src="../img/eekathe_02.jpg">
+<img src="../img/eekathe_03.jpg">
+<img src="../img/eekathe_04.jpg">
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>🚀 Proyección 2025</h2>
+
+<ul>
+<li>Producción de 10.000 árboles.</li>
+<li>Implementación de sistema de riego.</li>
+<li>Construcción de bodega.</li>
+<li>Difusión de la cartilla pedagógica.</li>
+<li>Mayor visibilidad digital del proceso.</li>
+</ul>
+
+</div>
+
+<div class="section">
 
 <a class="boton" href="../index.html">
 ⬅ Volver al geovisor
 </a>
 
-</section>
+</div>
+
+</div>
+
+<footer>
+
+<h3>Red de Viveros CORPOPALO</h3>
+
+<p>
+Construyendo capacidades para la restauración ecológica y la adaptación al cambio climático.
+</p>
+
+</footer>
 
 </body>
 </html>
