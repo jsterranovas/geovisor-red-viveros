@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vivero Monterredondo</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f4f7f3;
+    color:#333;
+    line-height:1.7;
+}
+
+.hero{
+    position:relative;
+}
+
+.hero img{
+    width:100%;
+    height:450px;
+    object-fit:cover;
+}
+
+.hero-text{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    background:rgba(0,0,0,0.55);
+    color:white;
+    padding:25px;
+    box-sizing:border-box;
+}
+
+.hero-text h1{
+    margin:0;
+    font-size:2.5rem;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:25px;
+}
+
+.frase{
+    text-align:center;
+    font-style:italic;
+    font-size:1.2rem;
+    color:#2f6b3f;
+    margin:30px 0;
+}
+
+.indicadores{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+}
+
+.tarjeta{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.section{
+    background:white;
+    padding:25px;
+    margin-top:20px;
+    border-radius:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.section h2{
+    color:#2f6b3f;
+}
+
+.impacto{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.impacto div{
+    background:#f8faf7;
+    padding:20px;
+    border-radius:10px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,td{
+    border-bottom:1px solid #ddd;
+    padding:10px;
+}
+
+.galeria{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.galeria img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.boton{
+    display:inline-block;
+    padding:12px 20px;
+    background:#2f6b3f;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+}
+
+footer{
+    text-align:center;
+    background:#2f6b3f;
+    color:white;
+    padding:30px;
+    margin-top:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="hero">
+
+<img src="../img/eekathe_portada.jpg">
+
+<div class="hero-text">
+
+<h1>🌱 Monterredondo</h1>
+
+<p>
+Vivero Escolar de I.E.A Monterredondo<br>
+Vereda Monterredondo<br>
+Miranda, Cauca
+</p>
+
+</div>
+
+</div>
+
+<div class="container">
+
+<div class="frase">
+
+"Sembramos conocimiento, restauramos el territorio y cultivamos el compromiso ambiental de las nuevas generaciones."
+
+</div>
+
+<div class="indicadores">
+
+<div class="tarjeta">
+<h3>📅 Trayectoria</h3>
+<p>10 años</p>
+</div>
+
+<div class="tarjeta">
+<h3>🌳 Capacidad Producción Promedio</h3>
+<p>3.000 árboles</p>
+</div>
+
+
+<div class="tarjeta">
+<h3>🌿 Especies Nativas Producidas </h3>
+<p>9 especies</p>
+</div>
+
+</div>
+
+<!-- PARTICIPACIÓN -->
+
+<div class="section">
+
+<h2>👥 Participación</h2>
+
+<table>
+
+<tr>
+<th>Grupo</th>
+<th>Cantidad</th>
+</tr>
+
+<tr>
+<td>👧 Niñas</td>
+<td>9</td>
+</tr>
+
+<tr>
+<td>👦 Niños</td>
+<td>17</td>
+</tr>
+
+<tr>
+<td>👩 Mujeres adultas</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>👨 Hombres adultos</td>
+<td>-</td>
+</tr>
+
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>27</strong></td>
+</tr>
+
+</table>
+
+</div>
+</div>
+
+<div class="section">
+
+<h2>🌱 Nuestra identidad</h2>
+
+<p>
+El vivero Monterredondo busca fortalecer el sentido de pertenencia, el respeto y el cuidado por la naturaleza dentro de la comunidad educativa y la vereda. Su trabajo está orientado a recuperar especies nativas afectadas por la tala y las quemas, promoviendo procesos de restauración ambiental y formación integral de los estudiantes..
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Nuestra historia</h2>
+
+<p>
+El vivero fue creado en 2016 como una iniciativa promovida por CORPOPALO y liderada inicialmente por la docente Beatriz Eugenia Ibarra, encargada de las áreas de Biología, Química y Emprendimiento..
+</p>
+
+<p>
+Dos años después, la coordinación del proceso fue asumida por la docente Sulma Corrales Alzate, quien ha continuado fortaleciendo el vivero como espacio pedagógico y ambiental.
+</p>
+
+<p>
+Inicialmente el trabajo se desarrollaba únicamente con estudiantes de grados décimo y once. Sin embargo, se identificó la necesidad de garantizar continuidad en los procesos formativos, por lo que posteriormente se integraron estudiantes desde grado sexto hasta once..
+</p>
+<p>
+Actualmente el vivero forma parte del proyecto ambiental escolar (PRAE) de la institución, fortaleciendo su sostenibilidad y articulación curricular.
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>📚 Participación y aprendizaje</h2>
+
+<p>
+El vivero constituye un espacio de aprendizaje práctico donde los estudiantes participan en actividades de siembra, mantenimiento, fertilización, control de arvenses, riego y monitoreo de especies.
+</p>
+
+<p>
+El proceso se articula con diversas asignaturas, fortaleciendo aprendizajes interdisciplinarios relacionados con lenguaje, matemáticas, biología y educación artística.
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>🌿 Producción y biodiversidad</h2>
+
+<p>
+El vivero produce especies forestales, ornamentales y de interés ecológico para procesos de restauración, protección de fuentes hídricas y fortalecimiento de coberturas vegetales.
+</p>
+
+<table>
+
+<tr>
+<th>Nombre Común</th>
+<th>Nombre Cientifico</th>
+</tr>
+
+<tr><td>Nacedero</td><td>Trichanthera gigantea</td></tr>
+<tr><td>Flor amarillo</td><td>Senna spectabilis</td></tr>
+<tr><td>Chicalá</td><td>Tecoma stans</td></tr>
+<tr><td>Cedro Rosado</td><td>Cedrela odorata</td></tr>
+<tr><td>Guamo Machete</td><td>Inga edulis</td></tr>
+<tr><td>Iraca</td><td>✓</td></tr>
+<tr><td>Lechero rojo</td><td>Euphorbia cotinifilia</td></tr>
+<tr><td>Gualanday</td><td>Jacaranda caucana</td></tr>
+<tr><td>Guayacán Rosado</td><td>Tabebuia rosea</td></tr>
+<tr><td>Guayacán amarillo</td><td>Handroanthus crhysantus</td></tr>
+<tr><td>Guayacán de Manizales</td><td>Lafoensia acuminata</td></tr>
+<tr><td>Chachafruto</td><td>Erythrina edulis</td></tr>
+
+</table>
+
+</div>
+
+<div class="section">
+
+<h2>🌎 Impacto comunitario</h2>
+
+<div class="impacto">
+
+<div>
+<h3>🌳 Restauración</h3>
+Producción de árboles para recuperación ambiental.
+</div>
+
+<div>
+<h3>👨‍👩‍👧‍👦 Comunidad</h3>
+Participación de estudiantes, docentes y familias.
+</div>
+
+<div>
+<h3>🌱 Medicina tradicional</h3>
+Semillero de plantas medicinales y huerta escolar.
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📸 Galería fotográfica</h2>
+
+<div class="galeria">
+
+<img src="../img/eekathe_01.jpg">
+<img src="../img/eekathe_02.jpg">
+<img src="../img/eekathe_03.jpg">
+<img src="../img/eekathe_04.jpg">
+
+</div>
+
+</div>
+
+<!-- ALIADOS -->
+
+<div class="section">
+
+<h2>🤝 Aliados</h2>
+
+<ul>
+<li>[ALIADO_1]</li>
+<li>[ALIADO_2]</li>
+<li>[ALIADO_3]</li>
+<li>[ALIADO_4]</li>
+</ul>
+
+</div>
+
+<!-- CONTACTO -->
+    
+<div class="section">
+
+<h2>📞 Información de contacto</h2>
+
+<p>
+<strong>Responsable del proceso:</strong> Sulma Corrales Alzate<br>
+<strong>Rol:</strong> Docente dinamizadora<br>
+<strong>Teléfono:</strong> [TELEFONO]<br>
+<strong>Correo:</strong> [CORREO]
+</p>
+
+</div>
+
+
+<div class="section">
+
+<a class="boton" href="../index.html">
+⬅ Volver al geovisor
+</a>
+
+</div>
+
+</div>
+
+<footer>
+
+<h3>Red de Viveros CORPOPALO</h3>
+
+<p>
+Construyendo capacidades para la restauración ecológica y la adaptación al cambio climático.
+</p>
+
+</footer>
+
+</body>
+</html>
