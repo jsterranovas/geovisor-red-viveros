@@ -37,12 +37,13 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet.photon.js"></script>
-        <script src="data/Subcuenca_2.js"></script>
+        <script src="data/Subcuenca_1.js"></script>
+        <script src="data/RedHidricaPpalSubcuencaPalo_2.js"></script>
         <script src="data/RedViveros_CORPOPALO_3.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[2.8331896710063105,-76.77979581634109],[3.298210647141606,-75.88286889601163]]);
+        }).fitBounds([[3.0180423685982807,-76.42986634092463],[3.270448984505266,-76.11083789801107]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/qgis2web/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -127,19 +128,7 @@
         });
         layer_Positronretina_0;
         map.addLayer(layer_Positronretina_0);
-        map.createPane('pane_ESRISatellite_1');
-        map.getPane('pane_ESRISatellite_1').style.zIndex = 401;
-        var layer_ESRISatellite_1 = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-            pane: 'pane_ESRISatellite_1',
-            opacity: 1.0,
-            attribution: '',
-            minZoom: 1,
-            maxZoom: 28,
-            minNativeZoom: 0,
-            maxNativeZoom: 20
-        });
-        layer_ESRISatellite_1;
-        function pop_Subcuenca_2(feature, layer) {
+        function pop_Subcuenca_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? autolinker.link(String(feature.properties['OBJECTID']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -170,32 +159,74 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Subcuenca_2_0() {
+        function style_Subcuenca_1_0() {
             return {
-                pane: 'pane_Subcuenca_2',
+                pane: 'pane_Subcuenca_1',
                 opacity: 1,
-                color: 'rgba(120,120,120,1.0)',
-                dashArray: '',
+                color: 'rgba(121,116,116,1.0)',
+                dashArray: '5.0,1.0',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 2.0, 
+                weight: 1.0, 
                 fillOpacity: 0,
                 interactive: false,
             }
         }
-        map.createPane('pane_Subcuenca_2');
-        map.getPane('pane_Subcuenca_2').style.zIndex = 402;
-        map.getPane('pane_Subcuenca_2').style['mix-blend-mode'] = 'normal';
-        var layer_Subcuenca_2 = new L.geoJson(json_Subcuenca_2, {
+        map.createPane('pane_Subcuenca_1');
+        map.getPane('pane_Subcuenca_1').style.zIndex = 401;
+        map.getPane('pane_Subcuenca_1').style['mix-blend-mode'] = 'normal';
+        var layer_Subcuenca_1 = new L.geoJson(json_Subcuenca_1, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_Subcuenca_2',
-            layerName: 'layer_Subcuenca_2',
-            pane: 'pane_Subcuenca_2',
-            onEachFeature: pop_Subcuenca_2,
-            style: style_Subcuenca_2_0,
+            dataVar: 'json_Subcuenca_1',
+            layerName: 'layer_Subcuenca_1',
+            pane: 'pane_Subcuenca_1',
+            onEachFeature: pop_Subcuenca_1,
+            style: style_Subcuenca_1_0,
         });
-        bounds_group.addLayer(layer_Subcuenca_2);
+        bounds_group.addLayer(layer_Subcuenca_1);
+        function pop_RedHidricaPpalSubcuencaPalo_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Nombre'] !== null ? autolinker.link(String(feature.properties['Nombre']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Longitud _'] !== null ? autolinker.link(String(feature.properties['Longitud _']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_RedHidricaPpalSubcuencaPalo_2_0() {
+            return {
+                pane: 'pane_RedHidricaPpalSubcuencaPalo_2',
+                opacity: 1,
+                color: 'rgba(31,120,180,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+        }
+        map.createPane('pane_RedHidricaPpalSubcuencaPalo_2');
+        map.getPane('pane_RedHidricaPpalSubcuencaPalo_2').style.zIndex = 402;
+        map.getPane('pane_RedHidricaPpalSubcuencaPalo_2').style['mix-blend-mode'] = 'normal';
+        var layer_RedHidricaPpalSubcuencaPalo_2 = new L.geoJson(json_RedHidricaPpalSubcuencaPalo_2, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_RedHidricaPpalSubcuencaPalo_2',
+            layerName: 'layer_RedHidricaPpalSubcuencaPalo_2',
+            pane: 'pane_RedHidricaPpalSubcuencaPalo_2',
+            onEachFeature: pop_RedHidricaPpalSubcuencaPalo_2,
+            style: style_RedHidricaPpalSubcuencaPalo_2_0,
+        });
+        bounds_group.addLayer(layer_RedHidricaPpalSubcuencaPalo_2);
         function pop_RedViveros_CORPOPALO_3(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -218,32 +249,8 @@
                         <td class="visible-with-data" id="InstitucionEducativa_Grupo">' + (feature.properties['InstitucionEducativa_Grupo'] !== null ? autolinker.link(String(feature.properties['InstitucionEducativa_Grupo']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Coordenada X</th>\
-                        <td class="visible-with-data" id="Este_Coord">' + (feature.properties['Este_Coord'] !== null ? autolinker.link(String(feature.properties['Este_Coord']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Coordenada Y</th>\
-                        <td class="visible-with-data" id="Norte_Coor">' + (feature.properties['Norte_Coor'] !== null ? autolinker.link(String(feature.properties['Norte_Coor']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
                         <th scope="row">Participantes</th>\
                         <td class="visible-with-data" id="Participantes">' + (feature.properties['Participantes'] !== null ? autolinker.link(String(feature.properties['Participantes']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Niñas</th>\
-                        <td class="visible-with-data" id="Niñas">' + (feature.properties['Niñas'] !== null ? autolinker.link(String(feature.properties['Niñas']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Niños</th>\
-                        <td class="visible-with-data" id="Niños">' + (feature.properties['Niños'] !== null ? autolinker.link(String(feature.properties['Niños']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Mujeres Adultas</th>\
-                        <td class="visible-with-data" id="Mujeres_Adultas">' + (feature.properties['Mujeres_Adultas'] !== null ? autolinker.link(String(feature.properties['Mujeres_Adultas']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Hombres Adultos</th>\
-                        <td class="visible-with-data" id="Hombres_Adultos">' + (feature.properties['Hombres_Adultos'] !== null ? autolinker.link(String(feature.properties['Hombres_Adultos']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Cantidad de Especies Producidas</th>\
@@ -254,20 +261,8 @@
                         <td class="visible-with-data" id="Total_Plantulas">' + (feature.properties['Total_Plantulas'] !== null ? autolinker.link(String(feature.properties['Total_Plantulas']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Estado del Vivero</th>\
-                        <td class="visible-with-data" id="Estado_Vivero">' + (feature.properties['Estado_Vivero'] !== null ? autolinker.link(String(feature.properties['Estado_Vivero']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Foto</th>\
-                        <td class="visible-with-data" id="Foto">' + (feature.properties['Foto'] !== null ? '<img src="images/' + String(feature.properties['Foto']).replace(/[\\/:]/g, '_').trim().replace(/'/g, '\'').replace(/"/g, '&quot;') + '">' : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Descripción</th>\
-                        <td class="visible-with-data" id="Descripción">' + (feature.properties['Descripción'] !== null ? autolinker.link(String(feature.properties['Descripción']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Año de Creación</th>\
-                        <td class="visible-with-data" id="Año_Creación">' + (feature.properties['Año_Creación'] !== null ? autolinker.link(String(feature.properties['Año_Creación']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">Conoce más</th>\
+                        <td class="visible-with-data" id="Ficha_Web">' + (feature.properties['Ficha_Web'] !== null ? autolinker.link(String(feature.properties['Ficha_Web']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -351,8 +346,8 @@
         map.addLayer(layer_RedViveros_CORPOPALO_3);
         var overlaysTree = [
             {label: 'RedViveros_CORPOPALO<br /><table><tr><td style="text-align: center;"><img src="legend/RedViveros_CORPOPALO_3_Comunitario0.png" /></td><td>Comunitario</td></tr><tr><td style="text-align: center;"><img src="legend/RedViveros_CORPOPALO_3_Escolar1.png" /></td><td>Escolar</td></tr><tr><td style="text-align: center;"><img src="legend/RedViveros_CORPOPALO_3_Institucional2.png" /></td><td>Institucional</td></tr></table>', layer: layer_RedViveros_CORPOPALO_3},
-            {label: '<img src="legend/Subcuenca_2.png" /> Subcuenca', layer: layer_Subcuenca_2},
-            {label: "ESRI Satellite", layer: layer_ESRISatellite_1},
+            {label: '<img src="legend/RedHidricaPpalSubcuencaPalo_2.png" /> RedHidricaPpalSubcuencaPalo', layer: layer_RedHidricaPpalSubcuencaPalo_2},
+            {label: '<img src="legend/Subcuenca_1.png" /> Subcuenca', layer: layer_Subcuenca_1},
             {label: "Positron (retina)", layer: layer_Positronretina_0, radioGroup: 'bm' },]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
@@ -416,12 +411,12 @@
         });       
         setBounds();
         var i = 0;
-        layer_Subcuenca_2.eachLayer(function(layer) {
+        layer_RedHidricaPpalSubcuencaPalo_2.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['NOM_MUN'] !== null?String('<div style="color: #5e5e5e; font-size: 10pt; font-family: \'Ubuntu Sans\', sans-serif;">' + layer.feature.properties['NOM_MUN']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Subcuenca_2'});
+            layer.bindTooltip((layer.feature.properties['Nombre'] !== null?String('<div style="color: #000000; font-size: 4pt; font-weight: bold; font-family: \'Ubuntu Sans\', sans-serif;">' + layer.feature.properties['Nombre']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_RedHidricaPpalSubcuencaPalo_2'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -434,22 +429,22 @@
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Vivero'] !== null?String('<div style="color: #000000; font-size: 8pt; font-family: \'Ubuntu Sans\', sans-serif;">' + layer.feature.properties['Vivero']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_RedViveros_CORPOPALO_3'});
+            layer.bindTooltip((layer.feature.properties['Vivero'] !== null?String('<div style="color: #000000; font-size: 8pt; font-weight: bold; font-family: \'Ubuntu Sans\', sans-serif;">' + layer.feature.properties['Vivero']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_RedViveros_CORPOPALO_3'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
               addLabel(layer, i);
               i++;
         });
-        resetLabels([layer_Subcuenca_2,layer_RedViveros_CORPOPALO_3]);
+        resetLabels([layer_Subcuenca_1,layer_RedHidricaPpalSubcuencaPalo_2,layer_RedViveros_CORPOPALO_3]);
         map.on("zoomend", function(){
-            resetLabels([layer_Subcuenca_2,layer_RedViveros_CORPOPALO_3]);
+            resetLabels([layer_Subcuenca_1,layer_RedHidricaPpalSubcuencaPalo_2,layer_RedViveros_CORPOPALO_3]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_Subcuenca_2,layer_RedViveros_CORPOPALO_3]);
+            resetLabels([layer_Subcuenca_1,layer_RedHidricaPpalSubcuencaPalo_2,layer_RedViveros_CORPOPALO_3]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_Subcuenca_2,layer_RedViveros_CORPOPALO_3]);
+            resetLabels([layer_Subcuenca_1,layer_RedHidricaPpalSubcuencaPalo_2,layer_RedViveros_CORPOPALO_3]);
         });
         </script>        
     </body>
