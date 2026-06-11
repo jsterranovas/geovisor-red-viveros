@@ -8,7 +8,6 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <link rel="stylesheet" href="css/leaflet.css">
         <link rel="stylesheet" href="css/L.Control.Layers.Tree.css">
-        <link rel="stylesheet" href="css/L.Control.Locate.min.css">
         <link rel="stylesheet" href="css/qgis2web.css">
         <link rel="stylesheet" href="css/fontawesome-all.min.css">
         <link rel="stylesheet" href="css/leaflet.photon.css">
@@ -20,7 +19,7 @@
             margin: 0;
         }
         </style>
-        <title></title>
+        <title>🌱 Geovisor de la Red de Viveros Escolares y Comunitarios Árboles para la Vida - CORPOPALO</title>
     </head>
     <body>
         <div id="map">
@@ -28,7 +27,6 @@
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
         <script src="js/L.Control.Layers.Tree.min.js"></script>
-        <script src="js/L.Control.Locate.min.js"></script>
         <script src="js/leaflet.rotatedMarker.js"></script>
         <script src="js/leaflet.pattern.js"></script>
         <script src="js/leaflet-hash.js"></script>
@@ -37,13 +35,13 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet.photon.js"></script>
-        <script src="data/Subcuenca_1.js"></script>
-        <script src="data/RedHidricaPpalSubcuencaPalo_2.js"></script>
-        <script src="data/RedViveros_CORPOPALO_3.js"></script>
+        <script src="data/Subcuenca_2.js"></script>
+        <script src="data/RedHidricaPpalSubcuencaPalo_3.js"></script>
+        <script src="data/RedViveros_CORPOPALO_4.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[3.0180423685982807,-76.42986634092463],[3.270448984505266,-76.11083789801107]]);
+        }).fitBounds([[2.8982009823435724,-76.45179762511627],[3.265540980301436,-75.97987759068997]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/qgis2web/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -108,10 +106,30 @@
                 popup._contentNode.classList.remove('media');
             }
         }
+        var abstract = new L.Control({'position':'bottomleft'});
+        abstract.onAdd = function (map) {
+            this._div = L.DomUtil.create('div',
+            'leaflet-control abstract');
+            this._div.id = 'abstract'
+                this._div.setAttribute("onmouseenter", "abstract.show()");
+                this._div.setAttribute("onmouseleave", "abstract.hide()");
+                this.hide();
+                return this._div;
+            };
+            abstract.hide = function () {
+                this._div.classList.remove("abstractUncollapsed");
+                this._div.classList.add("abstract");
+                this._div.innerHTML = 'i'
+            }
+            abstract.show = function () {
+                this._div.classList.remove("abstract");
+                this._div.classList.add("abstractUncollapsed");
+                this._div.innerHTML = 'Conozca los viveros escolares y comunitarios que hacen parte de la Red Árboles para la Vida de CORPOPALO. Explore su ubicación, características, especies cultivadas y experiencias que contribuyen a la restauración ecológica, la educación ambiental y el fortalecimiento de los territorios del norte del Cauca.';
+        };
+        abstract.addTo(map);
         var zoomControl = L.control.zoom({
             position: 'topleft'
         }).addTo(map);
-        L.control.locate({locateOptions: {maxZoom: 19}}).addTo(map);
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
         }
@@ -128,7 +146,19 @@
         });
         layer_Positronretina_0;
         map.addLayer(layer_Positronretina_0);
-        function pop_Subcuenca_1(feature, layer) {
+        map.createPane('pane_ImagenSatelital_1');
+        map.getPane('pane_ImagenSatelital_1').style.zIndex = 401;
+        var layer_ImagenSatelital_1 = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            pane: 'pane_ImagenSatelital_1',
+            opacity: 1.0,
+            attribution: '',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 20
+        });
+        layer_ImagenSatelital_1;
+        function pop_Subcuenca_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? autolinker.link(String(feature.properties['OBJECTID']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -159,9 +189,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Subcuenca_1_0() {
+        function style_Subcuenca_2_0() {
             return {
-                pane: 'pane_Subcuenca_1',
+                pane: 'pane_Subcuenca_2',
                 opacity: 1,
                 color: 'rgba(121,116,116,1.0)',
                 dashArray: '5.0,1.0',
@@ -172,20 +202,20 @@
                 interactive: false,
             }
         }
-        map.createPane('pane_Subcuenca_1');
-        map.getPane('pane_Subcuenca_1').style.zIndex = 401;
-        map.getPane('pane_Subcuenca_1').style['mix-blend-mode'] = 'normal';
-        var layer_Subcuenca_1 = new L.geoJson(json_Subcuenca_1, {
+        map.createPane('pane_Subcuenca_2');
+        map.getPane('pane_Subcuenca_2').style.zIndex = 402;
+        map.getPane('pane_Subcuenca_2').style['mix-blend-mode'] = 'normal';
+        var layer_Subcuenca_2 = new L.geoJson(json_Subcuenca_2, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_Subcuenca_1',
-            layerName: 'layer_Subcuenca_1',
-            pane: 'pane_Subcuenca_1',
-            onEachFeature: pop_Subcuenca_1,
-            style: style_Subcuenca_1_0,
+            dataVar: 'json_Subcuenca_2',
+            layerName: 'layer_Subcuenca_2',
+            pane: 'pane_Subcuenca_2',
+            onEachFeature: pop_Subcuenca_2,
+            style: style_Subcuenca_2_0,
         });
-        bounds_group.addLayer(layer_Subcuenca_1);
-        function pop_RedHidricaPpalSubcuencaPalo_2(feature, layer) {
+        bounds_group.addLayer(layer_Subcuenca_2);
+        function pop_RedHidricaPpalSubcuencaPalo_3(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['Nombre'] !== null ? autolinker.link(String(feature.properties['Nombre']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -201,9 +231,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_RedHidricaPpalSubcuencaPalo_2_0() {
+        function style_RedHidricaPpalSubcuencaPalo_3_0() {
             return {
-                pane: 'pane_RedHidricaPpalSubcuencaPalo_2',
+                pane: 'pane_RedHidricaPpalSubcuencaPalo_3',
                 opacity: 1,
                 color: 'rgba(31,120,180,1.0)',
                 dashArray: '',
@@ -214,54 +244,54 @@
                 interactive: false,
             }
         }
-        map.createPane('pane_RedHidricaPpalSubcuencaPalo_2');
-        map.getPane('pane_RedHidricaPpalSubcuencaPalo_2').style.zIndex = 402;
-        map.getPane('pane_RedHidricaPpalSubcuencaPalo_2').style['mix-blend-mode'] = 'normal';
-        var layer_RedHidricaPpalSubcuencaPalo_2 = new L.geoJson(json_RedHidricaPpalSubcuencaPalo_2, {
+        map.createPane('pane_RedHidricaPpalSubcuencaPalo_3');
+        map.getPane('pane_RedHidricaPpalSubcuencaPalo_3').style.zIndex = 403;
+        map.getPane('pane_RedHidricaPpalSubcuencaPalo_3').style['mix-blend-mode'] = 'normal';
+        var layer_RedHidricaPpalSubcuencaPalo_3 = new L.geoJson(json_RedHidricaPpalSubcuencaPalo_3, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_RedHidricaPpalSubcuencaPalo_2',
-            layerName: 'layer_RedHidricaPpalSubcuencaPalo_2',
-            pane: 'pane_RedHidricaPpalSubcuencaPalo_2',
-            onEachFeature: pop_RedHidricaPpalSubcuencaPalo_2,
-            style: style_RedHidricaPpalSubcuencaPalo_2_0,
+            dataVar: 'json_RedHidricaPpalSubcuencaPalo_3',
+            layerName: 'layer_RedHidricaPpalSubcuencaPalo_3',
+            pane: 'pane_RedHidricaPpalSubcuencaPalo_3',
+            onEachFeature: pop_RedHidricaPpalSubcuencaPalo_3,
+            style: style_RedHidricaPpalSubcuencaPalo_3_0,
         });
-        bounds_group.addLayer(layer_RedHidricaPpalSubcuencaPalo_2);
-        function pop_RedViveros_CORPOPALO_3(feature, layer) {
+        bounds_group.addLayer(layer_RedHidricaPpalSubcuencaPalo_3);
+        function pop_RedViveros_CORPOPALO_4(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2"><strong>Nombre del Vivero</strong><br />' + (feature.properties['Vivero'] !== null ? autolinker.link(String(feature.properties['Vivero']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>🌱  Vivero</strong><br />' + (feature.properties['Vivero'] !== null ? autolinker.link(String(feature.properties['Vivero']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Tipo</th>\
+                        <th scope="row">🏷️ Tipo</th>\
                         <td class="visible-with-data" id="Tipo">' + (feature.properties['Tipo'] !== null ? autolinker.link(String(feature.properties['Tipo']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Municipio</th>\
+                        <th scope="row">📍 Municipio</th>\
                         <td class="visible-with-data" id="Municipio">' + (feature.properties['Municipio'] !== null ? autolinker.link(String(feature.properties['Municipio']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Vereda</th>\
+                        <th scope="row">🗺️ Vereda</th>\
                         <td class="visible-with-data" id="Vereda">' + (feature.properties['Vereda'] !== null ? autolinker.link(String(feature.properties['Vereda']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Institución Educativa o Grupo Social</th>\
+                        <th scope="row">🏫 Institución  / Organización</th>\
                         <td class="visible-with-data" id="InstitucionEducativa_Grupo">' + (feature.properties['InstitucionEducativa_Grupo'] !== null ? autolinker.link(String(feature.properties['InstitucionEducativa_Grupo']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Participantes</th>\
+                        <th scope="row">👥 Participantes</th>\
                         <td class="visible-with-data" id="Participantes">' + (feature.properties['Participantes'] !== null ? autolinker.link(String(feature.properties['Participantes']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Cantidad de Especies Producidas</th>\
+                        <th scope="row">🌿 # Especies</th>\
                         <td class="visible-with-data" id="Num_Especies">' + (feature.properties['Num_Especies'] !== null ? autolinker.link(String(feature.properties['Num_Especies']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Capacidad de Producción</th>\
+                        <th scope="row">🌳 Producción Promedio</th>\
                         <td class="visible-with-data" id="Total_Plantulas">' + (feature.properties['Total_Plantulas'] !== null ? autolinker.link(String(feature.properties['Total_Plantulas']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Conoce más</th>\
+                        <th scope="row">📖 Ver Ficha Completa</th>\
                         <td class="visible-with-data" id="Ficha_Web">' + (feature.properties['Ficha_Web'] !== null ? autolinker.link(String(feature.properties['Ficha_Web']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
@@ -272,11 +302,11 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_RedViveros_CORPOPALO_3_0(feature) {
+        function style_RedViveros_CORPOPALO_4_0(feature) {
             switch(String(feature.properties['Tipo'])) {
                 case 'Comunitario':
                     return {
-                pane: 'pane_RedViveros_CORPOPALO_3',
+                pane: 'pane_RedViveros_CORPOPALO_4',
                 radius: 8.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -292,7 +322,7 @@
                     break;
                 case 'Escolar':
                     return {
-                pane: 'pane_RedViveros_CORPOPALO_3',
+                pane: 'pane_RedViveros_CORPOPALO_4',
                 radius: 8.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -308,7 +338,7 @@
                     break;
                 case 'Institucional':
                     return {
-                pane: 'pane_RedViveros_CORPOPALO_3',
+                pane: 'pane_RedViveros_CORPOPALO_4',
                 radius: 8.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -324,31 +354,32 @@
                     break;
             }
         }
-        map.createPane('pane_RedViveros_CORPOPALO_3');
-        map.getPane('pane_RedViveros_CORPOPALO_3').style.zIndex = 403;
-        map.getPane('pane_RedViveros_CORPOPALO_3').style['mix-blend-mode'] = 'normal';
-        var layer_RedViveros_CORPOPALO_3 = new L.geoJson(json_RedViveros_CORPOPALO_3, {
+        map.createPane('pane_RedViveros_CORPOPALO_4');
+        map.getPane('pane_RedViveros_CORPOPALO_4').style.zIndex = 404;
+        map.getPane('pane_RedViveros_CORPOPALO_4').style['mix-blend-mode'] = 'normal';
+        var layer_RedViveros_CORPOPALO_4 = new L.geoJson(json_RedViveros_CORPOPALO_4, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_RedViveros_CORPOPALO_3',
-            layerName: 'layer_RedViveros_CORPOPALO_3',
-            pane: 'pane_RedViveros_CORPOPALO_3',
-            onEachFeature: pop_RedViveros_CORPOPALO_3,
+            dataVar: 'json_RedViveros_CORPOPALO_4',
+            layerName: 'layer_RedViveros_CORPOPALO_4',
+            pane: 'pane_RedViveros_CORPOPALO_4',
+            onEachFeature: pop_RedViveros_CORPOPALO_4,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_RedViveros_CORPOPALO_3_0(feature));
+                return L.circleMarker(latlng, style_RedViveros_CORPOPALO_4_0(feature));
             },
         });
-        bounds_group.addLayer(layer_RedViveros_CORPOPALO_3);
-        map.addLayer(layer_RedViveros_CORPOPALO_3);
+        bounds_group.addLayer(layer_RedViveros_CORPOPALO_4);
+        map.addLayer(layer_RedViveros_CORPOPALO_4);
         var overlaysTree = [
-            {label: 'RedViveros_CORPOPALO<br /><table><tr><td style="text-align: center;"><img src="legend/RedViveros_CORPOPALO_3_Comunitario0.png" /></td><td>Comunitario</td></tr><tr><td style="text-align: center;"><img src="legend/RedViveros_CORPOPALO_3_Escolar1.png" /></td><td>Escolar</td></tr><tr><td style="text-align: center;"><img src="legend/RedViveros_CORPOPALO_3_Institucional2.png" /></td><td>Institucional</td></tr></table>', layer: layer_RedViveros_CORPOPALO_3},
-            {label: '<img src="legend/RedHidricaPpalSubcuencaPalo_2.png" /> RedHidricaPpalSubcuencaPalo', layer: layer_RedHidricaPpalSubcuencaPalo_2},
-            {label: '<img src="legend/Subcuenca_1.png" /> Subcuenca', layer: layer_Subcuenca_1},
-            {label: "Positron (retina)", layer: layer_Positronretina_0, radioGroup: 'bm' },]
+            {label: 'RedViveros_CORPOPALO<br /><table><tr><td style="text-align: center;"><img src="legend/RedViveros_CORPOPALO_4_Comunitario0.png" /></td><td>Comunitario</td></tr><tr><td style="text-align: center;"><img src="legend/RedViveros_CORPOPALO_4_Escolar1.png" /></td><td>Escolar</td></tr><tr><td style="text-align: center;"><img src="legend/RedViveros_CORPOPALO_4_Institucional2.png" /></td><td>Institucional</td></tr></table>', layer: layer_RedViveros_CORPOPALO_4},
+            {label: '<img src="legend/RedHidricaPpalSubcuencaPalo_3.png" /> RedHidricaPpalSubcuencaPalo', layer: layer_RedHidricaPpalSubcuencaPalo_3},
+            {label: '<img src="legend/Subcuenca_2.png" /> Subcuenca', layer: layer_Subcuenca_2},
+            {label: "Imagen Satelital", layer: layer_ImagenSatelital_1},
+            {label: "Positron (retina)", layer: layer_Positronretina_0},]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
             //selectorBack: false,
@@ -411,12 +442,12 @@
         });       
         setBounds();
         var i = 0;
-        layer_RedHidricaPpalSubcuencaPalo_2.eachLayer(function(layer) {
+        layer_RedHidricaPpalSubcuencaPalo_3.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Nombre'] !== null?String('<div style="color: #000000; font-size: 4pt; font-weight: bold; font-family: \'Ubuntu Sans\', sans-serif;">' + layer.feature.properties['Nombre']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_RedHidricaPpalSubcuencaPalo_2'});
+            layer.bindTooltip((layer.feature.properties['Nombre'] !== null?String('<div style="color: #000000; font-size: 4pt; font-weight: bold; font-family: \'Ubuntu Sans\', sans-serif;">' + layer.feature.properties['Nombre']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_RedHidricaPpalSubcuencaPalo_3'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -424,27 +455,27 @@
               i++;
         });
         var i = 0;
-        layer_RedViveros_CORPOPALO_3.eachLayer(function(layer) {
+        layer_RedViveros_CORPOPALO_4.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Vivero'] !== null?String('<div style="color: #000000; font-size: 8pt; font-weight: bold; font-family: \'Ubuntu Sans\', sans-serif;">' + layer.feature.properties['Vivero']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_RedViveros_CORPOPALO_3'});
+            layer.bindTooltip((layer.feature.properties['Vivero'] !== null?String('<div style="color: #000000; font-size: 8pt; font-weight: bold; font-family: \'Ubuntu Sans\', sans-serif;">' + layer.feature.properties['Vivero']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_RedViveros_CORPOPALO_4'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
               addLabel(layer, i);
               i++;
         });
-        resetLabels([layer_Subcuenca_1,layer_RedHidricaPpalSubcuencaPalo_2,layer_RedViveros_CORPOPALO_3]);
+        resetLabels([layer_Subcuenca_2,layer_RedHidricaPpalSubcuencaPalo_3,layer_RedViveros_CORPOPALO_4]);
         map.on("zoomend", function(){
-            resetLabels([layer_Subcuenca_1,layer_RedHidricaPpalSubcuencaPalo_2,layer_RedViveros_CORPOPALO_3]);
+            resetLabels([layer_Subcuenca_2,layer_RedHidricaPpalSubcuencaPalo_3,layer_RedViveros_CORPOPALO_4]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_Subcuenca_1,layer_RedHidricaPpalSubcuencaPalo_2,layer_RedViveros_CORPOPALO_3]);
+            resetLabels([layer_Subcuenca_2,layer_RedHidricaPpalSubcuencaPalo_3,layer_RedViveros_CORPOPALO_4]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_Subcuenca_1,layer_RedHidricaPpalSubcuencaPalo_2,layer_RedViveros_CORPOPALO_3]);
+            resetLabels([layer_Subcuenca_2,layer_RedHidricaPpalSubcuencaPalo_3,layer_RedViveros_CORPOPALO_4]);
         });
         </script>        
     </body>
