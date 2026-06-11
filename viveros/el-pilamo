@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vivero El Pilamo</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f4f7f3;
+    color:#333;
+    line-height:1.7;
+}
+
+.hero{
+    position:relative;
+}
+
+.hero img{
+    width:100%;
+    height:450px;
+    object-fit:cover;
+}
+
+.hero-text{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    background:rgba(0,0,0,0.55);
+    color:white;
+    padding:25px;
+    box-sizing:border-box;
+}
+
+.hero-text h1{
+    margin:0;
+    font-size:2.5rem;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:25px;
+}
+
+.frase{
+    text-align:center;
+    font-style:italic;
+    font-size:1.2rem;
+    color:#2f6b3f;
+    margin:30px 0;
+}
+
+.indicadores{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+}
+
+.tarjeta{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.section{
+    background:white;
+    padding:25px;
+    margin-top:20px;
+    border-radius:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.section h2{
+    color:#2f6b3f;
+}
+
+.impacto{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.impacto div{
+    background:#f8faf7;
+    padding:20px;
+    border-radius:10px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,td{
+    border-bottom:1px solid #ddd;
+    padding:10px;
+}
+
+.galeria{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.galeria img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.boton{
+    display:inline-block;
+    padding:12px 20px;
+    background:#2f6b3f;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+}
+
+footer{
+    text-align:center;
+    background:#2f6b3f;
+    color:white;
+    padding:30px;
+    margin-top:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="hero">
+
+<img src="../img/el-pilamo_portada.jpg">
+
+<div class="hero-text">
+
+<h1>🌱 Kwe’sx Fxtü Fxiw KbuÇxanxi Yaat</h1>
+<h2>(Lugar donde se germina la semilla de los árboles)</h2>
+
+
+<p>
+Vivero Escolar - I.E.B Dxi Phaden López Adentro - Sede Secundaria<br>
+Vereda El Pilamo<br>
+Caloto, Cauca
+</p>
+
+</div>
+
+</div>
+
+<div class="container">
+
+<div class="frase">
+
+"Sembramos y conservamos las semillas nativas para proteger el agua, la vida y el territorio."
+
+</div>
+
+<div class="indicadores">
+
+<div class="tarjeta">
+<h3>📅 Trayectoria</h3>
+<p>9 años</p>
+</div>
+
+<div class="tarjeta">
+<h3>🌳 Capacidad Producción Promedio</h3>
+<p>3.000 árboles</p>
+</div>
+
+
+</div>
+
+<!-- PARTICIPACIÓN -->
+
+<div class="section">
+
+<h2>👥 Participantes Directos</h2>
+
+<table>
+
+<tr>
+<th>Grupo</th>
+<th>Cantidad</th>
+</tr>
+
+<tr>
+<td>👧 Niñas</td>
+<td>5</td>
+</tr>
+
+<tr>
+<td>👦 Niños</td>
+<td>10</td>
+</tr>
+
+<tr>
+<td>👩 Mujeres adultas</td>
+<td>-</td>
+</tr>
+
+<tr>
+<td>👨 Hombres adultos</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>16</strong></td>
+</tr>
+
+</table>
+
+</div>
+</div>
+
+<div class="section">
+
+<h2>🌱 Nuestra identidad</h2>
+
+<p>
+El vivero escolar Kwe’sx Fxtü Fxiw KbuÇxanxi Yaat surge como una estrategia educativa y ambiental orientada a la recuperación de semillas nativas, la reforestación de cuencas hídricas y la protección de nacimientos de agua dentro del territorio indígena. Su trabajo fortalece la relación entre educación, conservación ambiental y responsabilidad comunitaria frente al cuidado del territorio.
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>📖 Nuestra historia</h2>
+
+<p>
+El vivero fue impulsado inicialmente por el profesor Edermides, con el respaldo de la administración de la institución educativa y del cabildo indígena, como parte de los proyectos pedagógicos desarrollados en la comunidad.
+</p>
+
+<p>
+Su creación respondió a la preocupación por la tala de árboles y la necesidad de recuperar áreas afectadas mediante procesos de reforestación. Desde sus inicios, el trabajo se enfocó en la recolección, conservación y propagación de semillas nativas, permitiendo fortalecer la disponibilidad de material vegetal para procesos de restauración ecológica.
+</p>
+<p>
+Con el paso de los años, el vivero se ha consolidado como un espacio de formación ambiental donde estudiantes, docentes y familias participan activamente en actividades de producción de plántulas y cuidado del territorio.
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>📚 Participación y aprendizaje</h2>
+
+<p>
+Los estudiantes participan organizados en grupos de trabajo que se turnan para garantizar el mantenimiento permanente del vivero, incluso durante fines de semana cuando es necesario. Las actividades incluyen:</p>
+<ul>
+  <li>Adecuación y mantenimiento del espacio</li>
+  <li>Preparación de sustratos y embolsado</li>
+  <li>Siembra de semillas</li>
+  <li>Riego y cuidado de plántulas</li>
+  <li>Jornadas de reforestación</li>
+
+</ul>
+<p>El proceso permite fortalecer valores como la responsabilidad, el compromiso colectivo y el trabajo colaborativo.
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>🌿 Producción y biodiversidad</h2>
+
+<p>
+El vivero produce especies forestales, ornamentales y de interés ecológico para procesos de restauración, protección de fuentes hídricas y fortalecimiento de coberturas vegetales.
+</p>
+
+<table>
+
+<tr>
+<th>Nombre Común</th>
+<th>Nombre Cientifico</th>
+</tr>
+
+<tr><td>Nacedero</td><td>Trichanthera gigantea</td></tr>
+<tr><td>Flor amarillo</td><td>Senna spectabilis</td></tr>
+<tr><td>Chicalá</td><td>Tecoma stans</td></tr>
+<tr><td>Cedro Rosado</td><td>Cedrela odorata</td></tr>
+<tr><td>Guamo Perrero</td><td>Inga edulis</td></tr>
+<tr><td>Casco de Buey</td><td>Bauhinia picta</td></tr>
+<tr><td>Guadua</td><td>Guadua angustifolia</td></tr>
+<tr><td>Gualanday</td><td>Jacaranda caucana</td></tr>
+<tr><td>Guayacán Rosado</td><td>Tabebuia rosea</td></tr>
+<tr><td>Guayacán amarillo</td><td>Handroanthus crhysantus</td></tr>
+<tr><td>Guayacán de Manizales</td><td>Lafoensia acuminata</td></tr>
+<tr><td>Nogal Cafetero</td><td>Cordia alliodora</td></tr>
+
+</table>
+
+</div>
+
+<div class="section">
+
+<h2>🌎 Impacto comunitario</h2>
+
+<div class="impacto">
+
+<div>
+<h3>🌳 Restauración</h3>
+Producción de árboles para recuperación ambiental.
+</div>
+
+<div>
+<h3>👨‍👩‍👧‍👦 Comunidad</h3>
+Participación de estudiantes, docentes y familias.
+</div>
+
+<div>
+<h3>🌱 Medicina tradicional</h3>
+Semillero de plantas medicinales y huerta escolar.
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📸 Galería fotográfica</h2>
+
+<div class="galeria">
+
+<img src="../img/el_pilamo_01.jpg">
+<img src="../img/el_pilamo__02.jpg">
+<img src="../img/el_pilamo__03.jpg">
+<img src="../img/el_pilamo__04.jpg">
+
+</div>
+
+</div>
+
+<!-- ALIADOS -->
+
+<div class="section">
+
+<h2>🤝 Aliados</h2>
+
+<ul>
+<li>[ALIADO_1]</li>
+<li>[ALIADO_2]</li>
+<li>[ALIADO_3]</li>
+<li>[ALIADO_4]</li>
+</ul>
+
+</div>
+
+<!-- CONTACTO -->
+    
+<div class="section">
+
+<h2>📞 Información de contacto</h2>
+
+<p>
+<strong>Responsable del proceso:</strong> Yadir Ordoñez<br>
+<strong>Rol:</strong> Docente dinamizadora<br>
+<strong>Teléfono:</strong> [TELEFONO]<br>
+<strong>Correo:</strong> [CORREO]
+</p>
+
+</div>
+
+
+<div class="section">
+
+<a class="boton" href="../index.html">
+⬅ Volver al geovisor
+</a>
+
+</div>
+
+</div>
+
+<footer>
+
+<h3>Red de Viveros Ärboles para la Vida - CORPOPALO</h3>
+
+<p>
+Construyendo capacidades para la restauración ecológica y la adaptación al cambio climático.
+</p>
+
+</footer>
+
+</body>
+</html>
