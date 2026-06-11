@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vivero Caparrozal</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f4f7f3;
+    color:#333;
+    line-height:1.7;
+}
+
+.hero{
+    position:relative;
+}
+
+.hero img{
+    width:100%;
+    height:450px;
+    object-fit:cover;
+}
+
+.hero-text{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    background:rgba(0,0,0,0.55);
+    color:white;
+    padding:25px;
+    box-sizing:border-box;
+}
+
+.hero-text h1{
+    margin:0;
+    font-size:2.5rem;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:25px;
+}
+
+.frase{
+    text-align:center;
+    font-style:italic;
+    font-size:1.2rem;
+    color:#2f6b3f;
+    margin:30px 0;
+}
+
+.indicadores{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+}
+
+.tarjeta{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.section{
+    background:white;
+    padding:25px;
+    margin-top:20px;
+    border-radius:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.section h2{
+    color:#2f6b3f;
+}
+
+.impacto{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.impacto div{
+    background:#f8faf7;
+    padding:20px;
+    border-radius:10px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,td{
+    border-bottom:1px solid #ddd;
+    padding:10px;
+}
+
+.galeria{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.galeria img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.boton{
+    display:inline-block;
+    padding:12px 20px;
+    background:#2f6b3f;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+}
+
+footer{
+    text-align:center;
+    background:#2f6b3f;
+    color:white;
+    padding:30px;
+    margin-top:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="hero">
+
+<img src="../img/caparrozal_portada.jpg">
+
+<div class="hero-text">
+
+<h1>🌱 Semillas Manantial de Vida</h1>
+
+  <p>
+Vivero Comunitario<br>
+Vereda Caparrozal<br>
+Miranda, Cauca
+</p>
+
+</div>
+
+</div>
+
+<div class="container">
+
+<div class="frase">
+
+"Sembramos árboles, cuidamos el agua y fortalecemos la solidaridad comunitaria para las generaciones presentes y futuras."
+
+</div>
+
+<div class="indicadores">
+
+<div class="tarjeta">
+<h3>📅 Trayectoria</h3>
+<p>6 años</p>
+</div>
+
+<div class="tarjeta">
+<h3>🌳 Capacidad Producción Promedio</h3>
+<p>5.000 árboles</p>
+</div>
+
+
+</div>
+
+<!-- PARTICIPACIÓN -->
+
+<div class="section">
+
+<h2>👥 Participantes Directos</h2>
+
+<table>
+
+<tr>
+<th>Grupo</th>
+<th>Cantidad</th>
+</tr>
+
+<tr>
+<td>👧 Niñas</td>
+<td>-</td>
+</tr>
+
+<tr>
+<td>👦 Niños</td>
+<td>-</td>
+</tr>
+
+<tr>
+<td>👩 Mujeres adultas</td>
+<td>6</td>
+</tr>
+
+<tr>
+<td>👨 Hombres adultos</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>8</strong></td>
+</tr>
+
+</table>
+
+</div>
+</div>
+
+<div class="section">
+
+<h2>🌱 Nuestra identidad</h2>
+
+<p>
+Semillas Manantial de Vida es un vivero comunitario construido desde el compromiso de un grupo de familias que decidieron actuar frente a los desafíos ambientales de su territorio.
+
+Su principal propósito es fortalecer la conciencia ambiental, especialmente entre niños y jóvenes, promoviendo el valor de sembrar árboles como una acción concreta para proteger el agua, los ecosistemas y el futuro de la comunidad.
+</p>
+
+<p>
+  La asociación promueve una visión amplia del desarrollo rural, integrando mujeres cabeza de hogar, jóvenes, personas mayores, población diversa y personas con discapacidad en torno al cuidado del ambiente y la construcción colectiva de oportunidades.
+</p>
+
+  
+</div>
+
+<div class="section">
+
+<h2>📖 Nuestra historia</h2>
+
+<p>
+La historia del vivero comenzó hace aproximadamente seis años gracias a la iniciativa de cinco mujeres de la vereda que, mientras culminaban sus estudios de bachillerato y realizaban actividades de servicio social, conocieron a Luis Blanco "Don Luis" (Colaborador de CORPOPALO), quien las motivó a continuar trabajando por el medio ambiente.</p>
+
+<p>
+Inicialmente desarrollaban actividades en espacios prestados y transportaban tierra desde la vereda para producir sus plantas. Sin embargo, una experiencia difícil marcó el rumbo del proceso: una producción completa de semillas fue retirada sin previo aviso, ocasionando la pérdida del trabajo realizado.
+</p>
+<p>
+ejos de abandonar la iniciativa, el grupo decidió fortalecer su autonomía y crear un vivero propio. Gracias al compromiso de las participantes y al acompañamiento de Don Luis, lograron consolidar un proceso independiente que hoy representa un referente comunitario de perseverancia y trabajo colectivo.
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>📚 Participación y aprendizaje</h2>
+
+<p>
+El vivero funciona mediante una organización flexible basada en la disponibilidad de sus integrantes.as reuniones se programan de acuerdo con las necesidades del vivero, pudiendo realizarse de manera semanal o con intervalos de varias semanas
+</p>
+  
+<p>
+La coordinación de las actividades se realiza principalmente a través de grupos de WhatsApp, mediante los cuales se convocan las jornadas de trabajo y se comparten las tareas necesarias para el mantenimiento del proceso.
+</p>
+</div>
+
+<div class="section">
+
+<h2>🌿 Producción y biodiversidad</h2>
+
+<p>
+El vivero produce especies forestales, protectoras, ornamentales y de interés comunitario para procesos de restauración ecológica y protección de fuentes hídricas.
+</p>
+
+<table>
+
+<tr>
+<th>Nombre Común</th>
+<th>Nombre Cientifico</th>
+</tr>
+
+<tr><td>Nacedero</td><td>Trichanthera gigantea</td></tr>
+<tr><td>Balso</td><td>Ochroma pyramidale</td></tr>
+<tr><td>Chicalá</td><td>Tecoma stans</td></tr>
+<tr><td>Cedro Rosado</td><td>Cedrela odorata</td></tr>
+<tr><td>Guamo Machete</td><td>Inga spectabilis</td></tr>
+<tr><td>Caracolí</td><td>Anacardium excelsum</td></tr>
+<tr><td>Lechero rojo</td><td>Euphorbia cotinifilia</td></tr>
+<tr><td>Gualanday</td><td>Jacaranda caucana</td></tr>
+<tr><td>Guayacán Rosado</td><td>Tabebuia rosea</td></tr>
+<tr><td>Guayacán amarillo</td><td>Handroanthus crhysantus</td></tr>
+<tr><td>Guayacán de Manizales</td><td>Lafoensia acuminata</td></tr>
+<tr><td>Chachafruto</td><td>Erythrina edulis</td></tr>
+
+</table>
+
+</div>
+
+<div class="section">
+
+<h2>🌎 Impacto comunitario</h2>
+
+<div class="impacto">
+
+<div>
+<h3>🌳 Restauración</h3>
+Producción de árboles para recuperación ambiental.
+</div>
+
+<div>
+<h3>👨‍👩‍👧‍👦 Comunidad</h3>
+Participación de estudiantes, docentes y familias.
+</div>
+
+<div>
+<h3>🌱 Medicina tradicional</h3>
+Semillero de plantas medicinales y huerta escolar.
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📸 Galería fotográfica</h2>
+
+<div class="galeria">
+
+<img src="../img/caparrozal_01.jpg">
+<img src="../img/caparrozal_02.jpg">
+<img src="../img/caparrozal_03.jpg">
+<img src="../img/caparrozal_04.jpg">
+
+</div>
+
+</div>
+
+<!-- ALIADOS -->
+
+<div class="section">
+
+<h2>🤝 Aliados</h2>
+
+<ul>
+<li>[ALIADO_1]</li>
+<li>[ALIADO_2]</li>
+<li>[ALIADO_3]</li>
+<li>[ALIADO_4]</li>
+</ul>
+
+</div>
+
+<!-- CONTACTO -->
+    
+<div class="section">
+
+<h2>📞 Información de contacto</h2>
+
+<p>
+<strong>Responsable del proceso:</strong> Breiner Mestizo<br>
+<strong>Rol:</strong> Lider Comunitario<br>
+<strong>Teléfono:</strong> [TELEFONO]<br>
+<strong>Correo:</strong> [CORREO]
+</p>
+
+</div>
+
+
+<div class="section">
+
+<a class="boton" href="../index.html">
+⬅ Volver al geovisor
+</a>
+
+</div>
+
+</div>
+
+<footer>
+
+<h3>Red de Viveros Árboles para la Vida - CORPOPALO</h3>
+
+<p>
+Construyendo capacidades para la restauración ecológica y la adaptación al cambio climático.
+</p>
+
+</footer>
+
+</body>
+</html>
