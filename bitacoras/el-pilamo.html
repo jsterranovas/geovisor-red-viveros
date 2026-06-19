@@ -1,16 +1,13 @@
 <!DOCTYPE html>
-
 <html lang="es">
 
 <head>
 
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width">
 
 <title>
-Bitácora viva | Vivero El Pílamo
+Bitácora viva | El Pílamo
 </title>
 
 <style>
@@ -19,35 +16,29 @@ body{
 
 margin:0;
 
-font-family:Arial,sans-serif;
+font-family:Arial;
 
-background:#f6f7f2;
+background:#F6F7F2;
 
-color:#34422d;
-
-line-height:1.7;
+color:#374230;
 
 }
 
 .container{
 
-max-width:1000px;
+max-width:950px;
 
 margin:auto;
 
-padding:40px 22px;
+padding:50px 25px;
 
 }
 
 .back{
 
-display:inline-block;
-
-margin-bottom:30px;
-
 text-decoration:none;
 
-color:#5b7f46;
+color:#5E814B;
 
 font-weight:600;
 
@@ -55,54 +46,50 @@ font-weight:600;
 
 .hero{
 
-background:white;
+text-align:center;
 
-border-radius:20px;
-
-padding:40px;
-
-box-shadow:
-0 8px 20px
-rgba(0,0,0,.06);
+padding-bottom:40px;
 
 }
 
 .hero h1{
 
-margin-top:0;
+font-size:2.3rem;
 
-font-size:2rem;
-
-}
-
-.subtitle{
-
-color:#6d7868;
+margin-bottom:10px;
 
 }
 
-.summary{
+.hero p{
+
+max-width:650px;
+
+margin:auto;
+
+color:#65715E;
+
+}
+
+.metrics{
 
 display:grid;
 
 grid-template-columns:
-repeat(auto-fit,minmax(180px,1fr));
+repeat(auto-fit,minmax(150px,1fr));
 
-gap:16px;
+gap:18px;
 
-margin-top:30px;
+margin-top:35px;
 
 }
 
 .metric{
 
-background:#eef5e7;
+background:white;
 
-padding:18px;
+padding:25px;
 
-border-radius:12px;
-
-text-align:center;
+border-radius:18px;
 
 }
 
@@ -110,63 +97,133 @@ text-align:center;
 
 display:block;
 
-font-size:1.6rem;
+font-size:2rem;
 
-margin-bottom:8px;
-
-}
-
-.section{
-
-margin-top:60px;
+color:#5B8446;
 
 }
+
+
 
 .timeline{
 
-display:flex;
+position:relative;
 
-flex-direction:column;
+margin-top:70px;
 
-gap:30px;
+padding-left:30px;
 
 }
 
+.timeline::before{
+
+content:"";
+
+position:absolute;
+
+left:14px;
+
+top:0;
+
+bottom:0;
+
+width:3px;
+
+background:#D5E3CC;
+
+}
+
+
+
 .month{
+
+position:relative;
+
+margin-bottom:40px;
+
+}
+
+
+
+.month summary{
+
+list-style:none;
+
+cursor:pointer;
+
+background:white;
+
+padding:22px;
+
+border-radius:18px;
+
+font-size:1.2rem;
+
+font-weight:700;
+
+box-shadow:
+0 5px 15px
+rgba(0,0,0,.05);
+
+position:relative;
+
+}
+
+
+
+.month summary::before{
+
+content:"";
+
+position:absolute;
+
+left:-25px;
+
+top:30px;
+
+width:18px;
+
+height:18px;
+
+background:#6E9854;
+
+border-radius:50%;
+
+}
+
+
+
+.content{
 
 background:white;
 
 padding:30px;
 
+margin-top:12px;
+
 border-radius:18px;
 
-box-shadow:
-0 5px 16px
-rgba(0,0,0,.05);
-
 }
 
-.month h3{
 
-margin-top:0;
-
-color:#5c8447;
-
-}
 
 .block{
 
-margin-top:20px;
+margin-bottom:30px;
 
 }
 
-.block-title{
 
-font-weight:700;
+
+.block h4{
+
+color:#638D4E;
 
 margin-bottom:8px;
 
 }
+
+
 
 .gallery{
 
@@ -175,30 +232,30 @@ display:grid;
 grid-template-columns:
 repeat(auto-fit,minmax(220px,1fr));
 
-gap:15px;
-
-margin-top:20px;
+gap:12px;
 
 }
+
+
 
 .gallery img{
 
 width:100%;
 
-border-radius:12px;
+border-radius:14px;
 
 }
 
+
+
 .quote{
 
-margin-top:20px;
+background:#F5F8F0;
 
-padding:18px;
-
-background:#f5f8f0;
+padding:20px;
 
 border-left:
-5px solid
+6px solid
 #7DA05A;
 
 font-style:italic;
@@ -207,32 +264,30 @@ font-style:italic;
 
 .footer{
 
-margin-top:60px;
-
 text-align:center;
+
+margin-top:60px;
 
 }
 
 .button{
 
-display:inline-block;
-
-padding:
-14px 26px;
-
 background:#5F8A48;
 
 color:white;
 
+padding:15px 30px;
+
 text-decoration:none;
 
-border-radius:12px;
+border-radius:14px;
 
 }
 
 </style>
 
 </head>
+
 
 <body>
 
@@ -250,22 +305,21 @@ href="../viveros/el-pilamo.html">
 <div class="hero">
 
 <h1>
+
 📖 Bitácora viva del proceso
+
 </h1>
-
-<p class="subtitle">
-
-Vivero El Pílamo
-
-</p>
 
 <p>
 
-Este espacio documenta el proceso de fortalecimiento del vivero mediante el seguimiento técnico, social y comunitario.
+Explore cómo evoluciona este vivero
+a través de acciones técnicas,
+sociales y aprendizajes colectivos.
 
 </p>
 
-<div class="summary">
+
+<div class="metrics">
 
 <div class="metric">
 <strong>4200</strong>
@@ -273,13 +327,13 @@ Plántulas
 </div>
 
 <div class="metric">
-<strong>6</strong>
-Encuentros
+<strong>130</strong>
+Participantes
 </div>
 
 <div class="metric">
-<strong>130</strong>
-Participantes
+<strong>6</strong>
+Encuentros
 </div>
 
 <div class="metric">
@@ -292,99 +346,118 @@ Meses
 </div>
 
 
-<div class="section">
-
-<h2>
-Línea de tiempo
-</h2>
 
 <div class="timeline">
 
 
-<div class="month">
 
-<h3>
+<details
+class="month"
+open>
+
+<summary>
+
 Junio 2026
-</h3>
+
+</summary>
+
+
+<div class="content">
 
 <div class="block">
 
-<div class="block-title">
+<h4>
 
 🌱 Componente técnico
 
-</div>
+</h4>
 
 <p>
 
-Producción de material vegetal,
-mantenimiento y fortalecimiento
-de capacidades del equipo local.
+Producción, mantenimiento
+y fortalecimiento del vivero.
 
 </p>
 
 </div>
+
 
 
 <div class="block">
 
-<div class="block-title">
+<h4>
 
 👥 Componente social
 
-</div>
+</h4>
 
 <p>
 
-Encuentro comunitario para intercambio de aprendizajes y apropiación del vivero.
+Intercambio de experiencias
+y trabajo comunitario.
 
 </p>
 
 </div>
 
 
+
+<div class="block">
+
+<h4>
+
+📷 Registro fotográfico
+
+</h4>
+
 <div class="gallery">
 
-<img
-src="../assets/fotos/el-pilamo/junio1.jpg">
+<img src="../assets/fotos/el-pilamo/1.jpg">
 
-<img
-src="../assets/fotos/el-pilamo/junio2.jpg">
+<img src="../assets/fotos/el-pilamo/2.jpg">
 
-<img
-src="../assets/fotos/el-pilamo/junio3.jpg">
+<img src="../assets/fotos/el-pilamo/3.jpg">
 
 </div>
+
+</div>
+
 
 
 <div class="quote">
 
-"El vivero se consolida como espacio para aprender haciendo y fortalecer el cuidado del territorio."
+"Cada jornada fortalece capacidades
+y vínculos con el territorio."
 
 </div>
 
 </div>
 
+</details>
 
 
-<div class="month">
 
-<h3>
+
+<details class="month">
+
+<summary>
+
 Julio 2026
-</h3>
 
-<p>
+</summary>
 
-Agregar siguiente registro.
+<div class="content">
 
-</p>
-
-</div>
-
+Agregar contenido.
 
 </div>
 
+</details>
+
+
+
 </div>
+
 
 
 <div class="footer">
