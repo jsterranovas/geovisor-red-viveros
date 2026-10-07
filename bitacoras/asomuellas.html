@@ -3,293 +3,162 @@
 
 <head>
 
+<head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>
-Bitácora viva | ASOMUELLAS
-</title>
+<title>Vivero Asomuellas</title>
 
 <style>
 
 body{
-
-margin:0;
-
-font-family:Arial;
-
-background:#F6F7F2;
-
-color:#374230;
-
-}
-
-.container{
-
-max-width:950px;
-
-margin:auto;
-
-padding:50px 25px;
-
-}
-
-.back{
-
-text-decoration:none;
-
-color:#5E814B;
-
-font-weight:600;
-
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f4f7f3;
+    color:#333;
+    line-height:1.7;
 }
 
 .hero{
-
-text-align:center;
-
-padding-bottom:40px;
-
+    position:relative;
 }
 
-.hero h1{
-
-font-size:2.3rem;
-
-margin-bottom:10px;
-
+.hero img{
+    width:100%;
+    height:450px;
+    object-fit:cover;
 }
 
-.hero p{
-
-max-width:650px;
-
-margin:auto;
-
-color:#65715E;
-
+.hero-text{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    background:rgba(0,0,0,0.55);
+    color:white;
+    padding:25px;
+    box-sizing:border-box;
 }
 
-.metrics{
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(150px,1fr));
-
-gap:18px;
-
-margin-top:35px;
-
+.hero-text h1{
+    margin:0;
+    font-size:2.5rem;
 }
 
-.metric{
-
-background:white;
-
-padding:25px;
-
-border-radius:18px;
-
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:25px;
 }
 
-.metric strong{
-
-display:block;
-
-font-size:2rem;
-
-color:#5B8446;
-
+.frase{
+    text-align:center;
+    font-style:italic;
+    font-size:1.2rem;
+    color:#2f6b3f;
+    margin:30px 0;
 }
 
-
-
-.timeline{
-
-position:relative;
-
-margin-top:70px;
-
-padding-left:30px;
-
+.indicadores{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
 }
 
-.timeline::before{
-
-content:"";
-
-position:absolute;
-
-left:14px;
-
-top:0;
-
-bottom:0;
-
-width:3px;
-
-background:#D5E3CC;
-
+.tarjeta{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
 }
 
-
-
-.month{
-
-position:relative;
-
-margin-bottom:40px;
-
+.section{
+    background:white;
+    padding:25px;
+    margin-top:20px;
+    border-radius:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
 }
 
-
-
-.month summary{
-
-list-style:none;
-
-cursor:pointer;
-
-background:white;
-
-padding:22px;
-
-border-radius:18px;
-
-font-size:1.2rem;
-
-font-weight:700;
-
-box-shadow:
-0 5px 15px
-rgba(0,0,0,.05);
-
-position:relative;
-
+.section h2{
+    color:#2f6b3f;
 }
 
-
-
-.month summary::before{
-
-content:"";
-
-position:absolute;
-
-left:-25px;
-
-top:30px;
-
-width:18px;
-
-height:18px;
-
-background:#6E9854;
-
-border-radius:50%;
-
+.impacto{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
 }
 
-
-
-.content{
-
-background:white;
-
-padding:30px;
-
-margin-top:12px;
-
-border-radius:18px;
-
+.impacto div{
+    background:#f8faf7;
+    padding:20px;
+    border-radius:10px;
 }
 
-
-
-.block{
-
-margin-bottom:30px;
-
+table{
+    width:100%;
+    border-collapse:collapse;
 }
 
-
-
-.block h4{
-
-color:#638D4E;
-
-margin-bottom:8px;
-
+th,td{
+    border-bottom:1px solid #ddd;
+    padding:10px;
 }
 
-
-
-.gallery{
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(220px,1fr));
-
-gap:12px;
-
+.galeria{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
 }
 
-
-
-.gallery img{
-
-width:100%;
-
-border-radius:14px;
-
+.galeria img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:10px;
 }
 
-
-
-.quote{
-
-background:#F5F8F0;
-
-padding:20px;
-
-border-left:
-6px solid
-#7DA05A;
-
-font-style:italic;
-
+.boton{
+    display:inline-block;
+    padding:12px 20px;
+    background:#2f6b3f;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
 }
 
-.footer{
-
-text-align:center;
-
-margin-top:60px;
-
-}
-
-.button{
-
-background:#5F8A48;
-
-color:white;
-
-padding:15px 30px;
-
-text-decoration:none;
-
-border-radius:14px;
-
+footer{
+    text-align:center;
+    background:#2f6b3f;
+    color:white;
+    padding:30px;
+    margin-top:40px;
 }
 
 </style>
 
 </head>
 
-
 <body>
+
+<div class="hero">
+
+<img src="../img/asomuellas_portada.jpg">
+
+<div class="hero-text">
+
+<h1>🌱 ASOMUELLAS</h1>
+<h2>🌱 (Asociación de Mujeres Dejando Huellas de Amor por el Campo)</h2>
+<p style="color;white;">
+Vivero Comunitario<br>
+Vereda La Capilla, Corregimiento Los Andes<br>
+Corinto, Cauca
+</p>
+
+</div>
+
+</div>
 
 <div class="container">
 
@@ -322,12 +191,12 @@ sociales y aprendizajes colectivos.
 <div class="metrics">
 
 <div class="metric">
-<strong>4200</strong>
+<strong>3200</strong>
 Plántulas
 </div>
 
 <div class="metric">
-<strong>130</strong>
+<strong>9</strong>
 Participantes
 </div>
 
@@ -357,12 +226,13 @@ open>
 
 <summary>
 
-Junio 2026
+Septiembre 2026
 
 </summary>
 
 
 <div class="content">
+
 
 <div class="block">
 
@@ -374,13 +244,12 @@ Junio 2026
 
 <p>
 
-Producción, mantenimiento
-y fortalecimiento del vivero.
+<strong>Nutrición y sanidad vegetal:</strong>
+Jornada práctica de observación y reconocimiento de señales asociadas a deficiencias nutricionales, plagas y enfermedades en las plantas del vivero. Se fortaleció la capacidad de identificar posibles causas y tomar decisiones de manejo a partir de la observación.
 
 </p>
 
 </div>
-
 
 
 <div class="block">
@@ -393,14 +262,11 @@ y fortalecimiento del vivero.
 
 <p>
 
-Intercambio de experiencias
-y trabajo comunitario.
+<strong>Apropiación individual y colectiva del vivero:</strong>
+Espacio participativo orientado a fortalecer el sentido de pertenencia y la corresponsabilidad frente al vivero. Los participantes reconocieron sus capacidades, aportes y responsabilidades, y construyeron acuerdos para contribuir al cuidado y sostenibilidad del proceso.
 
 </p>
-
 </div>
-
-
 
 <div class="block">
 
@@ -412,37 +278,53 @@ y trabajo comunitario.
 
 <div class="gallery">
 
-<img src="../assets/fotos/el-pilamo/1.jpg">
+<img src="../assets/septiembre/asomuellas/foto1.jpeg">
 
-<img src="../assets/fotos/el-pilamo/2.jpg">
+<img src="../assets/septiembre/asomuellas/foto2.jpeg">
 
-<img src="../assets/fotos/el-pilamo/3.jpg">
-
-</div>
+<img src="../assets/septiembre/asomuellas/foto3.jpeg">
 
 </div>
 
-
-
+</div>
+<div class="block">
 <div class="quote">
 
-"Cada jornada fortalece capacidades
-y vínculos con el territorio."
+"Del cuidado de cada planta al cuidado de todo el vivero: conocimiento, participación y corresponsabilidad."
 
 </div>
+</div>
 
+<div class="block">
+<!-- ALIADOS -->
+
+<h2>🤝 Aliados</h2>
+
+
+  <img src="../img/Logo-FFAVS.png" style="display: block; width: 180px; margin: 20px auto;">
+
+<!--
+  <ul>
+<li>[ALIADO_1]</li>
+<li>[ALIADO_2]</li>
+<li>[ALIADO_3]</li>
+<li>[ALIADO_4]</li>
+  </ul>
+  -->
+
+
+</div>
+  
 </div>
 
 </details>
-
-
 
 
 <details class="month">
 
 <summary>
 
-Julio 2026
+Octubre 2026
 
 </summary>
 
@@ -457,6 +339,8 @@ Agregar contenido.
 
 
 </div>
+</div>
+
 
 
 
