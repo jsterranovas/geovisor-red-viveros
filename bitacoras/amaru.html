@@ -3,436 +3,375 @@
 
 <head>
 
-<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>📖 🌱 Bitácora Viva| Amarú Planet</title>
+<title>📖🌱 Bitácora Viva | Amarú Planet</title>
 
 <style>
 
+/* =========================
+   ESTILOS GENERALES
+========================= */
+
 body{
     margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    background:#f4f7f3;
-    color:#333;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#F6F7F2;
+    color:#374230;
     line-height:1.7;
 }
 
-.hero{
-    position:relative;
+.container{
+    max-width:950px;
+    margin:auto;
+    padding:50px 25px;
 }
 
-.hero img{
+
+/* =========================
+   CABECERA / FOTO PRINCIPAL
+========================= */
+
+.hero{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+}
+
+.hero > img{
+    display:block;
     width:100%;
     height:450px;
     object-fit:cover;
 }
 
+
+/* Franja oscura dentro de la fotografía */
+
 .hero-text{
     position:absolute;
+    left:0;
     bottom:0;
     width:100%;
+    box-sizing:border-box;
+
     background:rgba(0,0,0,0.55);
     color:white;
-    padding:25px;
-    box-sizing:border-box;
+
+    padding:12px 25px 10px;
+
+    text-align:center;
 }
+
+
+/* Nombre del vivero */
 
 .hero-text h1{
-    margin:0;
-    font-size:2.5rem;
+    margin:0 0 2px;
+    padding:0;
+
+    font-size:2rem;
+    line-height:1.15;
 }
 
-.container{
-    max-width:1200px;
-    margin:auto;
-    padding:25px;
+
+/* Nombre de la organización */
+
+.hero-text h2{
+    margin:0 0 3px;
+
+    font-size:1.1rem;
+    line-height:1.3;
+    font-weight:600;
 }
 
-.frase{
-    text-align:center;
-    font-style:italic;
-    font-size:1.2rem;
-    color:#2f6b3f;
-    margin:30px 0;
-}
 
-.indicadores{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:15px;
-}
+/* Ubicación */
 
-.tarjeta{
-    background:white;
-    padding:20px;
-    border-radius:12px;
-    text-align:center;
-    box-shadow:0 2px 8px rgba(0,0,0,0.08);
-}
-
-.section{
-    background:white;
-    padding:25px;
-    margin-top:20px;
-    border-radius:12px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.08);
-}
-
-.section h2{
-    color:#2f6b3f;
-}
-
-.impacto{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:15px;
-}
-
-.impacto div{
-    background:#f8faf7;
-    padding:20px;
-    border-radius:10px;
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-}
-
-th,td{
-    border-bottom:1px solid #ddd;
-    padding:10px;
-}
-
-.galeria{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:15px;
-}
-
-.galeria img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-    border-radius:10px;
-}
-
-.boton{
-    display:inline-block;
-    padding:12px 20px;
-    background:#2f6b3f;
+.hero-text p{
+    margin:2px 0;
     color:white;
-    text-decoration:none;
-    border-radius:8px;
+    line-height:1.3;
 }
 
-footer{
-    text-align:center;
-    background:#2f6b3f;
+
+/* Identificación de la Red */
+
+.red-viveros{
+    margin:4px 0 0 !important;
+
+    font-size:0.95rem;
+    line-height:1.25;
+
+    font-weight:bold;
     color:white;
-    padding:30px;
-    margin-top:40px;
 }
 
-</style>
 
-</head>
+/* Logo institucional */
 
-<body>
+.logo-corpopalo{
+    display:block;
 
-<div class="hero">
+    width:140px;
+    max-width:140px;
 
-<img src="../img/amaru_portada.jpg">
+    height:auto;
 
-<div class="hero-text">
+    margin:7px auto 0;
 
-<h1>🌱 Amarú Planet</h1>
-<p style="color:white;">
-Vivero Comunitario<br>
-Vereda La Paila<br>
-Corinto, Cauca
-</p>
+    padding:5px 10px;
 
-</div>
+    box-sizing:border-box;
 
-</div>
+    object-fit:contain;
 
+    background:rgba(255,255,255,0.75);
 
+    border-radius:7px;
 
-<style>
-
-body{
-
-margin:0;
-
-font-family:Arial;
-
-background:#F6F7F2;
-
-color:#374230;
-
+    box-shadow:0 2px 7px rgba(0,0,0,0.15);
 }
 
-.container{
 
-max-width:950px;
-
-margin:auto;
-
-padding:50px 25px;
-
-}
+/* =========================
+   ENLACE REGRESAR
+========================= */
 
 .back{
+    display:inline-block;
 
-text-decoration:none;
+    text-decoration:none;
+    color:#5E814B;
 
-color:#5E814B;
+    font-weight:600;
 
-font-weight:600;
-
+    margin-bottom:30px;
 }
 
-.hero{
 
-text-align:center;
+/* =========================
+   TÍTULO DE LA BITÁCORA
+========================= */
 
-padding-bottom:40px;
-
+.bitacora-header{
+    text-align:center;
+    padding-bottom:10px;
 }
 
-.hero h1{
-
-font-size:2.3rem;
-
-margin-bottom:10px;
-
+.bitacora-header h1{
+    font-size:2.3rem;
+    margin:0 0 10px;
 }
 
-.hero p{
+.bitacora-header p{
+    max-width:650px;
+    margin:auto;
 
-max-width:650px;
-
-margin:auto;
-
-color:#65715E;
-
+    color:#65715E;
 }
+
+
+/* =========================
+   MÉTRICAS
+========================= */
 
 .metrics{
+    display:grid;
 
-display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(150px,1fr));
 
-grid-template-columns:
-repeat(auto-fit,minmax(150px,1fr));
+    gap:18px;
 
-gap:18px;
-
-margin-top:35px;
-
+    margin-top:35px;
 }
 
 .metric{
+    background:white;
 
-background:white;
+    padding:25px;
 
-padding:25px;
+    border-radius:18px;
 
-border-radius:18px;
-
+    text-align:center;
 }
 
 .metric strong{
+    display:block;
 
-display:block;
+    font-size:2rem;
 
-font-size:2rem;
-
-color:#5B8446;
-
+    color:#5B8446;
 }
 
 
+/* =========================
+   LÍNEA DE TIEMPO
+========================= */
 
 .timeline{
+    position:relative;
 
-position:relative;
+    margin-top:70px;
 
-margin-top:70px;
-
-padding-left:30px;
-
+    padding-left:30px;
 }
 
 .timeline::before{
+    content:"";
 
-content:"";
+    position:absolute;
 
-position:absolute;
+    left:14px;
+    top:0;
+    bottom:0;
 
-left:14px;
+    width:3px;
 
-top:0;
-
-bottom:0;
-
-width:3px;
-
-background:#D5E3CC;
-
+    background:#D5E3CC;
 }
 
 
+/* =========================
+   MESES
+========================= */
 
 .month{
+    position:relative;
 
-position:relative;
-
-margin-bottom:40px;
-
+    margin-bottom:40px;
 }
-
-
 
 .month summary{
+    list-style:none;
 
-list-style:none;
+    cursor:pointer;
 
-cursor:pointer;
+    background:white;
 
-background:white;
+    padding:22px;
 
-padding:22px;
+    border-radius:18px;
 
-border-radius:18px;
+    font-size:1.2rem;
 
-font-size:1.2rem;
+    font-weight:700;
 
-font-weight:700;
+    box-shadow:
+    0 5px 15px
+    rgba(0,0,0,.05);
 
-box-shadow:
-0 5px 15px
-rgba(0,0,0,.05);
-
-position:relative;
-
+    position:relative;
 }
 
 
+/* Punto de la línea de tiempo */
 
 .month summary::before{
+    content:"";
 
-content:"";
+    position:absolute;
 
-position:absolute;
+    left:-25px;
+    top:30px;
 
-left:-25px;
+    width:18px;
+    height:18px;
 
-top:30px;
+    background:#6E9854;
 
-width:18px;
-
-height:18px;
-
-background:#6E9854;
-
-border-radius:50%;
-
+    border-radius:50%;
 }
 
 
+/* =========================
+   CONTENIDO DEL MES
+========================= */
 
 .content{
+    background:white;
 
-background:white;
+    padding:30px;
 
-padding:30px;
+    margin-top:12px;
 
-margin-top:12px;
-
-border-radius:18px;
-
+    border-radius:18px;
 }
-
-
 
 .block{
-
-margin-bottom:30px;
-
+    margin-bottom:30px;
 }
-
-
 
 .block h4{
+    color:#638D4E;
 
-color:#638D4E;
-
-margin-bottom:8px;
-
+    margin-bottom:8px;
 }
 
 
+/* =========================
+   GALERÍA
+========================= */
 
 .gallery{
+    display:grid;
 
-display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
 
-grid-template-columns:
-repeat(auto-fit,minmax(220px,1fr));
-
-gap:12px;
-
+    gap:12px;
 }
-
-
 
 .gallery img{
+    width:100%;
 
-width:100%;
+    border-radius:14px;
 
-border-radius:14px;
-
+    display:block;
 }
 
 
+/* =========================
+   FRASE
+========================= */
 
 .quote{
+    background:#F5F8F0;
 
-background:#F5F8F0;
+    padding:20px;
 
-padding:20px;
+    border-left:
+    6px solid
+    #7DA05A;
 
-border-left:
-6px solid
-#7DA05A;
-
-font-style:italic;
-
+    font-style:italic;
 }
 
+
+/* =========================
+   PIE
+========================= */
+
 .footer{
+    text-align:center;
 
-text-align:center;
-
-margin-top:60px;
-
+    margin-top:60px;
 }
 
 .button{
+    display:inline-block;
 
-background:#5F8A48;
+    background:#5F8A48;
 
-color:white;
+    color:white;
 
-padding:15px 30px;
+    padding:15px 30px;
 
-text-decoration:none;
+    text-decoration:none;
 
-border-radius:14px;
-
+    border-radius:14px;
 }
 
 </style>
@@ -442,9 +381,48 @@ border-radius:14px;
 
 <body>
 
+<!-- =========================================
+     CABECERA DEL VIVERO
+========================================= -->
+
+<div class="hero">
+
+<img src="../img/amaru_portada.jpg"
+    alt="Vivero comunitario Amarú Planet">
+
+<div class="hero-text">
+
+    <h1>🌱 Amarú Planet</h1>
+    <p >
+    Vivero Comunitario<br>
+    Vereda La Paila,Corinto (Cauca)
+    </p>
+
+        <p class="red-viveros">
+            Red de Viveros Árboles para la Vida – CORPOPALO
+        </p>
+
+        <img
+            src="../img/Logo-CORPOPALO.png"
+            class="logo-corpopalo"
+            alt="CORPOPALO"
+        >
+
+    </div>
+
+</div>
+
+
+<!-- =========================================
+     CONTENIDO
+========================================= -->
+
 <div class="container">
 
-<a
+
+    <!-- REGRESAR -->
+
+    <a
 class="back"
 href="../viveros/amaru.html">
 
@@ -453,191 +431,241 @@ href="../viveros/amaru.html">
 </a>
 
 
-<div class="hero">
+  <!-- =====================================
+         PRESENTACIÓN DE LA BITÁCORA
+    ====================================== -->
 
-<h1>
+    <div class="bitacora-header">
 
-📖 Bitácora viva del proceso
+        <h1>
+            📖 Bitácora viva del proceso
+        </h1>
 
-</h1>
+        <p>
+            Explore cómo evoluciona este vivero
+            a través de acciones técnicas,
+            sociales y aprendizajes colectivos.
+        </p>
 
-<p>
-
-Explore cómo evoluciona este vivero
-a través de acciones técnicas,
-sociales y aprendizajes colectivos.
-
-</p>
-
-
-<div class="metrics">
-
-<div class="metric">
-<strong>2500</strong>
-Plántulas
-</div>
-
-<div class="metric">
-<strong>2</strong>
-Participantes Directos
-</div>
-
-<div class="metric">
-<strong>7</strong>
-Encuentros
-</div>
-
-<div class="metric">
-<strong>9</strong>
-Meses
-</div>
-
-</div>
-
-</div>
+    </div>
 
 
+    <!-- =====================================
+         MÉTRICAS
+    ====================================== -->
 
-<div class="timeline">
+    <div class="metrics">
 
+        <div class="metric">
+        <strong>2500</strong>
+        Plántulas
+        </div>
+        
+        <div class="metric">
+        <strong>2</strong>
+        Participantes Directos
+        </div>
 
-
-<details
-class="month"
-open>
-
-<summary>
-
-Septiembre 2026
-
-</summary>
-
-
-<div class="content">
-
-
-<div class="block">
-
-<h4>
-
-🌱 Componente técnico
-
-</h4>
-
-<p>
-
-<strong>Nutrición y sanidad vegetal:</strong>
-Jornada práctica de observación y reconocimiento de señales asociadas a deficiencias nutricionales, plagas y enfermedades en las plantas del vivero. Se fortaleció la capacidad de identificar posibles causas y tomar decisiones de manejo a partir de la observación.
-
-</p>
+        <div class="metric">
+        <strong>7</strong>
+        Encuentros
+        </div>
+        
+        <div class="metric">
+        <strong>9</strong>
+        Meses
+        </div>
 
 </div>
 
 
-<div class="block">
 
-<h4>
+    <!-- =====================================
+         LÍNEA DE TIEMPO
+    ====================================== -->
 
-👥 Componente social
+    <div class="timeline">
 
-</h4>
 
-<p>
+        <!-- =================================
+             SEPTIEMBRE 2026
+        ================================== -->
 
-<strong>Apropiación individual y colectiva del vivero:</strong>
-Espacio participativo orientado a fortalecer el sentido de pertenencia y la corresponsabilidad frente al vivero. Los participantes reconocieron sus capacidades, aportes y responsabilidades, y construyeron acuerdos para contribuir al cuidado y sostenibilidad del proceso.
+        <details
+            class="month"
+            open
+        >
 
-</p>
+            <summary>
+                Septiembre 2026
+            </summary>
+
+
+            <div class="content">
+
+
+                <!-- COMPONENTE TÉCNICO -->
+
+                <div class="block">
+
+                    <h4>
+                        🌱 Componente técnico
+                    </h4>
+
+                    <p>
+
+                        <strong>
+                            Nutrición y sanidad vegetal:
+                        </strong>
+
+                        Jornada práctica de observación y
+                        reconocimiento de señales asociadas
+                        a deficiencias nutricionales, plagas
+                        y enfermedades en las plantas del vivero.
+
+                        Se fortaleció la capacidad de identificar
+                        posibles causas y tomar decisiones de manejo
+                        a partir de la observación.
+
+                    </p>
+
+                </div>
+
+
+                <!-- COMPONENTE SOCIAL -->
+
+                <div class="block">
+
+                    <h4>
+                        👥 Componente social
+                    </h4>
+
+                    <p>
+
+                        <strong>
+                            Apropiación individual y colectiva del vivero:
+                        </strong>
+
+                        Espacio participativo orientado a fortalecer
+                        el sentido de pertenencia y la corresponsabilidad
+                        frente al vivero.
+
+                        Los participantes reconocieron sus capacidades,
+                        aportes y responsabilidades, y construyeron
+                        acuerdos para contribuir al cuidado y
+                        sostenibilidad del proceso.
+
+                    </p>
+
+                </div>
+
+
+                <!-- REGISTRO FOTOGRÁFICO -->
+
+                <div class="block">
+
+                    <h4>
+                        📷 Registro fotográfico
+                    </h4>
+
+                    <div class="gallery">
+
+
+                <img src="../assets/septiembre/amaru/foto1.jpeg"
+                     alt="Actividad septiembre Amarú">
+                
+                <img src="../assets/septiembre/amaru/foto2.jpeg"
+                    alt="Actividad septiembre Amarú">
+                
+                <img src="../assets/septiembre/amaru/foto3.jpeg"
+                    alt="Actividad septiembre Amarú">
+                
+                </div>
+
+            </div>
+ <!-- FRASE -->
+
+                <div class="block">
+
+                    <div class="quote">
+
+                        "Del cuidado de cada planta al cuidado de todo
+                        el vivero: conocimiento, participación y
+                        corresponsabilidad."
+
+                    </div>
+
+                </div>
+
+
+                <!-- ALIADO DEL MES -->
+
+                <div class="block">
+
+                    <h4>
+                        🤝 Aliado del proceso
+                    </h4>
+
+                    <img
+                        src="../img/Logo-FFAVS.png"
+                        alt="Fundación Fondo Agua por la Vida y la Sostenibilidad"
+                        style="
+                            display:block;
+                            width:180px;
+                            max-width:100%;
+                            margin:20px auto;
+                        "
+                    >
+
+                </div>
+
+
+            </div>
+
+        </details>
+
+
+        <!-- =================================
+             OCTUBRE 2026
+        ================================== -->
+
+        <details class="month">
+
+            <summary>
+                Octubre 2026
+            </summary>
+
+            <div class="content">
+
+                <p>
+                    Agregar contenido.
+                </p>
+
+            </div>
+
+        </details>
+
+
+    </div>
+
 </div>
 
-<div class="block">
 
-<h4>
-
-📷 Registro fotográfico
-
-</h4>
-
-<div class="gallery">
-
-<img src="../assets/septiembre/amaru/foto1.jpeg">
-
-<img src="../assets/septiembre/amaru/foto2.jpeg">
-
-<img src="../assets/septiembre/amaru/foto3.jpeg">
-
-</div>
-
-</div>
-<div class="block">
-<div class="quote">
-
-"Del cuidado de cada planta al cuidado de todo el vivero: conocimiento, participación y corresponsabilidad."
-
-</div>
-</div>
-
-<div class="block">
-<!-- ALIADOS -->
-
-<h2>🤝 Aliados</h2>
-
-
-  <img src="../img/Logo-FFAVS.png" style="display: block; width: 180px; margin: 20px auto;">
-
-<!--
-  <ul>
-<li>[ALIADO_1]</li>
-<li>[ALIADO_2]</li>
-<li>[ALIADO_3]</li>
-<li>[ALIADO_4]</li>
-  </ul>
-  -->
-
-
-</div>
-  
-</div>
-
-</details>
-
-
-<details class="month">
-
-<summary>
-
-Octubre 2026
-
-</summary>
-
-<div class="content">
-
-Agregar contenido.
-
-</div>
-
-</details>
-
-
-
-</div>
-</div>
-
-
+<!-- =========================================
+     PIE
+========================================= -->
 
 <div class="footer">
 
-<a
-class="button"
-href="../index.html">
-
-Volver al geovisor
-
-</a>
-
-</div>
+    <a
+        class="button"
+        href="../index.html"
+    >
+        Volver al geovisor
+    </a>
 
 </div>
+
 
 </body>
 
