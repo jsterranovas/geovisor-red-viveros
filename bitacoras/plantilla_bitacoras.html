@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bitácora Viva | [NOMBRE DEL VIVERO] - CORPOPALO</title>
+
+<style>
+
+/* ==========================================
+   ESTILOS GENERALES
+========================================== */
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f7f3;
+    color:#333;
+    line-height:1.7;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:25px;
+}
+
+/* ==========================================
+   PORTADA
+========================================== */
+
+.hero{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+}
+
+.hero > img{
+    display:block;
+    width:100%;
+    height:450px;
+    object-fit:cover;
+}
+
+.hero-text{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    background:rgba(0,0,0,0.55);
+    color:white;
+    padding:12px 25px 10px;
+    text-align:center;
+}
+
+.hero-text h1{
+    margin:0 0 3px;
+    font-size:2.1rem;
+    line-height:1.2;
+}
+
+.hero-text h2{
+    margin:0 0 4px;
+    font-size:1.1rem;
+    font-weight:600;
+    line-height:1.3;
+}
+
+.hero-text p{
+    margin:2px 0;
+    color:white;
+    line-height:1.3;
+}
+
+.red-viveros{
+    margin:5px 0 0 !important;
+    font-size:0.95rem;
+    font-weight:bold;
+}
+
+.logo-corpopalo{
+    display:block;
+    width:140px;
+    max-width:140px;
+    height:auto;
+    margin:7px auto 0;
+    padding:5px 10px;
+    background:rgba(255,255,255,0.78);
+    border-radius:7px;
+    object-fit:contain;
+    box-shadow:0 2px 7px rgba(0,0,0,0.15);
+}
+
+/* ==========================================
+   PRESENTACIÓN
+========================================== */
+
+.introduccion{
+    background:white;
+    padding:30px;
+    margin:20px 0 30px;
+    border-radius:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.introduccion h2{
+    margin-top:0;
+    color:#2f6b3f;
+}
+
+.introduccion p{
+    margin-bottom:0;
+}
+
+/* ==========================================
+   ENCABEZADOS DE PERÍODO
+========================================== */
+
+.periodo{
+    margin:35px 0 20px;
+    padding-bottom:10px;
+    border-bottom:2px solid #dce8da;
+}
+
+.periodo h2{
+    margin:0;
+    color:#2f6b3f;
+    font-size:1.65rem;
+}
+
+.periodo p{
+    margin:4px 0 0;
+    color:#666;
+}
+
+/* ==========================================
+   TARJETAS DE ACTIVIDADES
+========================================== */
+
+.actividad{
+    background:white;
+    padding:25px;
+    margin-bottom:22px;
+    border-radius:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    border-left:5px solid #2f6b3f;
+}
+
+.actividad h3{
+    color:#2f6b3f;
+    margin:12px 0;
+    font-size:1.35rem;
+}
+
+.actividad p{
+    margin:12px 0;
+}
+
+/* ==========================================
+   FECHA Y TIPO DE ACTIVIDAD
+========================================== */
+
+.metadatos{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:10px;
+    margin-bottom:10px;
+}
+
+.fecha{
+    font-size:0.9rem;
+    color:#666;
+    font-weight:bold;
+}
+
+.etiqueta{
+    display:inline-block;
+    padding:5px 12px;
+    border-radius:20px;
+    font-size:0.8rem;
+    font-weight:bold;
+}
+
+.tecnica{
+    background:#e2f0e4;
+    color:#28653b;
+}
+
+.social{
+    background:#e5edf8;
+    color:#355b87;
+}
+
+.comunitaria{
+    background:#f7ecd9;
+    color:#866127;
+}
+
+.ambiental{
+    background:#e1f1ed;
+    color:#246f63;
+}
+
+/* ==========================================
+   APRENDIZAJES
+========================================== */
+
+.aprendizaje{
+    background:#f5f8f0;
+    border-left:4px solid #8aaa69;
+    padding:15px 20px;
+    border-radius:8px;
+    margin-top:20px;
+}
+
+.aprendizaje h4{
+    margin:0 0 6px;
+    color:#426b35;
+}
+
+.aprendizaje p{
+    margin:0;
+}
+
+/* ==========================================
+   GALERÍA FOTOGRÁFICA
+========================================== */
+
+.galeria{
+    display:grid;
+    grid-template-columns:
+        repeat(auto-fit,minmax(230px,1fr));
+    gap:15px;
+    margin-top:20px;
+}
+
+.galeria figure{
+    margin:0;
+}
+
+.galeria img{
+    display:block;
+    width:100%;
+    height:230px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.galeria figcaption{
+    font-size:0.85rem;
+    color:#666;
+    margin-top:6px;
+    line-height:1.5;
+}
+
+/* ==========================================
+   REFLEXIÓN FINAL
+========================================== */
+
+.reflexion{
+    background:#edf4ea;
+    padding:30px;
+    margin-top:35px;
+    border-radius:12px;
+    text-align:center;
+}
+
+.reflexion h2{
+    color:#2f6b3f;
+    margin-top:0;
+}
+
+.reflexion p{
+    font-style:italic;
+    font-size:1.1rem;
+    margin-bottom:0;
+}
+
+/* ==========================================
+   NAVEGACIÓN
+========================================== */
+
+.navegacion{
+    margin-top:30px;
+    padding:25px;
+    background:white;
+    border-radius:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.boton{
+    display:inline-block;
+    padding:12px 20px;
+    background:#2f6b3f;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+}
+
+.boton:hover{
+    background:#245632;
+}
+
+/* ==========================================
+   PIE DE PÁGINA
+========================================== */
+
+footer{
+    text-align:center;
+    background:#2f6b3f;
+    color:white;
+    padding:30px;
+    margin-top:40px;
+}
+
+/* ==========================================
+   DISEÑO RESPONSIVO
+========================================== */
+
+@media(max-width:600px){
+
+    .hero > img{
+        height:450px;
+    }
+
+    .hero-text{
+        padding:12px 15px 10px;
+    }
+
+    .hero-text h1{
+        font-size:1.55rem;
+    }
+
+    .hero-text h2{
+        font-size:0.95rem;
+    }
+
+    .hero-text p{
+        font-size:0.85rem;
+    }
+
+    .red-viveros{
+        font-size:0.85rem;
+    }
+
+    .logo-corpopalo{
+        width:120px;
+    }
+
+    .container{
+        padding:15px;
+    }
+
+    .introduccion,
+    .actividad,
+    .navegacion{
+        padding:18px;
+    }
+
+    .periodo h2{
+        font-size:1.4rem;
+    }
+
+    .actividad h3{
+        font-size:1.2rem;
+    }
+
+    .galeria{
+        grid-template-columns:1fr;
+    }
+
+    .galeria img{
+        height:250px;
+    }
+
+    .reflexion{
+        padding:20px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================
+     01. PORTADA
+========================================== -->
+
+<header class="hero">
+
+    <img
+        src="../img/[ID_VIVERO]_portada.jpg"
+        alt="Vivero [NOMBRE DEL VIVERO]"
+    >
+
+    <div class="hero-text">
+
+        <h1>📖🌱 BITÁCORA VIVA</h1>
+
+        <h2>[NOMBRE DEL VIVERO]</h2>
+
+        <p>
+            [TIPO DE VIVERO] - [INSTITUCIÓN U ORGANIZACIÓN]<br>
+            [VEREDA / RESGUARDO / CORREGIMIENTO]<br>
+            [MUNICIPIO], Cauca
+        </p>
+
+        <p class="red-viveros">
+            Red de Viveros Árboles para la Vida – CORPOPALO
+        </p>
+
+        <img
+            src="../img/Logo-CORPOPALO.png"
+            class="logo-corpopalo"
+            alt="CORPOPALO"
+        >
+
+    </div>
+
+</header>
+
+
+<!-- ==========================================
+     CONTENIDO PRINCIPAL
+========================================== -->
+
+<main class="container">
+
+
+    <!-- ======================================
+         02. PRESENTACIÓN
+    ======================================= -->
+
+    <section class="introduccion">
+
+        <h2>🌿 Una historia que seguimos construyendo</h2>
+
+        <p>
+            Esta bitácora recoge los momentos, aprendizajes
+            y experiencias que hacen parte del proceso
+            del vivero [NOMBRE DEL VIVERO].
+            A través de sus actividades técnicas, sociales
+            y comunitarias, compartimos cómo las semillas,
+            el conocimiento y el trabajo colectivo
+            contribuyen al cuidado del territorio.
+        </p>
+
+    </section>
+
+
+    <!-- ======================================
+         03. PERÍODO DE ACTIVIDADES
+    ======================================= -->
+
+    <div class="periodo">
+
+        <h2>📅 [MES Y AÑO]</h2>
+
+        <p>
+            [BREVE FRASE SOBRE EL PERÍODO]
+        </p>
+
+    </div>
+
+
+    <!-- ======================================
+         04. ACTIVIDAD TÉCNICA
+    ======================================= -->
+
+    <article class="actividad">
+
+        <div class="metadatos">
+
+            <span class="fecha">
+                📅 [FECHA DE LA ACTIVIDAD]
+            </span>
+
+            <span class="etiqueta tecnica">
+                🌱 Actividad técnica
+            </span>
+
+        </div>
+
+        <h3>
+            [TÍTULO DE LA ACTIVIDAD]
+        </h3>
+
+        <p>
+            [DESCRIBIR DE MANERA CLARA QUÉ SE REALIZÓ,
+            QUIÉNES PARTICIPARON Y CUÁL FUE
+            EL PROPÓSITO DE LA JORNADA.]
+        </p>
+
+        <p>
+            [EXPLICAR BREVEMENTE CÓMO SE DESARROLLÓ
+            LA ACTIVIDAD Y QUÉ AVANCES SE LOGRARON.]
+        </p>
+
+        <div class="aprendizaje">
+
+            <h4>💡 Lo que aprendimos</h4>
+
+            <p>
+                [PRINCIPAL APRENDIZAJE O RESULTADO
+                DE LA ACTIVIDAD.]
+            </p>
+
+        </div>
+
+        <div class="galeria">
+
+            <figure>
+
+                <img
+                    src="../img/[ID_VIVERO]_[ACTIVIDAD]_01.jpg"
+                    alt="[DESCRIPCIÓN DE LA FOTOGRAFÍA]"
+                    loading="lazy"
+                >
+
+                <figcaption>
+                    [BREVE DESCRIPCIÓN DE LA FOTOGRAFÍA]
+                </figcaption>
+
+            </figure>
+
+            <figure>
+
+                <img
+                    src="../img/[ID_VIVERO]_[ACTIVIDAD]_02.jpg"
+                    alt="[DESCRIPCIÓN DE LA FOTOGRAFÍA]"
+                    loading="lazy"
+                >
+
+                <figcaption>
+                    [BREVE DESCRIPCIÓN DE LA FOTOGRAFÍA]
+                </figcaption>
+
+            </figure>
+
+        </div>
+
+    </article>
+
+
+    <!-- ======================================
+         05. ACTIVIDAD SOCIAL
+    ======================================= -->
+
+    <article class="actividad">
+
+        <div class="metadatos">
+
+            <span class="fecha">
+                📅 [FECHA DE LA ACTIVIDAD]
+            </span>
+
+            <span class="etiqueta social">
+                👥 Actividad social
+            </span>
+
+        </div>
+
+        <h3>
+            [TÍTULO DE LA ACTIVIDAD]
+        </h3>
+
+        <p>
+            [DESCRIBIR EL ENCUENTRO, LA DINÁMICA
+            PARTICIPATIVA O EL PROCESO
+            DE FORTALECIMIENTO COMUNITARIO.]
+        </p>
+
+        <p>
+            [MENCIONAR LAS REFLEXIONES,
+            LOS ACUERDOS O LOS AVANCES
+            EN LA PARTICIPACIÓN DEL GRUPO.]
+        </p>
+
+        <div class="aprendizaje">
+
+            <h4>💡 Lo que construimos juntos</h4>
+
+            <p>
+                [PRINCIPAL REFLEXIÓN, ACUERDO
+                O APRENDIZAJE COLECTIVO.]
+            </p>
+
+        </div>
+
+        <div class="galeria">
+
+            <figure>
+
+                <img
+                    src="../img/[ID_VIVERO]_[ACTIVIDAD]_03.jpg"
+                    alt="[DESCRIPCIÓN DE LA FOTOGRAFÍA]"
+                    loading="lazy"
+                >
+
+                <figcaption>
+                    [BREVE DESCRIPCIÓN DE LA FOTOGRAFÍA]
+                </figcaption>
+
+            </figure>
+
+            <figure>
+
+                <img
+                    src="../img/[ID_VIVERO]_[ACTIVIDAD]_04.jpg"
+                    alt="[DESCRIPCIÓN DE LA FOTOGRAFÍA]"
+                    loading="lazy"
+                >
+
+                <figcaption>
+                    [BREVE DESCRIPCIÓN DE LA FOTOGRAFÍA]
+                </figcaption>
+
+            </figure>
+
+        </div>
+
+    </article>
+
+
+    <!-- ======================================
+         06. REFLEXIÓN DEL PROCESO
+    ======================================= -->
+
+    <section class="reflexion">
+
+        <h2>🌱 Seguimos sembrando futuro</h2>
+
+        <p>
+            "[FRASE QUE RESUMA LOS APRENDIZAJES,
+            EL COMPROMISO O LOS AVANCES
+            DEL VIVERO DURANTE ESTE PERÍODO.]"
+        </p>
+
+    </section>
+
+
+    <!-- ======================================
+         07. NAVEGACIÓN
+    ======================================= -->
+
+    <nav class="navegacion">
+
+        <a
+            class="boton"
+            href="../viveros/[ID_VIVERO].html"
+        >
+            ⬅ Volver al vivero
+        </a>
+
+        <a
+            class="boton"
+            href="../index.html"
+        >
+            🗺️ Ir al geovisor
+        </a>
+
+    </nav>
+
+
+</main>
+
+
+<!-- ==========================================
+     PIE DE PÁGINA
+========================================== -->
+
+<footer>
+
+    <h3>
+        Red de Viveros Árboles para la Vida - CORPOPALO
+    </h3>
+
+    <p>
+        Construyendo capacidades para la restauración ecológica
+        y la adaptación al cambio climático.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
