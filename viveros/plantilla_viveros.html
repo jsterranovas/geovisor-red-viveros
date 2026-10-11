@@ -2,26 +2,45 @@
 <html lang="es">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>[NOMBRE_VIVERO]</title>
+<title>[NOMBRE DEL VIVERO] | CORPOPALO</title>
 
 <style>
 
+/* =====================================
+   ESTILOS GENERALES
+===================================== */
+
 body{
     margin:0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
     background:#f4f7f3;
     color:#333;
     line-height:1.7;
 }
 
-.hero{
-    position:relative;
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:25px;
+    box-sizing:border-box;
 }
 
-.hero img{
+/* =====================================
+   PORTADA
+===================================== */
+
+.hero{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+}
+
+.hero > img{
+    display:block;
     width:100%;
     height:450px;
     object-fit:cover;
@@ -29,24 +48,59 @@ body{
 
 .hero-text{
     position:absolute;
+    left:0;
     bottom:0;
     width:100%;
+    box-sizing:border-box;
     background:rgba(0,0,0,0.55);
     color:white;
-    padding:25px;
-    box-sizing:border-box;
+    padding:12px 25px 10px;
+    text-align:center;
 }
 
 .hero-text h1{
-    margin:0;
-    font-size:2.5rem;
+    margin:0 0 3px;
+    font-size:2.1rem;
+    line-height:1.2;
 }
 
-.container{
-    max-width:1200px;
-    margin:auto;
-    padding:25px;
+.hero-text h2{
+    margin:0 0 4px;
+    font-size:1.1rem;
+    line-height:1.3;
+    font-weight:600;
 }
+
+.hero-text p{
+    margin:2px 0;
+    color:white;
+    line-height:1.3;
+}
+
+.red-viveros{
+    margin:5px 0 0 !important;
+    font-size:0.95rem;
+    font-weight:bold;
+    color:white;
+}
+
+.logo-corpopalo{
+    display:block;
+    width:140px;
+    max-width:140px;
+    height:auto;
+    margin:7px auto 0;
+    padding:5px 10px;
+    box-sizing:border-box;
+    object-fit:contain;
+    background:rgba(255,255,255,0.78);
+    border-radius:7px;
+    box-shadow:0 2px 7px rgba(0,0,0,0.15);
+}
+
+/* =====================================
+   FRASE IDENTITARIA
+===================================== */
 
 .frase{
     text-align:center;
@@ -56,9 +110,14 @@ body{
     margin:30px 0;
 }
 
+/* =====================================
+   INDICADORES
+===================================== */
+
 .indicadores{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    grid-template-columns:
+        repeat(auto-fit,minmax(200px,1fr));
     gap:15px;
 }
 
@@ -69,6 +128,14 @@ body{
     text-align:center;
     box-shadow:0 2px 8px rgba(0,0,0,0.08);
 }
+
+.tarjeta h3{
+    margin-top:0;
+}
+
+/* =====================================
+   SECCIONES
+===================================== */
 
 .section{
     background:white;
@@ -82,28 +149,63 @@ body{
     color:#2f6b3f;
 }
 
-.galeria{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:15px;
+/* =====================================
+   ELEMENTO DIFERENCIADOR
+===================================== */
+
+.diferenciador-card{
+    background:#f5f8f0;
+    border-left:6px solid #7da05a;
+    padding:22px;
+    border-radius:12px;
+    margin-top:15px;
 }
 
-.galeria img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-    border-radius:10px;
+.diferenciador-card p{
+    margin:0;
+    font-size:1.05rem;
+    line-height:1.8;
+    color:#3a4a33;
+    font-style:italic;
 }
+
+/* =====================================
+   TABLAS
+===================================== */
 
 table{
     width:100%;
     border-collapse:collapse;
 }
 
-th, td{
-    padding:10px;
+th,td{
     border-bottom:1px solid #ddd;
+    padding:10px;
+    text-align:left;
 }
+
+/* =====================================
+   GALERÍA
+===================================== */
+
+.galeria{
+    display:grid;
+    grid-template-columns:
+        repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.galeria img{
+    display:block;
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+/* =====================================
+   BOTONES
+===================================== */
 
 .boton{
     display:inline-block;
@@ -114,6 +216,14 @@ th, td{
     border-radius:8px;
 }
 
+.boton:hover{
+    background:#245632;
+}
+
+/* =====================================
+   PIE DE PÁGINA
+===================================== */
+
 footer{
     text-align:center;
     background:#2f6b3f;
@@ -122,286 +232,500 @@ footer{
     margin-top:40px;
 }
 
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media(max-width:600px){
+
+    .hero > img{
+        height:450px;
+    }
+
+    .hero-text{
+        padding:12px 15px 10px;
+    }
+
+    .hero-text h1{
+        font-size:1.55rem;
+    }
+
+    .hero-text h2{
+        font-size:0.95rem;
+    }
+
+    .hero-text p{
+        font-size:0.85rem;
+    }
+
+    .red-viveros{
+        font-size:0.85rem;
+    }
+
+    .logo-corpopalo{
+        width:120px;
+    }
+
+    .container{
+        padding:15px;
+    }
+
+    .section{
+        padding:18px;
+    }
+
+    .frase{
+        font-size:1.05rem;
+    }
+
+    .diferenciador-card{
+        padding:16px;
+    }
+
+    th,td{
+        padding:8px;
+        font-size:0.9rem;
+    }
+
+    .galeria{
+        grid-template-columns:1fr;
+    }
+
+}
+
 </style>
 
 </head>
 
 <body>
 
-<!-- PORTADA -->
+
+<!-- =====================================
+     01. PORTADA
+===================================== -->
 
 <div class="hero">
 
-<img src="../img/[ID_VIVERO]_portada.jpg">
+    <img
+        src="../img/[ID_VIVERO]_portada.jpg"
+        alt="Fotografía del vivero [NOMBRE DEL VIVERO]"
+    >
 
-<div class="hero-text">
+    <div class="hero-text">
 
-<h1>🌱 [NOMBRE_VIVERO]</h1>
+        <h1>
+            🌱 [NOMBRE DEL VIVERO]
+        </h1>
 
-<h2>[SIGNIFICADO_NOMBRE]</h2>
+        <!--
+        OPCIONAL:
+        Utilizar si el vivero tiene un nombre
+        en lengua propia y su traducción.
 
-<p>
-[TIPO_VIVERO]<br>
-[COMUNIDAD_O_SEDE]<br>
-[VEREDA_O_RESGUARDO]<br>
-[MUNICIPIO], [DEPARTAMENTO]
-</p>
+        <h2>[TRADUCCIÓN DEL NOMBRE]</h2>
+        -->
+
+        <p>
+            [TIPO DE VIVERO] - [INSTITUCIÓN U ORGANIZACIÓN]<br>
+            [VEREDA / RESGUARDO / CORREGIMIENTO]<br>
+            [MUNICIPIO], Cauca
+        </p>
+
+        <p class="red-viveros">
+            Red de Viveros Árboles para la Vida – CORPOPALO
+        </p>
+
+        <img
+            src="../img/Logo-CORPOPALO.png"
+            class="logo-corpopalo"
+            alt="CORPOPALO"
+        >
+
+    </div>
 
 </div>
 
-</div>
 
 <div class="container">
 
-<!-- FRASE -->
 
-<div class="frase">
+    <!-- =====================================
+         02. FRASE IDENTITARIA
+    ====================================== -->
 
-"[FRASE_IDENTITARIA]"
+    <div class="frase">
+
+        "[FRASE QUE REPRESENTA LA IDENTIDAD
+        O PROPÓSITO DEL VIVERO]"
+
+    </div>
+
+
+    <!-- =====================================
+         03. INDICADORES
+    ====================================== -->
+
+    <div class="indicadores">
+
+        <div class="tarjeta">
+
+            <h3>📅 Trayectoria</h3>
+
+            <p>
+                [AÑOS DE TRAYECTORIA]
+            </p>
+
+        </div>
+
+        <div class="tarjeta">
+
+            <h3>🌳 Capacidad de producción</h3>
+
+            <p>
+                [CAPACIDAD DE PRODUCCIÓN]
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         04. PARTICIPANTES DIRECTOS
+    ====================================== -->
+
+    <div class="section">
+
+        <h2>👥 Participantes Directos</h2>
+
+        <table>
+
+            <tr>
+                <th>Grupo</th>
+                <th>Cantidad</th>
+            </tr>
+
+            <tr>
+                <td>👧 Niñas</td>
+                <td>[CANTIDAD]</td>
+            </tr>
+
+            <tr>
+                <td>👦 Niños</td>
+                <td>[CANTIDAD]</td>
+            </tr>
+
+            <tr>
+                <td>👩 Mujeres adultas</td>
+                <td>[CANTIDAD]</td>
+            </tr>
+
+            <tr>
+                <td>👨 Hombres adultos</td>
+                <td>[CANTIDAD]</td>
+            </tr>
+
+            <tr>
+                <td><strong>Total</strong></td>
+                <td><strong>[TOTAL]</strong></td>
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- =====================================
+         05. NUESTRA IDENTIDAD
+    ====================================== -->
+
+    <div class="section">
+
+        <h2>🌱 Nuestra identidad</h2>
+
+        <p>
+            [DESCRIBIR EL PROPÓSITO PRINCIPAL
+            DEL VIVERO Y SU RELACIÓN CON
+            LA COMUNIDAD O INSTITUCIÓN.]
+        </p>
+
+        <p>
+            [EXPLICAR SU CONTRIBUCIÓN A LA
+            EDUCACIÓN AMBIENTAL, LA RESTAURACIÓN
+            ECOLÓGICA Y EL CUIDADO DEL TERRITORIO.]
+        </p>
+
+    </div>
+
+
+    <!-- =====================================
+         06. ELEMENTO DIFERENCIADOR
+         SECCIÓN OPCIONAL
+    ====================================== -->
+
+    <!--
+    Eliminar esta sección si el vivero
+    no tiene un elemento diferenciador
+    identificado.
+    -->
+
+    <div class="section">
+
+        <h2>✨ Elemento diferenciador</h2>
+
+        <div class="diferenciador-card">
+
+            <p>
+                [DESCRIBIR EN UNA FRASE EL ASPECTO
+                QUE HACE ESPECIAL AL VIVERO.]
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         07. BITÁCORA VIVA
+    ====================================== -->
+
+    <div class="section">
+
+        <h2>📖 Bitácora viva del proceso</h2>
+
+        <p>
+            Conozca cómo evoluciona este vivero mes a mes:
+            acciones técnicas, encuentros comunitarios,
+            aprendizajes y registro fotográfico.
+        </p>
+
+        <a
+            class="boton"
+            href="../bitacoras/[ID_VIVERO].html"
+        >
+            Explorar la bitácora →
+        </a>
+
+    </div>
+
+
+    <!-- =====================================
+         08. NUESTRA HISTORIA
+    ====================================== -->
+
+    <div class="section">
+
+        <h2>📖 Nuestra historia</h2>
+
+        <p>
+            [DESCRIBIR CÓMO SURGIÓ EL VIVERO,
+            EN QUÉ AÑO Y QUIÉNES IMPULSARON
+            SU CREACIÓN.]
+        </p>
+
+        <p>
+            [EXPLICAR LOS PRINCIPALES MOMENTOS
+            DE SU DESARROLLO O LOS MOTIVOS
+            QUE DIERON ORIGEN A LA INICIATIVA.]
+        </p>
+
+        <p>
+            [DESCRIBIR SU SITUACIÓN ACTUAL,
+            LOS AVANCES ALCANZADOS Y SU
+            PROYECCIÓN EN EL TERRITORIO.]
+        </p>
+
+    </div>
+
+
+    <!-- =====================================
+         09. PARTICIPACIÓN Y APRENDIZAJE
+    ====================================== -->
+
+    <div class="section">
+
+        <h2>📚 Participación y aprendizaje</h2>
+
+        <p>
+            [DESCRIBIR QUIÉNES PARTICIPAN
+            Y CÓMO SE ORGANIZA EL TRABAJO
+            EN EL VIVERO.]
+        </p>
+
+        <p>
+            Las principales actividades incluyen:
+        </p>
+
+        <ul>
+            <li>[ACTIVIDAD 1]</li>
+            <li>[ACTIVIDAD 2]</li>
+            <li>[ACTIVIDAD 3]</li>
+            <li>[ACTIVIDAD 4]</li>
+            <li>[ACTIVIDAD 5]</li>
+        </ul>
+
+        <p>
+            [EXPLICAR LOS APRENDIZAJES,
+            CAPACIDADES O VALORES QUE
+            FORTALECE EL PROCESO.]
+        </p>
+
+    </div>
+
+
+    <!-- =====================================
+         10. PRODUCCIÓN Y BIODIVERSIDAD
+    ====================================== -->
+
+    <div class="section">
+
+        <h2>🌿 Producción y biodiversidad</h2>
+
+        <p>
+            [DESCRIBIR LAS ESPECIES QUE
+            SE PRODUCEN O QUE SE ESPERA
+            PROPAGAR EN EL VIVERO.]
+        </p>
+
+        <table>
+
+            <tr>
+                <th>Nombre común</th>
+                <th>Nombre científico</th>
+            </tr>
+
+            <tr>
+                <td>[ESPECIE 1]</td>
+                <td><em>[NOMBRE CIENTÍFICO]</em></td>
+            </tr>
+
+            <tr>
+                <td>[ESPECIE 2]</td>
+                <td><em>[NOMBRE CIENTÍFICO]</em></td>
+            </tr>
+
+            <tr>
+                <td>[ESPECIE 3]</td>
+                <td><em>[NOMBRE CIENTÍFICO]</em></td>
+            </tr>
+
+            <tr>
+                <td>[ESPECIE 4]</td>
+                <td><em>[NOMBRE CIENTÍFICO]</em></td>
+            </tr>
+
+            <tr>
+                <td>[ESPECIE 5]</td>
+                <td><em>[NOMBRE CIENTÍFICO]</em></td>
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- =====================================
+         11. GALERÍA FOTOGRÁFICA
+    ====================================== -->
+
+    <div class="section">
+
+        <h2>📸 Galería fotográfica</h2>
+
+        <div class="galeria">
+
+            <img
+                src="../img/[ID_VIVERO]_01.jpg"
+                alt="Actividades del vivero [NOMBRE]"
+                loading="lazy"
+            >
+
+            <img
+                src="../img/[ID_VIVERO]_02.jpg"
+                alt="Participación en el vivero [NOMBRE]"
+                loading="lazy"
+            >
+
+            <img
+                src="../img/[ID_VIVERO]_03.jpg"
+                alt="Producción vegetal del vivero [NOMBRE]"
+                loading="lazy"
+            >
+
+            <img
+                src="../img/[ID_VIVERO]_04.jpg"
+                alt="Proceso del vivero [NOMBRE]"
+                loading="lazy"
+            >
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         12. INFORMACIÓN DE CONTACTO
+    ====================================== -->
+
+    <div class="section">
+
+        <h2>📞 Información de contacto</h2>
+
+        <p>
+
+            <strong>Responsable del proceso:</strong>
+            [NOMBRE COMPLETO]
+            <br>
+
+            <strong>Rol:</strong>
+            [ROL O CARGO]
+            <br>
+
+            <strong>Teléfono:</strong>
+            [TELÉFONO]
+            <br>
+
+            <strong>Correo:</strong>
+            [CORREO ELECTRÓNICO]
+
+        </p>
+
+    </div>
+
+
+    <!-- =====================================
+         13. REGRESAR AL GEOVISOR
+    ====================================== -->
+
+    <div class="section">
+
+        <a
+            class="boton"
+            href="../index.html"
+        >
+            ⬅ Volver al geovisor
+        </a>
+
+    </div>
+
 
 </div>
 
-<!-- INDICADORES -->
 
-<div class="indicadores">
-
-<div class="tarjeta">
-<h3>📅 Trayectoria</h3>
-<p>[ANIOS_TRAYECTORIA]</p>
-</div>
-
-<div class="tarjeta">
-<h3>🌳 Producción</h3>
-<p>[PRODUCCION_ACTUAL]</p>
-</div>
-
-<div class="tarjeta">
-<h3>🎯 Meta</h3>
-<p>[META_PRODUCCION]</p>
-</div>
-
-<div class="tarjeta">
-<h3>🌿 Especies</h3>
-<p>[NUMERO_ESPECIES]</p>
-</div>
-
-<div class="tarjeta">
-<h3>👥 Participantes</h3>
-<p>[TOTAL_PARTICIPANTES]</p>
-</div>
-
-</div>
-
-<!-- PARTICIPACIÓN -->
-
-<div class="section">
-
-<h2>👥 Participación</h2>
-
-<table>
-
-<tr>
-<th>Grupo</th>
-<th>Cantidad</th>
-</tr>
-
-<tr>
-<td>👧 Niñas</td>
-<td>[NINAS]</td>
-</tr>
-
-<tr>
-<td>👦 Niños</td>
-<td>[NINOS]</td>
-</tr>
-
-<tr>
-<td>👩 Mujeres adultas</td>
-<td>[MUJERES]</td>
-</tr>
-
-<tr>
-<td>👨 Hombres adultos</td>
-<td>[HOMBRES]</td>
-</tr>
-
-<tr>
-<td><strong>Total</strong></td>
-<td><strong>[TOTAL_PARTICIPANTES]</strong></td>
-</tr>
-
-</table>
-
-</div>
-
-<!-- IDENTIDAD -->
-
-<div class="section">
-
-<h2>🌱 Nuestra identidad</h2>
-
-<p>[IDENTIDAD]</p>
-
-</div>
-
-<!-- HISTORIA -->
-
-<div class="section">
-
-<h2>📖 Nuestra historia</h2>
-
-<p>[HISTORIA]</p>
-
-</div>
-
-<!-- PARTICIPACIÓN Y APRENDIZAJE -->
-
-<div class="section">
-
-<h2>📚 Participación y aprendizaje</h2>
-
-<p>[PARTICIPACION_APRENDIZAJE]</p>
-
-</div>
-
-<!-- PRODUCCIÓN -->
-
-<div class="section">
-
-<h2>🌿 Producción y biodiversidad</h2>
-
-<p>[DESCRIPCION_PRODUCCION]</p>
-
-<table>
-
-<tr>
-<th>Especie</th>
-<th>Observaciones</th>
-</tr>
-
-[LISTA_ESPECIES]
-
-</table>
-
-</div>
-
-<!-- IMPACTOS -->
-
-<div class="section">
-
-<h2>🌎 Impactos</h2>
-
-<h3>Ambiental</h3>
-<p>[IMPACTO_AMBIENTAL]</p>
-
-<h3>Social</h3>
-<p>[IMPACTO_SOCIAL]</p>
-
-<h3>Educativo</h3>
-<p>[IMPACTO_EDUCATIVO]</p>
-
-<h3>Cultural</h3>
-<p>[IMPACTO_CULTURAL]</p>
-
-</div>
-
-<!-- CULTURA -->
-
-<div class="section">
-
-<h2>🎶 Cultura y territorio</h2>
-
-<p>[CULTURA_TERRITORIO]</p>
-
-</div>
-
-<!-- GALERÍA -->
-
-<div class="section">
-
-<h2>📸 Galería fotográfica</h2>
-
-<div class="galeria">
-
-<img src="../img/[ID_VIVERO]_01.jpg">
-<img src="../img/[ID_VIVERO]_02.jpg">
-<img src="../img/[ID_VIVERO]_03.jpg">
-<img src="../img/[ID_VIVERO]_04.jpg">
-
-</div>
-
-</div>
-
-<!-- RETOS -->
-
-<div class="section">
-
-<h2>💪 Retos y aprendizajes</h2>
-
-<p>[RETOS]</p>
-
-</div>
-
-<!-- PROYECCIÓN -->
-
-<div class="section">
-
-<h2>🚀 Proyección</h2>
-
-<p>[PROYECCION]</p>
-
-</div>
-
-<!-- ALIADOS -->
-
-<div class="section">
-
-<h2>🤝 Aliados</h2>
-
-<ul>
-<li>[ALIADO_1]</li>
-<li>[ALIADO_2]</li>
-<li>[ALIADO_3]</li>
-<li>[ALIADO_4]</li>
-</ul>
-
-</div>
-
-<!-- CONTACTO -->
-    
-<div class="section">
-
-<h2>📞 Información de contacto</h2>
-
-<p>
-<strong>Responsable del proceso:</strong> [RESPONSABLE]<br>
-<strong>Rol:</strong> [ROL_RESPONSABLE]<br>
-<strong>Teléfono:</strong> [TELEFONO]<br>
-<strong>Correo:</strong> [CORREO]
-</p>
-
-</div>
-
-<!-- BOTÓN -->
-
-<div class="section">
-
-<a class="boton" href="../index.html">
-⬅ Volver al geovisor
-</a>
-
-</div>
-
-</div>
+<!-- =====================================
+     PIE DE PÁGINA
+===================================== -->
 
 <footer>
 
-<h3>Red de Viveros CORPOPALO</h3>
+    <h3>
+        Red de Viveros Árboles para la Vida - CORPOPALO
+    </h3>
 
-<p>
-Construyendo capacidades para la restauración ecológica,
-la educación ambiental y la adaptación al cambio climático.
-</p>
+    <p>
+        Construyendo capacidades para la restauración ecológica
+        y la adaptación al cambio climático.
+    </p>
 
 </footer>
 
