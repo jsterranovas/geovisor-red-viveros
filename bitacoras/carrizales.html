@@ -310,6 +310,83 @@ body{
     margin-bottom:8px;
 }
 
+/* =====================================
+   OTRAS ACCIONES Y AVANCES DEL MES
+===================================== */
+
+.acciones-adicionales{
+    margin-top:35px;
+}
+
+.acciones-adicionales > h4{
+    color:#638D4E;
+    margin-bottom:15px;
+}
+
+/* Tarjeta de cada acontecimiento */
+
+.actividad-extra{
+    background:#F5F8F0;
+    border-left:4px solid #7DA05A;
+    border-radius:12px;
+
+    padding:20px;
+    margin-bottom:20px;
+}
+
+.actividad-extra h3{
+    color:#4F783C;
+    font-size:1.1rem;
+    margin:0 0 5px;
+}
+
+.fecha-actividad{
+    display:block;
+    color:#71806A;
+    font-size:0.85rem;
+    margin-bottom:12px;
+}
+
+.actividad-extra p{
+    margin:0 0 15px;
+}
+
+/* Fotografías de cada actividad */
+
+.fotos-actividad{
+    display:grid;
+    grid-template-columns:
+        repeat(auto-fit,minmax(180px,1fr));
+
+    gap:12px;
+    margin-top:15px;
+}
+
+.fotos-actividad img{
+    display:block;
+    width:100%;
+    height:190px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+/* Ajuste para celulares */
+
+@media(max-width:600px){
+
+    .actividad-extra{
+        padding:15px;
+    }
+
+    .fotos-actividad{
+        grid-template-columns:1fr;
+    }
+
+    .fotos-actividad img{
+        height:220px;
+    }
+}
+   
 
 /* =========================
    GALERÍA
@@ -565,6 +642,53 @@ body{
 
                 </div>
 
+<!-- =====================================
+     OTRAS ACCIONES Y AVANCES
+===================================== -->
+
+<div class="block acciones-adicionales">
+
+    <h4>🌿 Otras acciones y avances del mes</h4>
+
+
+    <!-- =================================
+         ACTIVIDAD ADICIONAL 1
+    ================================== -->
+
+    <div class="actividad-extra">
+
+        <h3>🌳 Jornada de siembra</h3>
+
+        <span class="fecha-actividad">
+            25 de Septiembre
+        </span>
+
+        <p>
+            [DESCRIPCIÓN DE LA JORNADA:
+            lugar de intervención, especies
+            sembradas, número de plantas,
+            participantes y propósito ambiental.]
+        </p>
+
+        <div class="fotos-actividad">
+
+            <img
+                src="../assets/septiembre/carrizales/siembra_01.jpeg"
+                alt="Jornada de siembra comunitaria"
+                loading="lazy"
+            >
+
+            <img
+                src="../assets/septiembre/carrizales/siembra_02.jpeg"
+                alt="Participantes durante la jornada de siembra"
+                loading="lazy"
+            >
+
+        </div>
+
+    </div>
+
+</div>
 
                 <!-- REGISTRO FOTOGRÁFICO -->
 
