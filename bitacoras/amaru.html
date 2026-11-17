@@ -409,6 +409,114 @@ body{
     display:block;
 }
 
+/* =========================
+   PARTICIPACIÓN EN LA JORNADA
+========================= */
+
+.participacion{
+    margin:25px 0 30px;
+    padding:20px;
+    background:#F5F8F0;
+    border-left:4px solid #7DA05A;
+    border-radius:12px;
+}
+
+.participacion h4{
+    margin:0 0 10px;
+    color:#4F783C;
+    font-size:1rem;
+}
+
+.participacion-total{
+    margin:0;
+    color:#374230;
+}
+
+.participacion-total strong{
+    margin-right:6px;
+    color:#4F783C;
+    font-size:2rem;
+    line-height:1.2;
+}
+
+.participacion details{
+    margin-top:15px;
+}
+
+/* Evita heredar los estilos del encabezado mensual */
+
+.month .participacion summary{
+    display:list-item;
+    list-style:disclosure-closed;
+    padding:8px 0;
+    background:transparent;
+    border-radius:0;
+    box-shadow:none;
+    color:#4F783C;
+    font-size:0.95rem;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.month .participacion details[open] > summary{
+    list-style:disclosure-open;
+}
+
+.month .participacion summary::before{
+    content:none;
+}
+
+.participacion summary:focus-visible{
+    outline:2px solid #5F8A48;
+    outline-offset:4px;
+}
+
+.participacion-tabla{
+    overflow-x:auto;
+    margin-top:10px;
+}
+
+.participacion table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    font-size:0.9rem;
+}
+
+.participacion caption{
+    padding-bottom:8px;
+    text-align:left;
+    color:#65715E;
+    font-size:0.85rem;
+}
+
+.participacion th,
+.participacion td{
+    padding:10px;
+    border-bottom:1px solid #DCE6D5;
+    text-align:center;
+}
+
+.participacion th:first-child,
+.participacion td:first-child{
+    text-align:left;
+}
+
+.participacion thead{
+    background:#E7EFDF;
+    color:#374230;
+}
+
+.participacion tfoot{
+    background:#EEF3E8;
+    font-weight:bold;
+}
+
+.participacion-nota{
+    margin:12px 0 0;
+    color:#65715E;
+    font-size:0.8rem;
+}
 
 /* =========================
    FRASE
@@ -635,8 +743,9 @@ href="../viveros/amaru.html">
                     </p>
 
                 </div>
-<!-- PARTICIPACIÓN EN LA JORNADA -->
-<!-- Cifras ilustrativas: reemplazar con el registro de asistencia -->
+
+               
+               <!-- PARTICIPACIÓN EN LA JORNADA -->
 
 <section
     class="participacion"
@@ -648,71 +757,97 @@ href="../viveros/amaru.html">
         <strong>2</strong> personas participantes
     </p>
 
-    <details>
-        <summary>Ver detalle de participación</summary>
+    <details class="participacion-detalle">
 
-        <div class="participacion-tabla">
-            <table>
-                <caption>
-                    Distribución por grupo de edad y sexo
-                </caption>
+        <summary>Detalle de participación</summary>
 
-                <thead>
-                    <tr>
-                        <th scope="col">Grupo de edad</th>
-                        <th scope="col">Mujeres</th>
-                        <th scope="col">Hombres</th>
-                        <th scope="col">Total</th>
-                    </tr>
-                </thead>
+        <div class="participacion-grupos">
 
-                <tbody>
-                    <tr>
-                        <th scope="row">
-                            Niñez<br>
-                            <small>Menores de 12 años</small>
-                        </th>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                    </tr>
+            <!-- NIÑEZ -->
 
-                    <tr>
-                        <th scope="row">
-                            Adolescencia<br>
-                            <small>12 a 17 años</small>
-                        </th>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                    </tr>
+            <div class="participacion-grupo">
+                <h5>Niñez</h5>
 
-                    <tr>
-                        <th scope="row">
-                            Personas adultas<br>
-                            <small>18 años o más</small>
-                        </th>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>2</td>
-                    </tr>
-                </tbody>
+                <span class="participacion-edad">
+                    Menores de 12 años
+                </span>
 
-                <tfoot>
-                    <tr>
-                        <th scope="row">Total</th>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>2</td>
-                    </tr>
-                </tfoot>
-            </table>
+                <div class="participacion-globos">
+                    <div class="participacion-globo">
+                        <span class="participacion-emoji"
+                              aria-hidden="true">👧</span>
+                        <strong>0</strong>
+                        <small>Niñas</small>
+                    </div>
+
+                    <div class="participacion-globo">
+                        <span class="participacion-emoji"
+                              aria-hidden="true">👦</span>
+                        <strong>0</strong>
+                        <small>Niños</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ADOLESCENCIA -->
+
+            <div class="participacion-grupo">
+                <h5>Adolescencia</h5>
+
+                <span class="participacion-edad">
+                    De 12 a 17 años
+                </span>
+
+                <div class="participacion-globos">
+                    <div class="participacion-globo">
+                        <span class="participacion-emoji"
+                              aria-hidden="true">👩</span>
+                        <strong>0</strong>
+                        <small>Mujeres</small>
+                    </div>
+
+                    <div class="participacion-globo">
+                        <span class="participacion-emoji"
+                              aria-hidden="true">👨</span>
+                        <strong>0</strong>
+                        <small>Hombres</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERSONAS ADULTAS -->
+
+            <div class="participacion-grupo">
+                <h5>Personas adultas: 2</h5>
+
+                <span class="participacion-edad">
+                    18 años o más
+                </span>
+
+                <div class="participacion-globos">
+                    <div class="participacion-globo">
+                        <span class="participacion-emoji"
+                              aria-hidden="true">👩</span>
+                        <strong aria-label="Sin dato">—</strong>
+                        <small>Mujeres</small>
+                    </div>
+
+                    <div class="participacion-globo">
+                        <span class="participacion-emoji"
+                              aria-hidden="true">👨</span>
+                        <strong aria-label="Sin dato">—</strong>
+                        <small>Hombres</small>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <p class="participacion-nota">
+            0: sin participantes. —: dato no disponible.
             Fuente: registro de asistencia de la jornada.
-            Cada persona se cuenta una sola vez en este encuentro.
         </p>
+
     </details>
 </section>
 
@@ -882,8 +1017,8 @@ Espacio participativo orientado a construir acuerdos de convivencia, organizar r
                     </p>
 
                 </div>
-<!-- PARTICIPACIÓN EN LA JORNADA -->
-<!-- Cifras ilustrativas: reemplazar con el registro de asistencia -->
+
+               <!-- PARTICIPACIÓN EN LA JORNADA -->
 
 <section
     class="participacion"
@@ -895,71 +1030,97 @@ Espacio participativo orientado a construir acuerdos de convivencia, organizar r
         <strong>2</strong> personas participantes
     </p>
 
-    <details>
-        <summary>Ver detalle de participación</summary>
+    <details class="participacion-detalle">
 
-        <div class="participacion-tabla">
-            <table>
-                <caption>
-                    Distribución por grupo de edad y sexo
-                </caption>
+        <summary>Detalle de participación</summary>
 
-                <thead>
-                    <tr>
-                        <th scope="col">Grupo de edad</th>
-                        <th scope="col">Mujeres</th>
-                        <th scope="col">Hombres</th>
-                        <th scope="col">Total</th>
-                    </tr>
-                </thead>
+        <div class="participacion-grupos">
 
-                <tbody>
-                    <tr>
-                        <th scope="row">
-                            Niñez<br>
-                            <small>Menores de 12 años</small>
-                        </th>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                    </tr>
+            <!-- NIÑEZ -->
 
-                    <tr>
-                        <th scope="row">
-                            Adolescencia<br>
-                            <small>12 a 17 años</small>
-                        </th>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                    </tr>
+            <div class="participacion-grupo">
+                <h5>Niñez</h5>
 
-                    <tr>
-                        <th scope="row">
-                            Personas adultas<br>
-                            <small>18 años o más</small>
-                        </th>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>2</td>
-                    </tr>
-                </tbody>
+                <span class="participacion-edad">
+                    Menores de 12 años
+                </span>
 
-                <tfoot>
-                    <tr>
-                        <th scope="row">Total</th>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>2</td>
-                    </tr>
-                </tfoot>
-            </table>
+                <div class="participacion-globos">
+                    <div class="participacion-globo">
+                        <span class="participacion-emoji"
+                              aria-hidden="true">👧</span>
+                        <strong>0</strong>
+                        <small>Niñas</small>
+                    </div>
+
+                    <div class="participacion-globo">
+                        <span class="participacion-emoji"
+                              aria-hidden="true">👦</span>
+                        <strong>0</strong>
+                        <small>Niños</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ADOLESCENCIA -->
+
+            <div class="participacion-grupo">
+                <h5>Adolescencia</h5>
+
+                <span class="participacion-edad">
+                    De 12 a 17 años
+                </span>
+
+                <div class="participacion-globos">
+                    <div class="participacion-globo">
+                        <span class="participacion-emoji"
+                              aria-hidden="true">👩</span>
+                        <strong>0</strong>
+                        <small>Mujeres</small>
+                    </div>
+
+                    <div class="participacion-globo">
+                        <span class="participacion-emoji"
+                              aria-hidden="true">👨</span>
+                        <strong>0</strong>
+                        <small>Hombres</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERSONAS ADULTAS -->
+
+            <div class="participacion-grupo">
+                <h5>Personas adultas: 2</h5>
+
+                <span class="participacion-edad">
+                    18 años o más
+                </span>
+
+                <div class="participacion-globos">
+                    <div class="participacion-globo">
+                        <span class="participacion-emoji"
+                              aria-hidden="true">👩</span>
+                        <strong aria-label="Sin dato">—</strong>
+                        <small>Mujeres</small>
+                    </div>
+
+                    <div class="participacion-globo">
+                        <span class="participacion-emoji"
+                              aria-hidden="true">👨</span>
+                        <strong aria-label="Sin dato">—</strong>
+                        <small>Hombres</small>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <p class="participacion-nota">
+            0: sin participantes. —: dato no disponible.
             Fuente: registro de asistencia de la jornada.
-            Cada persona se cuenta una sola vez en este encuentro.
         </p>
+
     </details>
 </section>
 
@@ -1064,8 +1225,8 @@ Espacio participativo de reflexión sobre la relación entre el agua y la vida c
                     </p>
 
                 </div>
-<!-- PARTICIPACIÓN EN LA JORNADA -->
-<!-- Cifras ilustrativas: reemplazar con el registro de asistencia -->
+
+               <!-- PARTICIPACIÓN EN LA JORNADA -->
 
 <section
     class="participacion"
@@ -1077,71 +1238,97 @@ Espacio participativo de reflexión sobre la relación entre el agua y la vida c
         <strong>2</strong> personas participantes
     </p>
 
-    <details>
-        <summary>Ver detalle de participación</summary>
+    <details class="participacion-detalle">
 
-        <div class="participacion-tabla">
-            <table>
-                <caption>
-                    Distribución por grupo de edad y sexo
-                </caption>
+        <summary>Detalle de participación</summary>
 
-                <thead>
-                    <tr>
-                        <th scope="col">Grupo de edad</th>
-                        <th scope="col">Mujeres</th>
-                        <th scope="col">Hombres</th>
-                        <th scope="col">Total</th>
-                    </tr>
-                </thead>
+        <div class="participacion-grupos">
 
-                <tbody>
-                    <tr>
-                        <th scope="row">
-                            Niñez<br>
-                            <small>Menores de 12 años</small>
-                        </th>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                    </tr>
+            <!-- NIÑEZ -->
 
-                    <tr>
-                        <th scope="row">
-                            Adolescencia<br>
-                            <small>12 a 17 años</small>
-                        </th>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                    </tr>
+            <div class="participacion-grupo">
+                <h5>Niñez</h5>
 
-                    <tr>
-                        <th scope="row">
-                            Personas adultas<br>
-                            <small>18 años o más</small>
-                        </th>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>2</td>
-                    </tr>
-                </tbody>
+                <span class="participacion-edad">
+                    Menores de 12 años
+                </span>
 
-                <tfoot>
-                    <tr>
-                        <th scope="row">Total</th>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>2</td>
-                    </tr>
-                </tfoot>
-            </table>
+                <div class="participacion-globos">
+                    <div class="participacion-globo">
+                        <span class="participacion-emoji"
+                              aria-hidden="true">👧</span>
+                        <strong>0</strong>
+                        <small>Niñas</small>
+                    </div>
+
+                    <div class="participacion-globo">
+                        <span class="participacion-emoji"
+                              aria-hidden="true">👦</span>
+                        <strong>0</strong>
+                        <small>Niños</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ADOLESCENCIA -->
+
+            <div class="participacion-grupo">
+                <h5>Adolescencia</h5>
+
+                <span class="participacion-edad">
+                    De 12 a 17 años
+                </span>
+
+                <div class="participacion-globos">
+                    <div class="participacion-globo">
+                        <span class="participacion-emoji"
+                              aria-hidden="true">👩</span>
+                        <strong>0</strong>
+                        <small>Mujeres</small>
+                    </div>
+
+                    <div class="participacion-globo">
+                        <span class="participacion-emoji"
+                              aria-hidden="true">👨</span>
+                        <strong>0</strong>
+                        <small>Hombres</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERSONAS ADULTAS -->
+
+            <div class="participacion-grupo">
+                <h5>Personas adultas: 2</h5>
+
+                <span class="participacion-edad">
+                    18 años o más
+                </span>
+
+                <div class="participacion-globos">
+                    <div class="participacion-globo">
+                        <span class="participacion-emoji"
+                              aria-hidden="true">👩</span>
+                        <strong aria-label="Sin dato">—</strong>
+                        <small>Mujeres</small>
+                    </div>
+
+                    <div class="participacion-globo">
+                        <span class="participacion-emoji"
+                              aria-hidden="true">👨</span>
+                        <strong aria-label="Sin dato">—</strong>
+                        <small>Hombres</small>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <p class="participacion-nota">
+            0: sin participantes. —: dato no disponible.
             Fuente: registro de asistencia de la jornada.
-            Cada persona se cuenta una sola vez en este encuentro.
         </p>
+
     </details>
 </section>
 
