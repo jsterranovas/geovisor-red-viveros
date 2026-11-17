@@ -426,6 +426,114 @@ body{
     font-style:italic;
 }
 
+/* =========================
+   PARTICIPACIÓN EN LA JORNADA
+========================= */
+
+.participacion{
+    margin:25px 0 30px;
+    padding:20px;
+    background:#F5F8F0;
+    border-left:4px solid #7DA05A;
+    border-radius:12px;
+}
+
+.participacion h4{
+    margin:0 0 10px;
+    color:#4F783C;
+    font-size:1rem;
+}
+
+.participacion-total{
+    margin:0;
+    color:#374230;
+}
+
+.participacion-total strong{
+    margin-right:6px;
+    color:#4F783C;
+    font-size:2rem;
+    line-height:1.2;
+}
+
+.participacion details{
+    margin-top:15px;
+}
+
+/* Evita heredar los estilos del encabezado mensual */
+
+.month .participacion summary{
+    display:list-item;
+    list-style:disclosure-closed;
+    padding:8px 0;
+    background:transparent;
+    border-radius:0;
+    box-shadow:none;
+    color:#4F783C;
+    font-size:0.95rem;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.month .participacion details[open] > summary{
+    list-style:disclosure-open;
+}
+
+.month .participacion summary::before{
+    content:none;
+}
+
+.participacion summary:focus-visible{
+    outline:2px solid #5F8A48;
+    outline-offset:4px;
+}
+
+.participacion-tabla{
+    overflow-x:auto;
+    margin-top:10px;
+}
+
+.participacion table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    font-size:0.9rem;
+}
+
+.participacion caption{
+    padding-bottom:8px;
+    text-align:left;
+    color:#65715E;
+    font-size:0.85rem;
+}
+
+.participacion th,
+.participacion td{
+    padding:10px;
+    border-bottom:1px solid #DCE6D5;
+    text-align:center;
+}
+
+.participacion th:first-child,
+.participacion td:first-child{
+    text-align:left;
+}
+
+.participacion thead{
+    background:#E7EFDF;
+    color:#374230;
+}
+
+.participacion tfoot{
+    background:#EEF3E8;
+    font-weight:bold;
+}
+
+.participacion-nota{
+    margin:12px 0 0;
+    color:#65715E;
+    font-size:0.8rem;
+}
 
 /* =========================
    PIE
