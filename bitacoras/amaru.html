@@ -413,12 +413,14 @@ body{
    PARTICIPACIÓN EN LA JORNADA
 ========================= */
 
+/* PARTICIPACIÓN EN LA JORNADA */
+
 .participacion{
     margin:25px 0 30px;
     padding:20px;
     background:#F5F8F0;
     border-left:4px solid #7DA05A;
-    border-radius:12px;
+    border-radius:16px;
 }
 
 .participacion h4{
@@ -439,83 +441,147 @@ body{
     line-height:1.2;
 }
 
-.participacion details{
+.participacion-detalle{
     margin-top:15px;
 }
 
-/* Evita heredar los estilos del encabezado mensual */
+/* Título del desplegable: sin punto ni marcador nativo */
 
-.month .participacion summary{
-    display:list-item;
-    list-style:disclosure-closed;
-    padding:8px 0;
+.month .participacion-detalle > summary{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+
+    padding:12px 0;
+    margin:0;
+    list-style:none;
+
     background:transparent;
     border-radius:0;
     box-shadow:none;
+
     color:#4F783C;
     font-size:0.95rem;
     font-weight:600;
     cursor:pointer;
 }
 
-.month .participacion details[open] > summary{
-    list-style:disclosure-open;
+.month .participacion-detalle > summary::-webkit-details-marker{
+    display:none;
 }
 
-.month .participacion summary::before{
+/* Elimina el punto heredado de la línea de tiempo */
+
+.month .participacion-detalle > summary::before{
     content:none;
 }
 
-.participacion summary:focus-visible{
+.month .participacion-detalle > summary::after{
+    content:"";
+    width:8px;
+    height:8px;
+    flex-shrink:0;
+    margin-right:4px;
+
+    border-right:2px solid currentColor;
+    border-bottom:2px solid currentColor;
+
+    transform:rotate(45deg);
+    transition:transform 0.2s ease;
+}
+
+.month .participacion-detalle[open] > summary::after{
+    transform:rotate(225deg);
+}
+
+.participacion-detalle > summary:focus-visible{
     outline:2px solid #5F8A48;
     outline-offset:4px;
+    border-radius:4px;
 }
 
-.participacion-tabla{
-    overflow-x:auto;
-    margin-top:10px;
+/* Grupos de edad */
+
+.participacion-grupos{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:12px;
+    margin-top:12px;
 }
 
-.participacion table{
-    width:100%;
-    border-collapse:collapse;
+.participacion-grupo{
+    padding:16px 12px;
     background:white;
-    font-size:0.9rem;
-}
-
-.participacion caption{
-    padding-bottom:8px;
-    text-align:left;
-    color:#65715E;
-    font-size:0.85rem;
-}
-
-.participacion th,
-.participacion td{
-    padding:10px;
-    border-bottom:1px solid #DCE6D5;
+    border:1px solid #E1E9DA;
+    border-radius:18px;
     text-align:center;
 }
 
-.participacion th:first-child,
-.participacion td:first-child{
-    text-align:left;
+.participacion .participacion-grupo h5{
+    margin:0;
+    color:#4F783C;
+    font-size:0.95rem;
 }
 
-.participacion thead{
-    background:#E7EFDF;
-    color:#374230;
+.participacion-edad{
+    display:block;
+    margin:3px 0 14px;
+    color:#65715E;
+    font-size:0.75rem;
 }
 
-.participacion tfoot{
-    background:#EEF3E8;
-    font-weight:bold;
+/* Globos con emoji, dato y etiqueta */
+
+.participacion-globos{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px;
+}
+
+.participacion-globo{
+    display:flex;
+    flex:1 1 65px;
+    flex-direction:column;
+    align-items:center;
+    gap:3px;
+
+    padding:12px 8px;
+    background:#EEF4E8;
+    border-radius:18px;
+}
+
+.participacion-emoji{
+    font-size:1.4rem;
+    line-height:1.2;
+}
+
+.participacion-globo strong{
+    color:#4F783C;
+    font-size:1.5rem;
+    line-height:1.2;
+}
+
+.participacion-globo small{
+    color:#526149;
+    font-size:0.8rem;
 }
 
 .participacion-nota{
-    margin:12px 0 0;
+    margin:14px 0 0;
     color:#65715E;
     font-size:0.8rem;
+}
+
+@media(max-width:650px){
+    .participacion-grupos{
+        grid-template-columns:1fr;
+    }
+
+    .participacion{
+        padding:16px;
+    }
 }
 
 /* =========================
@@ -751,7 +817,7 @@ href="../viveros/amaru.html">
     class="participacion"
     aria-label="Participación en la jornada"
 >
-    <h4>👥 Participación en la jornada</h4>
+    <h4>🙋 Participación en la jornada</h4>
 
     <p class="participacion-total">
         <strong>2</strong> personas participantes
@@ -1024,7 +1090,7 @@ Espacio participativo orientado a construir acuerdos de convivencia, organizar r
     class="participacion"
     aria-label="Participación en la jornada"
 >
-    <h4>👥 Participación en la jornada</h4>
+    <h4>🙋 Participación en la jornada</h4>
 
     <p class="participacion-total">
         <strong>2</strong> personas participantes
@@ -1232,7 +1298,7 @@ Espacio participativo de reflexión sobre la relación entre el agua y la vida c
     class="participacion"
     aria-label="Participación en la jornada"
 >
-    <h4>👥 Participación en la jornada</h4>
+    <h4>🙋 Participación en la jornada</h4>
 
     <p class="participacion-total">
         <strong>2</strong> personas participantes
