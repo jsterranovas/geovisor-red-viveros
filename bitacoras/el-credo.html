@@ -2,758 +2,1158 @@
 <html lang="es">
 
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>📖🌱 Bitácora Viva | El Credo</title>
-
-<style>
-
-/* =========================
-   ESTILOS GENERALES
-========================= */
-
-body{
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    background:#F6F7F2;
-    color:#374230;
-    line-height:1.7;
-}
-
-.container{
-    max-width:950px;
-    margin:auto;
-    padding:50px 25px;
-}
-
-
-/* =========================
-   CABECERA / FOTO PRINCIPAL
-========================= */
-
-.hero{
-    position:relative;
-    width:100%;
-    overflow:hidden;
-}
-
-.hero > img{
-    display:block;
-    width:100%;
-    height:450px;
-    object-fit:cover;
-}
-
-
-/* Franja oscura dentro de la fotografía */
-
-.hero-text{
-    position:absolute;
-    left:0;
-    bottom:0;
-    width:100%;
-    box-sizing:border-box;
-
-    background:rgba(0,0,0,0.55);
-    color:white;
-
-    padding:12px 25px 10px;
-
-    text-align:center;
-}
-
-
-/* Nombre del vivero */
-
-.hero-text h1{
-    margin:0 0 2px;
-    padding:0;
-
-    font-size:2rem;
-    line-height:1.15;
-}
-
-
-/* Nombre de la organización */
-
-.hero-text h2{
-    margin:0 0 3px;
-
-    font-size:1.1rem;
-    line-height:1.3;
-    font-weight:600;
-}
-
-
-/* Ubicación */
-
-.hero-text p{
-    margin:2px 0;
-    color:white;
-    line-height:1.3;
-}
-
-
-/* Identificación de la Red */
-
-.red-viveros{
-    margin:4px 0 0 !important;
-
-    font-size:0.95rem;
-    line-height:1.25;
-
-    font-weight:bold;
-    color:white;
-}
-
-
-/* Logo institucional */
-
-.logo-corpopalo{
-    display:block;
-
-    width:140px;
-    max-width:140px;
-
-    height:auto;
-
-    margin:7px auto 0;
-
-    padding:5px 10px;
-
-    box-sizing:border-box;
-
-    object-fit:contain;
-
-    background:rgba(255,255,255,0.8);
-
-    border-radius:7px;
-
-    box-shadow:0 2px 7px rgba(0,0,0,0.15);
-}
-
-
-/* =========================
-   ENLACE REGRESAR
-========================= */
-
-.back{
-    display:inline-block;
-
-    text-decoration:none;
-    color:#5E814B;
-
-    font-weight:600;
-
-    margin-bottom:30px;
-}
-
-
-/* =========================
-   TÍTULO DE LA BITÁCORA
-========================= */
-
-.bitacora-header{
-    text-align:center;
-    padding-bottom:10px;
-}
-
-.bitacora-header h1{
-    font-size:2.3rem;
-    margin:0 0 10px;
-}
-
-.bitacora-header p{
-    max-width:650px;
-    margin:auto;
-
-    color:#65715E;
-}
-
-
-/* =========================
-   MÉTRICAS
-========================= */
-
-.metrics{
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(150px,1fr));
-
-    gap:18px;
-
-    margin-top:35px;
-}
-
-.metric{
-    background:white;
-
-    padding:25px;
-
-    border-radius:18px;
-
-    text-align:center;
-}
-
-.metric strong{
-    display:block;
-
-    font-size:2rem;
-
-    color:#5B8446;
-}
-
-
-/* =========================
-   LÍNEA DE TIEMPO
-========================= */
-
-.timeline{
-    position:relative;
-
-    margin-top:70px;
-
-    padding-left:30px;
-}
-
-.timeline::before{
-    content:"";
-
-    position:absolute;
-
-    left:14px;
-    top:0;
-    bottom:0;
-
-    width:3px;
-
-    background:#D5E3CC;
-}
-
-
-/* =========================
-   MESES
-========================= */
-
-.month{
-    position:relative;
-
-    margin-bottom:40px;
-}
-
-.month summary{
-    list-style:none;
-
-    cursor:pointer;
-
-    background:white;
-
-    padding:22px;
-
-    border-radius:18px;
-
-    font-size:1.2rem;
-
-    font-weight:700;
-
-    box-shadow:
-    0 5px 15px
-    rgba(0,0,0,.05);
-
-    position:relative;
-}
-
-
-/* Punto de la línea de tiempo */
-
-.month summary::before{
-    content:"";
-
-    position:absolute;
-
-    left:-25px;
-    top:30px;
-
-    width:18px;
-    height:18px;
-
-    background:#6E9854;
-
-    border-radius:50%;
-}
-
-
-/* =========================
-   CONTENIDO DEL MES
-========================= */
-
-.content{
-    background:white;
-
-    padding:30px;
-
-    margin-top:12px;
-
-    border-radius:18px;
-}
-
-.block{
-    margin-bottom:30px;
-}
-
-.block h4{
-    color:#638D4E;
-
-    margin-bottom:8px;
-}
-
-
-/* =====================================
-   OTRAS ACCIONES Y AVANCES DEL MES
-===================================== */
-
-.acciones-adicionales{
-    margin-top:35px;
-}
-
-.acciones-adicionales > h4{
-    color:#638D4E;
-    margin-bottom:15px;
-}
-
-/* Tarjeta de cada acontecimiento */
-
-.actividad-extra{
-    background:#F5F8F0;
-    border-left:4px solid #7DA05A;
-    border-radius:12px;
-
-    padding:20px;
-    margin-bottom:20px;
-}
-
-.actividad-extra h3{
-    color:#4F783C;
-    font-size:1.1rem;
-    margin:0 0 5px;
-}
-
-.fecha-actividad{
-    display:block;
-    color:#71806A;
-    font-size:0.85rem;
-    margin-bottom:12px;
-}
-
-.actividad-extra p{
-    margin:0 0 15px;
-}
-
-/* Fotografías de cada actividad */
-
-.fotos-actividad{
-    display:grid;
-    grid-template-columns:
-        repeat(auto-fit,minmax(180px,1fr));
-
-    gap:12px;
-    margin-top:15px;
-}
-
-.fotos-actividad img{
-    display:block;
-    width:100%;
-    height:190px;
-    object-fit:cover;
-    border-radius:10px;
-}
-
-/* Ajuste para celulares */
-
-@media(max-width:600px){
-
-    .actividad-extra{
-        padding:15px;
-    }
-
-    .fotos-actividad{
-        grid-template-columns:1fr;
-    }
-
-    .fotos-actividad img{
-        height:220px;
-    }
-}
-   
-
-/* =========================
-   GALERÍA
-========================= */
-
-.gallery{
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(220px,1fr));
-
-    gap:12px;
-}
-
-.gallery img{
-    width:100%;
-
-    border-radius:14px;
-
-    display:block;
-}
-
-
-/* =========================
-   FRASE
-========================= */
-
-.quote{
-    background:#F5F8F0;
-
-    padding:20px;
-
-    border-left:
-    6px solid
-    #7DA05A;
-
-    font-style:italic;
-}
-
-
-/* =========================
-   PIE
-========================= */
-
-.footer{
-    text-align:center;
-
-    margin-top:60px;
-}
-
-.button{
-    display:inline-block;
-
-    background:#5F8A48;
-
-    color:white;
-
-    padding:15px 30px;
-
-    text-decoration:none;
-
-    border-radius:14px;
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>📖🌱 Bitácora Viva | El Credo</title>
+
+    <style>
+        /* ESTILOS GENERALES */
+
+        body{
+            margin:0;
+            font-family:Arial, Helvetica, sans-serif;
+            background:#F6F7F2;
+            color:#374230;
+            line-height:1.7;
+        }
+
+        .container{
+            max-width:950px;
+            margin:auto;
+            padding:50px 25px;
+        }
+
+        /* CABECERA */
+
+        .hero{
+            position:relative;
+            width:100%;
+            overflow:hidden;
+        }
+
+        .hero > img{
+            display:block;
+            width:100%;
+            height:450px;
+            object-fit:cover;
+        }
+
+        .hero-text{
+            position:absolute;
+            left:0;
+            bottom:0;
+            width:100%;
+            box-sizing:border-box;
+            background:rgba(0,0,0,0.55);
+            color:white;
+            padding:12px 25px 10px;
+            text-align:center;
+        }
+
+        .hero-text h1{
+            margin:0 0 2px;
+            font-size:2rem;
+            line-height:1.15;
+        }
+
+        .hero-text p{
+            margin:2px 0;
+            color:white;
+            line-height:1.3;
+        }
+
+        .red-viveros{
+            margin:4px 0 0 !important;
+            font-size:0.95rem;
+            line-height:1.25;
+            font-weight:bold;
+        }
+
+        .logo-corpopalo{
+            display:block;
+            width:140px;
+            max-width:100%;
+            height:auto;
+            margin:7px auto 0;
+            padding:5px 10px;
+            box-sizing:border-box;
+            background:rgba(255,255,255,0.8);
+            border-radius:7px;
+            box-shadow:0 2px 7px rgba(0,0,0,0.15);
+        }
+
+        /* PRESENTACIÓN */
+
+        .back{
+            display:inline-block;
+            margin-bottom:30px;
+            text-decoration:none;
+            color:#5E814B;
+            font-weight:600;
+        }
+
+        .bitacora-header{
+            text-align:center;
+            padding-bottom:10px;
+        }
+
+        .bitacora-header h1{
+            font-size:2.3rem;
+            margin:0 0 10px;
+        }
+
+        .bitacora-header p{
+            max-width:650px;
+            margin:auto;
+            color:#65715E;
+        }
+
+        /* MÉTRICAS GENERALES */
+
+        .metrics{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+            gap:18px;
+            margin-top:35px;
+        }
+
+        .metric{
+            background:white;
+            padding:25px;
+            border-radius:18px;
+            text-align:center;
+        }
+
+        .metric strong{
+            display:block;
+            font-size:2rem;
+            color:#5B8446;
+        }
+
+        /* LÍNEA DE TIEMPO */
+
+        .timeline{
+            position:relative;
+            margin-top:70px;
+            padding-left:30px;
+        }
+
+        .timeline::before{
+            content:"";
+            position:absolute;
+            left:14px;
+            top:0;
+            bottom:0;
+            width:3px;
+            background:#D5E3CC;
+        }
+
+        .month{
+            position:relative;
+            margin-bottom:40px;
+        }
+
+        /* Solo afecta al encabezado del mes */
+
+        .month > summary{
+            position:relative;
+            list-style:none;
+            cursor:pointer;
+            background:white;
+            padding:22px;
+            border-radius:18px;
+            font-size:1.2rem;
+            font-weight:700;
+            box-shadow:0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .month > summary::-webkit-details-marker{
+            display:none;
+        }
+
+        .month > summary::before{
+            content:"";
+            position:absolute;
+            left:-25px;
+            top:30px;
+            width:18px;
+            height:18px;
+            background:#6E9854;
+            border-radius:50%;
+        }
+
+        summary:focus-visible{
+            outline:2px solid #5F8A48;
+            outline-offset:4px;
+        }
+
+        /* CONTENIDO */
+
+        .content{
+            background:white;
+            padding:30px;
+            margin-top:12px;
+            border-radius:18px;
+        }
+
+        .block{
+            margin-bottom:30px;
+        }
+
+        .block h4{
+            color:#638D4E;
+            margin-bottom:8px;
+        }
+
+        /* PARTICIPACIÓN EN LA JORNADA */
+
+        .participacion{
+            margin:25px 0 30px;
+            padding:20px;
+            background:#F5F8F0;
+            border-left:4px solid #7DA05A;
+            border-radius:16px;
+        }
+
+        .participacion h4{
+            margin:0 0 10px;
+            color:#4F783C;
+            font-size:1rem;
+        }
+
+        .participacion-total{
+            margin:0;
+        }
+
+        .participacion-total strong{
+            margin-right:6px;
+            color:#4F783C;
+            font-size:2rem;
+            line-height:1.2;
+        }
+
+        .participacion-detalle{
+            margin-top:15px;
+        }
+
+        .participacion-detalle > summary{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:12px;
+            padding:12px 0;
+            list-style:none;
+            color:#4F783C;
+            font-size:0.95rem;
+            font-weight:600;
+            cursor:pointer;
+        }
+
+        .participacion-detalle > summary::-webkit-details-marker{
+            display:none;
+        }
+
+        .participacion-detalle > summary::before{
+            content:none;
+        }
+
+        .participacion-detalle > summary::after{
+            content:"";
+            width:8px;
+            height:8px;
+            flex-shrink:0;
+            margin-right:4px;
+            border-right:2px solid currentColor;
+            border-bottom:2px solid currentColor;
+            transform:rotate(45deg);
+            transition:transform 0.2s ease;
+        }
+
+        .participacion-detalle[open] > summary::after{
+            transform:rotate(225deg);
+        }
+
+        .participacion-grupos{
+            display:grid;
+            grid-template-columns:repeat(3,minmax(0,1fr));
+            gap:12px;
+            margin-top:12px;
+        }
+
+        .participacion-grupo{
+            padding:16px 12px;
+            background:white;
+            border:1px solid #E1E9DA;
+            border-radius:18px;
+            text-align:center;
+        }
+
+        .participacion-grupo h5{
+            margin:0;
+            color:#4F783C;
+            font-size:0.95rem;
+        }
+
+        .participacion-edad{
+            display:block;
+            margin:3px 0 14px;
+            color:#65715E;
+            font-size:0.75rem;
+        }
+
+        .participacion-globos{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:8px;
+        }
+
+        .participacion-globo{
+            display:flex;
+            flex:1 1 65px;
+            flex-direction:column;
+            align-items:center;
+            gap:3px;
+            padding:12px 8px;
+            background:#EEF4E8;
+            border-radius:18px;
+        }
+
+        .participacion-emoji{
+            font-size:1.4rem;
+            line-height:1.2;
+        }
+
+        .participacion-globo strong{
+            color:#4F783C;
+            font-size:1.5rem;
+            line-height:1.2;
+        }
+
+        .participacion-globo small{
+            color:#526149;
+            font-size:0.8rem;
+        }
+
+        .participacion-nota{
+            margin:14px 0 0;
+            color:#65715E;
+            font-size:0.8rem;
+        }
+
+        /* GALERÍA */
+
+        .gallery{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            gap:12px;
+        }
+
+        .gallery img{
+            display:block;
+            width:100%;
+            border-radius:14px;
+        }
+
+        /* FRASE Y ALIADO */
+
+        .quote{
+            background:#F5F8F0;
+            padding:20px;
+            border-left:6px solid #7DA05A;
+            font-style:italic;
+        }
+
+        .logo-aliado{
+            display:block;
+            width:180px;
+            max-width:100%;
+            height:auto;
+            margin:20px auto;
+        }
+
+        /* PIE */
+
+        .footer{
+            text-align:center;
+            margin-top:60px;
+            padding-bottom:30px;
+        }
+
+        .button{
+            display:inline-block;
+            background:#5F8A48;
+            color:white;
+            padding:15px 30px;
+            text-decoration:none;
+            border-radius:14px;
+        }
+
+        /* CELULARES */
+
+        @media(max-width:650px){
+
+            .participacion-grupos{
+                grid-template-columns:1fr;
+            }
+
+            .participacion{
+                padding:16px;
+            }
+
+            .content{
+                padding:18px;
+            }
+
+            .gallery{
+                grid-template-columns:minmax(0,1fr);
+            }
+
+            .hero > img{
+                height:500px;
+            }
+
+            .hero-text h1{
+                font-size:1.6rem;
+            }
+
+            .bitacora-header h1{
+                font-size:1.9rem;
+            }
+        }
+    </style>
 </head>
-
 
 <body>
 
+    <!-- CABECERA DEL VIVERO -->
 
-<!-- =========================================
-     CABECERA DEL VIVERO
-========================================= -->
-
-<div class="hero">
-
-    <img
-        src="../img/el-credo_portada.jpg"
-        alt="Vivero escolar I.E.A El Credo"
-    >
-
-    <div class="hero-text">
-
-        <h1>🌱 Emprendedores de Semillas de Vida</h1>
-
-        <p>
-            Vivero Escolar I.E.A El Credo<br>
-            Vereda El Credo, Resguardo Huellas, Caloto (Cauca)
-        </p>
-
-        <p class="red-viveros">
-            Red de Viveros Árboles para la Vida – CORPOPALO
-        </p>
+    <div class="hero">
 
         <img
-            src="../img/Logo-CORPOPALO.png"
-            class="logo-corpopalo"
-            alt="CORPOPALO"
+            src="../img/el-credo_portada.jpg"
+            alt="Vivero escolar I.E.A. El Credo"
         >
 
+        <div class="hero-text">
+
+            <h1>🌱 Emprendedores de Semillas de Vida</h1>
+
+            <p>
+                Vivero Escolar I.E.A. El Credo<br>
+                Vereda El Credo, Resguardo Huellas, Caloto (Cauca)
+            </p>
+
+            <p class="red-viveros">
+                Red de Viveros Árboles para la Vida – CORPOPALO
+            </p>
+
+            <img
+                src="../img/Logo-CORPOPALO.png"
+                class="logo-corpopalo"
+                alt="CORPOPALO"
+            >
+
+        </div>
     </div>
 
-</div>
+    <div class="container">
 
+        <a class="back" href="../viveros/el-credo.html">
+            ← Regresar al vivero
+        </a>
 
-<!-- =========================================
-     CONTENIDO
-========================================= -->
+        <div class="bitacora-header">
 
-<div class="container">
+            <h1>📖 Bitácora viva del proceso</h1>
 
+            <p>
+                Explore cómo evoluciona este vivero a través de acciones
+                técnicas, sociales y aprendizajes colectivos.
+            </p>
 
-    <!-- REGRESAR -->
-
-    <a
-        class="back"
-        href="../viveros/el-credo.html"
-    >
-        ← Regresar al vivero
-    </a>
-
-
-    <!-- =====================================
-         PRESENTACIÓN DE LA BITÁCORA
-    ====================================== -->
-
-    <div class="bitacora-header">
-
-        <h1>
-            📖 Bitácora viva del proceso
-        </h1>
-
-        <p>
-            Explore cómo evoluciona este vivero
-            a través de acciones técnicas,
-            sociales y aprendizajes colectivos.
-        </p>
-
-    </div>
-
-
-    <!-- =====================================
-         MÉTRICAS
-    ====================================== -->
-
-    <div class="metrics">
-
-        <div class="metric">
-            <strong>1100</strong>
-            Plántulas
         </div>
 
-        <div class="metric">
-            <strong>18</strong>
-            Participantes Directos
+        <!-- MÉTRICAS GENERALES DEL VIVERO -->
+
+        <div class="metrics">
+
+            <div class="metric">
+                <strong>1100</strong>
+                Plántulas
+            </div>
+
+            <div class="metric">
+                <strong>18</strong>
+                Participantes directos
+            </div>
+
+            <div class="metric">
+                <strong>7</strong>
+                Encuentros
+            </div>
+
+            <div class="metric">
+                <strong>9</strong>
+                Meses
+            </div>
+
         </div>
 
-        <div class="metric">
-            <strong>7</strong>
-            Encuentros
-        </div>
+        <!-- LÍNEA DE TIEMPO -->
 
-        <div class="metric">
-            <strong>9</strong>
-            Meses
-        </div>
+        <div class="timeline">
 
-    </div>
+            <!-- SEPTIEMBRE 2026 -->
 
+            <details class="month" open>
 
-    <!-- =====================================
-         LÍNEA DE TIEMPO
-    ====================================== -->
+                <summary>Septiembre 2026</summary>
 
-    <div class="timeline">
+                <div class="content">
 
+                    <div class="block">
 
-        <!-- =================================
-             SEPTIEMBRE 2026
-        ================================== -->
+                        <h4>🌱 Componente técnico</h4>
 
-        <details
-            class="month"
-            open
-        >
-
-            <summary>
-                Septiembre 2026
-            </summary>
-
-
-            <div class="content">
-
-
-                <!-- COMPONENTE TÉCNICO -->
-
-                <div class="block">
-
-                    <h4>
-                        🌱 Componente técnico
-                    </h4>
-
-                    <p>
-
-                        <strong>
-                            Nutrición y sanidad vegetal:
-                        </strong>
-
-                        Jornada práctica de observación y
-                        reconocimiento de señales asociadas
-                        a deficiencias nutricionales, plagas
-                        y enfermedades en las plantas del vivero.
-
-                        Se fortaleció la capacidad de identificar
-                        posibles causas y tomar decisiones de manejo
-                        a partir de la observación.
-
-                    </p>
-
-                </div>
-
-
-                <!-- COMPONENTE SOCIAL -->
-
-                <div class="block">
-
-                    <h4>
-                        👥 Componente social
-                    </h4>
-
-                    <p>
-
-                        <strong>
-                            Apropiación individual y colectiva del vivero:
-                        </strong>
-
-                        Espacio participativo orientado a fortalecer
-                        el sentido de pertenencia y la corresponsabilidad
-                        frente al vivero.
-
-                        Los participantes reconocieron sus capacidades,
-                        aportes y responsabilidades, y construyeron
-                        acuerdos para contribuir al cuidado y
-                        sostenibilidad del proceso.
-
-                    </p>
-
-                </div>
-
-
-                <!-- REGISTRO FOTOGRÁFICO -->
-
-                <div class="block">
-
-                    <h4>
-                        📷 Registro fotográfico
-                    </h4>
-
-                    <div class="gallery">
-
-                        <img
-                            src="../assets/septiembre/el-credo/foto1.jpeg"
-                            alt="Actividad septiembre El Credo"
-                        >
-
-                        <img
-                            src="../assets/septiembre/el-credo/foto2.jpeg"
-                            alt="Actividad septiembre El Credo"
-                        >
-
-                        <img
-                            src="../assets/septiembre/el-credo/foto3.jpeg"
-                            alt="Actividad septiembre El Credo"
-                        >
+                        <p>
+                            <strong>Nutrición y sanidad vegetal:</strong>
+                            Jornada práctica de observación y reconocimiento
+                            de señales asociadas a deficiencias nutricionales,
+                            plagas y enfermedades en las plantas del vivero.
+                            Se fortaleció la capacidad de identificar posibles
+                            causas y tomar decisiones de manejo a partir
+                            de la observación.
+                        </p>
 
                     </div>
 
-                </div>
+                    <div class="block">
 
+                        <h4>👥 Componente social</h4>
 
-                <!-- FRASE -->
-
-                <div class="block">
-
-                    <div class="quote">
-
-                        "Del cuidado de cada planta al cuidado de todo
-                        el vivero: conocimiento, participación y
-                        corresponsabilidad."
+                        <p>
+                            <strong>
+                                Apropiación individual y colectiva del vivero:
+                            </strong>
+                            Espacio participativo orientado a fortalecer
+                            el sentido de pertenencia y la corresponsabilidad
+                            frente al vivero. Los participantes reconocieron
+                            sus capacidades, aportes y responsabilidades,
+                            y construyeron acuerdos para contribuir al
+                            cuidado y sostenibilidad del proceso.
+                        </p>
 
                     </div>
 
-                </div>
+                    <!-- PARTICIPACIÓN SEPTIEMBRE -->
 
-
-                <!-- ALIADO DEL MES -->
-
-                <div class="block">
-
-                    <h4>
-                        🤝 Aliado del proceso
-                    </h4>
-
-                    <img
-                        src="../img/Logo-FFAVS.png"
-                        alt="Fundación Fondo Agua por la Vida y la Sostenibilidad"
-                        style="
-                            display:block;
-                            width:180px;
-                            max-width:100%;
-                            margin:20px auto;
-                        "
+                    <section
+                        class="participacion"
+                        aria-label="Participación en la jornada de septiembre"
                     >
 
+                        <h4>🙋 Participación en la jornada</h4>
+
+                        <p class="participacion-total">
+                            <strong>—</strong> personas participantes
+                        </p>
+
+                        <details class="participacion-detalle">
+
+                            <summary>Detalle de participación</summary>
+
+                            <div class="participacion-grupos">
+
+                                <div class="participacion-grupo">
+
+                                    <h5>Niñez</h5>
+
+                                    <span class="participacion-edad">
+                                        Menores de 12 años
+                                    </span>
+
+                                    <div class="participacion-globos">
+
+                                        <div class="participacion-globo">
+                                            <span class="participacion-emoji"
+                                                  aria-hidden="true">👧</span>
+                                            <strong>—</strong>
+                                            <small>Niñas</small>
+                                        </div>
+
+                                        <div class="participacion-globo">
+                                            <span class="participacion-emoji"
+                                                  aria-hidden="true">👦</span>
+                                            <strong>—</strong>
+                                            <small>Niños</small>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="participacion-grupo">
+
+                                    <h5>Adolescencia</h5>
+
+                                    <span class="participacion-edad">
+                                        De 12 a 17 años
+                                    </span>
+
+                                    <div class="participacion-globos">
+
+                                        <div class="participacion-globo">
+                                            <span class="participacion-emoji"
+                                                  aria-hidden="true">👩</span>
+                                            <strong>—</strong>
+                                            <small>Mujeres</small>
+                                        </div>
+
+                                        <div class="participacion-globo">
+                                            <span class="participacion-emoji"
+                                                  aria-hidden="true">👨</span>
+                                            <strong>—</strong>
+                                            <small>Hombres</small>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="participacion-grupo">
+
+                                    <h5>Personas adultas</h5>
+
+                                    <span class="participacion-edad">
+                                        18 años o más
+                                    </span>
+
+                                    <div class="participacion-globos">
+
+                                        <div class="participacion-globo">
+                                            <span class="participacion-emoji"
+                                                  aria-hidden="true">👩</span>
+                                            <strong>—</strong>
+                                            <small>Mujeres</small>
+                                        </div>
+
+                                        <div class="participacion-globo">
+                                            <span class="participacion-emoji"
+                                                  aria-hidden="true">👨</span>
+                                            <strong>—</strong>
+                                            <small>Hombres</small>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <p class="participacion-nota">
+                                —: dato pendiente de confirmación.
+                            </p>
+
+                        </details>
+                    </section>
+
+                    <!-- FOTOGRAFÍAS SEPTIEMBRE -->
+
+                    <div class="block">
+
+                        <h4>📷 Registro fotográfico</h4>
+
+                        <div class="gallery">
+
+                            <img
+                                src="../assets/septiembre/el-credo/foto1.jpeg"
+                                alt="Actividad septiembre El Credo"
+                                loading="lazy"
+                            >
+
+                            <img
+                                src="../assets/septiembre/el-credo/foto2.jpeg"
+                                alt="Actividad septiembre El Credo"
+                                loading="lazy"
+                            >
+
+                            <img
+                                src="../assets/septiembre/el-credo/foto3.jpeg"
+                                alt="Actividad septiembre El Credo"
+                                loading="lazy"
+                            >
+
+                        </div>
+                    </div>
+
+                    <!-- FRASE SEPTIEMBRE -->
+
+                    <div class="block">
+
+                        <div class="quote">
+                            “Del cuidado de cada planta al cuidado de todo
+                            el vivero: conocimiento, participación y
+                            corresponsabilidad.”
+                        </div>
+
+                    </div>
+
+                    <!-- ALIADO SEPTIEMBRE -->
+
+                    <div class="block">
+
+                        <h4>🤝 Aliado del proceso</h4>
+
+                        <img
+                            src="../img/Logo-FFAVS.png"
+                            class="logo-aliado"
+                            alt="Fundación Fondo Agua por la Vida y la Sostenibilidad"
+                        >
+
+                    </div>
+
                 </div>
+            </details>
 
+            <!-- OCTUBRE 2026 -->
 
-            </div>
+            <details class="month" open>
 
-        </details>
+                <summary>Octubre 2026</summary>
 
+                <div class="content">
 
-        <!-- =================================
-             OCTUBRE 2026
-        ================================== -->
+                    <div class="block">
 
-        <details class="month">
+                        <h4>🌱 Componente técnico</h4>
 
-            <summary>
-                Octubre 2026
-            </summary>
+                        <p>
+                            <strong>
+                                Siembra y almacenamiento de semillas forestales:
+                            </strong>
+                            Jornada práctica orientada a fortalecer la
+                            selección, siembra, rotulado y conservación de
+                            semillas según las características de cada especie.
+                            Se abordaron los cuidados necesarios para favorecer
+                            la germinación y el seguimiento de las siembras,
+                            promoviendo la responsabilidad compartida en la
+                            producción de plantas para la restauración
+                            del territorio.
+                        </p>
 
-            <div class="content">
+                    </div>
 
-                <p>
-                    Agregar contenido.
-                </p>
+                    <div class="block">
 
-            </div>
+                        <h4>👥 Componente social</h4>
 
-        </details>
+                        <p>
+                            <strong>
+                                Gobernanza, convivencia y continuidad del vivero:
+                            </strong>
+                            Espacio participativo orientado a construir
+                            acuerdos de convivencia, organizar rutinas de
+                            cuidado y distribuir responsabilidades para el
+                            funcionamiento del vivero. Se reconocieron saberes
+                            y prácticas para transmitir a nuevos integrantes
+                            y se definieron acciones para favorecer la
+                            continuidad del proceso durante recesos y cambios
+                            de participantes.
+                        </p>
 
+                    </div>
+
+                    <!-- PARTICIPACIÓN OCTUBRE -->
+
+                    <section
+                        class="participacion"
+                        aria-label="Participación en la jornada de octubre"
+                    >
+
+                        <h4>🙋 Participación en la jornada</h4>
+
+                        <p class="participacion-total">
+                            <strong>—</strong> personas participantes
+                        </p>
+
+                        <details class="participacion-detalle">
+
+                            <summary>Detalle de participación</summary>
+
+                            <div class="participacion-grupos">
+
+                                <div class="participacion-grupo">
+
+                                    <h5>Niñez</h5>
+
+                                    <span class="participacion-edad">
+                                        Menores de 12 años
+                                    </span>
+
+                                    <div class="participacion-globos">
+
+                                        <div class="participacion-globo">
+                                            <span class="participacion-emoji"
+                                                  aria-hidden="true">👧</span>
+                                            <strong>—</strong>
+                                            <small>Niñas</small>
+                                        </div>
+
+                                        <div class="participacion-globo">
+                                            <span class="participacion-emoji"
+                                                  aria-hidden="true">👦</span>
+                                            <strong>—</strong>
+                                            <small>Niños</small>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="participacion-grupo">
+
+                                    <h5>Adolescencia</h5>
+
+                                    <span class="participacion-edad">
+                                        De 12 a 17 años
+                                    </span>
+
+                                    <div class="participacion-globos">
+
+                                        <div class="participacion-globo">
+                                            <span class="participacion-emoji"
+                                                  aria-hidden="true">👩</span>
+                                            <strong>—</strong>
+                                            <small>Mujeres</small>
+                                        </div>
+
+                                        <div class="participacion-globo">
+                                            <span class="participacion-emoji"
+                                                  aria-hidden="true">👨</span>
+                                            <strong>—</strong>
+                                            <small>Hombres</small>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="participacion-grupo">
+
+                                    <h5>Personas adultas</h5>
+
+                                    <span class="participacion-edad">
+                                        18 años o más
+                                    </span>
+
+                                    <div class="participacion-globos">
+
+                                        <div class="participacion-globo">
+                                            <span class="participacion-emoji"
+                                                  aria-hidden="true">👩</span>
+                                            <strong>—</strong>
+                                            <small>Mujeres</small>
+                                        </div>
+
+                                        <div class="participacion-globo">
+                                            <span class="participacion-emoji"
+                                                  aria-hidden="true">👨</span>
+                                            <strong>—</strong>
+                                            <small>Hombres</small>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <p class="participacion-nota">
+                                —: dato pendiente de confirmación.
+                            </p>
+
+                        </details>
+                    </section>
+
+                    <!-- FOTOGRAFÍAS OCTUBRE -->
+
+                    <div class="block">
+
+                        <h4>📷 Registro fotográfico</h4>
+
+                        <div class="gallery">
+
+                            <img
+                                src="../assets/octubre/el-credo/foto1.jpeg"
+                                alt="Actividad octubre El Credo"
+                                loading="lazy"
+                            >
+
+                            <img
+                                src="../assets/octubre/el-credo/foto2.jpeg"
+                                alt="Actividad octubre El Credo"
+                                loading="lazy"
+                            >
+
+                            <img
+                                src="../assets/octubre/el-credo/foto3.jpeg"
+                                alt="Actividad octubre El Credo"
+                                loading="lazy"
+                            >
+
+                        </div>
+                    </div>
+
+                    <!-- FRASE OCTUBRE -->
+
+                    <div class="block">
+
+                        <div class="quote">
+                            “Cada semilla guarda la posibilidad de un bosque;
+                            cada saber compartido y cada acuerdo de cuidado
+                            ayudan a hacerlo crecer.”
+                        </div>
+
+                    </div>
+
+                    <!-- ALIADO OCTUBRE -->
+
+                    <div class="block">
+
+                        <h4>🤝 Aliado del proceso</h4>
+
+                        <img
+                            src="../img/Logo-FFAVS.png"
+                            class="logo-aliado"
+                            alt="Fundación Fondo Agua por la Vida y la Sostenibilidad"
+                        >
+
+                    </div>
+
+                </div>
+            </details>
+
+            <!-- NOVIEMBRE 2026 -->
+
+            <details class="month" open>
+
+                <summary>Noviembre 2026</summary>
+
+                <div class="content">
+
+                    <div class="block">
+
+                        <h4>🌱 Componente técnico</h4>
+
+                        <p>
+                            <strong>
+                                Bosques, agua y regulación hídrica:
+                            </strong>
+                            Jornada orientada a comprender la importancia
+                            de los árboles y los ecosistemas boscosos en
+                            la interceptación de la lluvia, la infiltración
+                            del agua y la protección del suelo. Se relacionó
+                            la producción de plantas nativas y la restauración
+                            ecológica con el cuidado de las fuentes hídricas
+                            y el territorio.
+                        </p>
+
+                    </div>
+
+                    <div class="block">
+
+                        <h4>👥 Componente social</h4>
+
+                        <p>
+                            <strong>
+                                Agua, territorio y compromiso colectivo:
+                            </strong>
+                            Espacio participativo de reflexión sobre la
+                            relación entre el agua y la vida comunitaria,
+                            a partir de los saberes y experiencias de los
+                            participantes. Mediante el diálogo y el cuaderno
+                            de sentires y aprendizajes, se reconoció el valor
+                            del trabajo colectivo y se promovieron compromisos
+                            para el cuidado del vivero, el agua y el entorno.
+                        </p>
+
+                    </div>
+
+                    <!-- PARTICIPACIÓN NOVIEMBRE -->
+
+                    <section
+                        class="participacion"
+                        aria-label="Participación en la jornada de noviembre"
+                    >
+
+                        <h4>🙋 Participación en la jornada</h4>
+
+                        <p class="participacion-total">
+                            <strong>—</strong> personas participantes
+                        </p>
+
+                        <details class="participacion-detalle">
+
+                            <summary>Detalle de participación</summary>
+
+                            <div class="participacion-grupos">
+
+                                <div class="participacion-grupo">
+
+                                    <h5>Niñez</h5>
+
+                                    <span class="participacion-edad">
+                                        Menores de 12 años
+                                    </span>
+
+                                    <div class="participacion-globos">
+
+                                        <div class="participacion-globo">
+                                            <span class="participacion-emoji"
+                                                  aria-hidden="true">👧</span>
+                                            <strong>—</strong>
+                                            <small>Niñas</small>
+                                        </div>
+
+                                        <div class="participacion-globo">
+                                            <span class="participacion-emoji"
+                                                  aria-hidden="true">👦</span>
+                                            <strong>—</strong>
+                                            <small>Niños</small>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="participacion-grupo">
+
+                                    <h5>Adolescencia</h5>
+
+                                    <span class="participacion-edad">
+                                        De 12 a 17 años
+                                    </span>
+
+                                    <div class="participacion-globos">
+
+                                        <div class="participacion-globo">
+                                            <span class="participacion-emoji"
+                                                  aria-hidden="true">👩</span>
+                                            <strong>—</strong>
+                                            <small>Mujeres</small>
+                                        </div>
+
+                                        <div class="participacion-globo">
+                                            <span class="participacion-emoji"
+                                                  aria-hidden="true">👨</span>
+                                            <strong>—</strong>
+                                            <small>Hombres</small>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="participacion-grupo">
+
+                                    <h5>Personas adultas</h5>
+
+                                    <span class="participacion-edad">
+                                        18 años o más
+                                    </span>
+
+                                    <div class="participacion-globos">
+
+                                        <div class="participacion-globo">
+                                            <span class="participacion-emoji"
+                                                  aria-hidden="true">👩</span>
+                                            <strong>—</strong>
+                                            <small>Mujeres</small>
+                                        </div>
+
+                                        <div class="participacion-globo">
+                                            <span class="participacion-emoji"
+                                                  aria-hidden="true">👨</span>
+                                            <strong>—</strong>
+                                            <small>Hombres</small>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <p class="participacion-nota">
+                                —: dato pendiente de confirmación.
+                            </p>
+
+                        </details>
+                    </section>
+
+                    <!-- FOTOGRAFÍAS NOVIEMBRE -->
+
+                    <div class="block">
+
+                        <h4>📷 Registro fotográfico</h4>
+
+                        <div class="gallery">
+
+                            <img
+                                src="../assets/noviembre/el-credo/foto1.jpeg"
+                                alt="Actividad noviembre El Credo"
+                                loading="lazy"
+                            >
+
+                            <img
+                                src="../assets/noviembre/el-credo/foto2.jpeg"
+                                alt="Actividad noviembre El Credo"
+                                loading="lazy"
+                            >
+
+                            <img
+                                src="../assets/noviembre/el-credo/foto3.jpeg"
+                                alt="Actividad noviembre El Credo"
+                                loading="lazy"
+                            >
+
+                        </div>
+                    </div>
+
+                    <!-- FRASE NOVIEMBRE -->
+
+                    <div class="block">
+
+                        <div class="quote">
+                            “Cada árbol que cuidamos aporta a la vida del agua;
+                            cada saber y compromiso que compartimos fortalece
+                            las raíces de nuestro vivero.”
+                        </div>
+
+                    </div>
+
+                    <!-- ALIADO NOVIEMBRE -->
+
+                    <div class="block">
+
+                        <h4>🤝 Aliado del proceso</h4>
+
+                        <img
+                            src="../img/Logo-FFAVS.png"
+                            class="logo-aliado"
+                            alt="Fundación Fondo Agua por la Vida y la Sostenibilidad"
+                        >
+
+                    </div>
+
+                </div>
+            </details>
+
+        </div>
+    </div>
+
+    <!-- PIE -->
+
+    <div class="footer">
+
+        <a class="button" href="../index.html">
+            Volver al geovisor
+        </a>
 
     </div>
 
-</div>
-
-
-<!-- =========================================
-     PIE
-========================================= -->
-
-<div class="footer">
-
-    <a
-        class="button"
-        href="../index.html"
-    >
-        Volver al geovisor
-    </a>
-
-</div>
-
-
 </body>
-
 </html>
