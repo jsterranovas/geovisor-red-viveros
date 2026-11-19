@@ -75,13 +75,12 @@
             font-size:0.95rem;
             line-height:1.25;
             font-weight:bold;
-            color:white;
         }
 
         .logo-corpopalo{
             display:block;
             width:140px;
-            max-width:140px;
+            max-width:100%;
             height:auto;
             margin:7px auto 0;
             padding:5px 10px;
@@ -165,10 +164,7 @@
             margin-bottom:40px;
         }
 
-        /*
-        El selector > aplica los estilos únicamente al título
-        del mes y evita afectar el desplegable de participación.
-        */
+        /* Solo afecta al encabezado del mes */
 
         .month > summary{
             position:relative;
@@ -195,6 +191,11 @@
             height:18px;
             background:#6E9854;
             border-radius:50%;
+        }
+
+        summary:focus-visible{
+            outline:2px solid #5F8A48;
+            outline-offset:4px;
         }
 
         /* CONTENIDO DEL MES */
@@ -286,11 +287,6 @@
             transform:rotate(225deg);
         }
 
-        summary:focus-visible{
-            outline:2px solid #5F8A48;
-            outline-offset:4px;
-        }
-
         .participacion-grupos{
             display:grid;
             grid-template-columns:repeat(3,minmax(0,1fr));
@@ -368,18 +364,26 @@
         }
 
         .gallery img{
+            display:block;
             width:100%;
             border-radius:14px;
-            display:block;
         }
 
-        /* FRASE */
+        /* FRASE Y ALIADO */
 
         .quote{
             background:#F5F8F0;
             padding:20px;
             border-left:6px solid #7DA05A;
             font-style:italic;
+        }
+
+        .logo-aliado{
+            display:block;
+            width:180px;
+            max-width:100%;
+            height:auto;
+            margin:20px auto;
         }
 
         /* PIE */
@@ -399,7 +403,7 @@
             border-radius:14px;
         }
 
-        /* AJUSTES PARA CELULARES */
+        /* CELULARES */
 
         @media(max-width:650px){
 
@@ -429,6 +433,10 @@
 
             .hero-text h2{
                 font-size:1rem;
+            }
+
+            .bitacora-header h1{
+                font-size:1.9rem;
             }
         }
     </style>
@@ -471,8 +479,6 @@
         </div>
     </div>
 
-    <!-- CONTENIDO -->
-
     <div class="container">
 
         <a class="back" href="../viveros/asomuellas.html">
@@ -490,7 +496,7 @@
 
         </div>
 
-        <!-- MÉTRICAS GENERALES DEL VIVERO -->
+        <!-- MÉTRICAS GENERALES -->
 
         <div class="metrics">
 
@@ -515,8 +521,6 @@
             </div>
 
         </div>
-
-        <!-- LÍNEA DE TIEMPO -->
 
         <div class="timeline">
 
@@ -582,15 +586,12 @@
                             <div class="participacion-grupos">
 
                                 <div class="participacion-grupo">
-
                                     <h5>Niñez</h5>
-
                                     <span class="participacion-edad">
                                         Menores de 12 años
                                     </span>
 
                                     <div class="participacion-globos">
-
                                         <div class="participacion-globo">
                                             <span class="participacion-emoji"
                                                   aria-hidden="true">👧</span>
@@ -604,20 +605,16 @@
                                             <strong>0</strong>
                                             <small>Niños</small>
                                         </div>
-
                                     </div>
                                 </div>
 
                                 <div class="participacion-grupo">
-
                                     <h5>Adolescencia</h5>
-
                                     <span class="participacion-edad">
                                         De 12 a 17 años
                                     </span>
 
                                     <div class="participacion-globos">
-
                                         <div class="participacion-globo">
                                             <span class="participacion-emoji"
                                                   aria-hidden="true">👩</span>
@@ -631,20 +628,16 @@
                                             <strong>0</strong>
                                             <small>Hombres</small>
                                         </div>
-
                                     </div>
                                 </div>
 
                                 <div class="participacion-grupo">
-
                                     <h5>Personas adultas</h5>
-
                                     <span class="participacion-edad">
                                         18 años o más
                                     </span>
 
                                     <div class="participacion-globos">
-
                                         <div class="participacion-globo">
                                             <span class="participacion-emoji"
                                                   aria-hidden="true">👩</span>
@@ -658,7 +651,6 @@
                                             <strong>1</strong>
                                             <small>Hombres</small>
                                         </div>
-
                                     </div>
                                 </div>
 
@@ -700,13 +692,17 @@
                         </div>
                     </div>
 
+                    <!-- FRASE SEPTIEMBRE -->
+
                     <div class="block">
                         <div class="quote">
-                            "Del cuidado de cada planta al cuidado de todo
+                            “Del cuidado de cada planta al cuidado de todo
                             el vivero: conocimiento, participación y
-                            corresponsabilidad."
+                            corresponsabilidad.”
                         </div>
                     </div>
+
+                    <!-- ALIADO SEPTIEMBRE -->
 
                     <div class="block">
 
@@ -714,13 +710,8 @@
 
                         <img
                             src="../img/Logo-FFAVS.png"
+                            class="logo-aliado"
                             alt="Fundación Fondo Agua por la Vida y la Sostenibilidad"
-                            style="
-                                display:block;
-                                width:180px;
-                                max-width:100%;
-                                margin:20px auto;
-                            "
                         >
 
                     </div>
@@ -796,15 +787,12 @@
                             <div class="participacion-grupos">
 
                                 <div class="participacion-grupo">
-
                                     <h5>Niñez</h5>
-
                                     <span class="participacion-edad">
                                         Menores de 12 años
                                     </span>
 
                                     <div class="participacion-globos">
-
                                         <div class="participacion-globo">
                                             <span class="participacion-emoji"
                                                   aria-hidden="true">👧</span>
@@ -818,20 +806,16 @@
                                             <strong>0</strong>
                                             <small>Niños</small>
                                         </div>
-
                                     </div>
                                 </div>
 
                                 <div class="participacion-grupo">
-
                                     <h5>Adolescencia</h5>
-
                                     <span class="participacion-edad">
                                         De 12 a 17 años
                                     </span>
 
                                     <div class="participacion-globos">
-
                                         <div class="participacion-globo">
                                             <span class="participacion-emoji"
                                                   aria-hidden="true">👩</span>
@@ -845,20 +829,16 @@
                                             <strong>0</strong>
                                             <small>Hombres</small>
                                         </div>
-
                                     </div>
                                 </div>
 
                                 <div class="participacion-grupo">
-
                                     <h5>Personas adultas</h5>
-
                                     <span class="participacion-edad">
                                         18 años o más
                                     </span>
 
                                     <div class="participacion-globos">
-
                                         <div class="participacion-globo">
                                             <span class="participacion-emoji"
                                                   aria-hidden="true">👩</span>
@@ -872,7 +852,6 @@
                                             <strong>1</strong>
                                             <small>Hombres</small>
                                         </div>
-
                                     </div>
                                 </div>
 
@@ -912,6 +891,30 @@
                             >
 
                         </div>
+                    </div>
+
+                    <!-- FRASE OCTUBRE -->
+
+                    <div class="block">
+                        <div class="quote">
+                            “Cada semilla guarda la posibilidad de un bosque;
+                            cada saber compartido y cada acuerdo de cuidado
+                            ayudan a hacerlo crecer.”
+                        </div>
+                    </div>
+
+                    <!-- ALIADO OCTUBRE -->
+
+                    <div class="block">
+
+                        <h4>🤝 Aliado del proceso</h4>
+
+                        <img
+                            src="../img/Logo-FFAVS.png"
+                            class="logo-aliado"
+                            alt="Fundación Fondo Agua por la Vida y la Sostenibilidad"
+                        >
+
                     </div>
 
                 </div>
@@ -983,15 +986,12 @@
                             <div class="participacion-grupos">
 
                                 <div class="participacion-grupo">
-
                                     <h5>Niñez</h5>
-
                                     <span class="participacion-edad">
                                         Menores de 12 años
                                     </span>
 
                                     <div class="participacion-globos">
-
                                         <div class="participacion-globo">
                                             <span class="participacion-emoji"
                                                   aria-hidden="true">👧</span>
@@ -1005,20 +1005,16 @@
                                             <strong>0</strong>
                                             <small>Niños</small>
                                         </div>
-
                                     </div>
                                 </div>
 
                                 <div class="participacion-grupo">
-
                                     <h5>Adolescencia</h5>
-
                                     <span class="participacion-edad">
                                         De 12 a 17 años
                                     </span>
 
                                     <div class="participacion-globos">
-
                                         <div class="participacion-globo">
                                             <span class="participacion-emoji"
                                                   aria-hidden="true">👩</span>
@@ -1032,20 +1028,16 @@
                                             <strong>0</strong>
                                             <small>Hombres</small>
                                         </div>
-
                                     </div>
                                 </div>
 
                                 <div class="participacion-grupo">
-
                                     <h5>Personas adultas</h5>
-
                                     <span class="participacion-edad">
                                         18 años o más
                                     </span>
 
                                     <div class="participacion-globos">
-
                                         <div class="participacion-globo">
                                             <span class="participacion-emoji"
                                                   aria-hidden="true">👩</span>
@@ -1059,7 +1051,6 @@
                                             <strong>1</strong>
                                             <small>Hombres</small>
                                         </div>
-
                                     </div>
                                 </div>
 
@@ -1099,6 +1090,30 @@
                             >
 
                         </div>
+                    </div>
+
+                    <!-- FRASE NOVIEMBRE -->
+
+                    <div class="block">
+                        <div class="quote">
+                            “Cada árbol que cuidamos aporta a la vida del agua;
+                            cada saber y compromiso que compartimos fortalece
+                            las raíces de nuestro vivero.”
+                        </div>
+                    </div>
+
+                    <!-- ALIADO NOVIEMBRE -->
+
+                    <div class="block">
+
+                        <h4>🤝 Aliado del proceso</h4>
+
+                        <img
+                            src="../img/Logo-FFAVS.png"
+                            class="logo-aliado"
+                            alt="Fundación Fondo Agua por la Vida y la Sostenibilidad"
+                        >
+
                     </div>
 
                 </div>
